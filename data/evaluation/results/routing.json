@@ -1,0 +1,1493 @@
+{
+  "cases": 58,
+  "accuracy": 1.0,
+  "type_accuracy": 1.0,
+  "per_type": {
+    "DOCUMENT_SEARCH": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "support": 10.0
+    },
+    "INCIDENT_SEARCH": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "support": 8.0
+    },
+    "CODE_SEARCH": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "support": 8.0
+    },
+    "SQL_QUERY": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "support": 8.0
+    },
+    "DEPLOYMENT_SEARCH": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "support": 6.0
+    },
+    "LOG_SEARCH": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "support": 6.0
+    },
+    "MULTI_SOURCE": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "support": 6.0
+    },
+    "UNKNOWN": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "support": 6.0
+    }
+  },
+  "confusion": {
+    "CODE_SEARCH": {
+      "CODE_SEARCH": 8
+    },
+    "DEPLOYMENT_SEARCH": {
+      "DEPLOYMENT_SEARCH": 6
+    },
+    "DOCUMENT_SEARCH": {
+      "DOCUMENT_SEARCH": 10
+    },
+    "INCIDENT_SEARCH": {
+      "INCIDENT_SEARCH": 8
+    },
+    "LOG_SEARCH": {
+      "LOG_SEARCH": 6
+    },
+    "MULTI_SOURCE": {
+      "MULTI_SOURCE": 6
+    },
+    "SQL_QUERY": {
+      "SQL_QUERY": 8
+    },
+    "UNKNOWN": {
+      "UNKNOWN": 6
+    }
+  },
+  "outcomes": [
+    {
+      "id": "RT-01",
+      "query": "How does payment authentication work?",
+      "expected_type": "DOCUMENT_SEARCH",
+      "predicted_type": "DOCUMENT_SEARCH",
+      "tools": [
+        "search_documents"
+      ],
+      "missing_tools": [],
+      "confidence": "high",
+      "summary": "DOCUMENT_SEARCH ('How does payment authentication work')"
+    },
+    {
+      "id": "RT-02",
+      "query": "What caused INC-0421?",
+      "expected_type": "INCIDENT_SEARCH",
+      "predicted_type": "INCIDENT_SEARCH",
+      "tools": [
+        "search_incidents"
+      ],
+      "missing_tools": [],
+      "confidence": "high",
+      "summary": "INCIDENT_SEARCH ('INC-0421', 'What caused')"
+    },
+    {
+      "id": "RT-03",
+      "query": "Where is database pooling implemented?",
+      "expected_type": "CODE_SEARCH",
+      "predicted_type": "CODE_SEARCH",
+      "tools": [
+        "search_code"
+      ],
+      "missing_tools": [],
+      "confidence": "high",
+      "summary": "CODE_SEARCH ('Where is database pooling implemented')"
+    },
+    {
+      "id": "RT-04",
+      "query": "How many payment incidents happened last month?",
+      "expected_type": "SQL_QUERY",
+      "predicted_type": "SQL_QUERY",
+      "tools": [
+        "query_database"
+      ],
+      "missing_tools": [],
+      "confidence": "high",
+      "summary": "aggregation requested ('How many')"
+    },
+    {
+      "id": "RT-05",
+      "query": "What changed before the payment outage?",
+      "expected_type": "MULTI_SOURCE",
+      "predicted_type": "MULTI_SOURCE",
+      "tools": [
+        "search_incidents",
+        "search_deployments",
+        "search_logs"
+      ],
+      "missing_tools": [],
+      "confidence": "high",
+      "summary": "links a change to a failure ('What changed before')"
+    },
+    {
+      "id": "RT-06",
+      "query": "What is the architecture of the search service?",
+      "expected_type": "DOCUMENT_SEARCH",
+      "predicted_type": "DOCUMENT_SEARCH",
+      "tools": [
+        "search_documents"
+      ],
+      "missing_tools": [],
+      "confidence": "high",
+      "summary": "DOCUMENT_SEARCH ('What is the architecture', 'architecture')"
+    },
+    {
+      "id": "RT-07",
+      "query": "Explain how the API gateway validates JWT tokens.",
+      "expected_type": "DOCUMENT_SEARCH",
+      "predicted_type": "DOCUMENT_SEARCH",
+      "tools": [
+        "search_documents"
+      ],
+      "missing_tools": [],
+      "confidence": "high",
+      "summary": "DOCUMENT_SEARCH ('Explain', 'API')"
+    },
+    {
+      "id": "RT-08",
+      "query": "What is the procedure to roll back a bad release?",
+      "expected_type": "DOCUMENT_SEARCH",
+      "predicted_type": "DOCUMENT_SEARCH",
+      "tools": [
+        "search_documents",
+        "get_runbook"
+      ],
+      "missing_tools": [],
+      "confidence": "high",
+      "summary": "DOCUMENT_SEARCH ('procedure')"
+    },
+    {
+      "id": "RT-09",
+      "query": "Which alerts are defined for cart-service and what are their thresholds?",
+      "expected_type": "DOCUMENT_SEARCH",
+      "predicted_type": "DOCUMENT_SEARCH",
+      "tools": [
+        "search_documents"
+      ],
+      "missing_tools": [],
+      "confidence": "low",
+      "summary": "DOCUMENT_SEARCH ('alerts')"
+    },
+    {
+      "id": "RT-10",
+      "query": "What request rate limits apply to API clients?",
+      "expected_type": "DOCUMENT_SEARCH",
+      "predicted_type": "DOCUMENT_SEARCH",
+      "tools": [
+        "search_documents"
+      ],
+      "missing_tools": [],
+      "confidence": "low",
+      "summary": "DOCUMENT_SEARCH ('rate limits')"
+    },
+    {
+      "id": "RT-11",
+      "query": "How should we respond to Redis memory pressure?",
+      "expected_type": "DOCUMENT_SEARCH",
+      "predicted_type": "DOCUMENT_SEARCH",
+      "tools": [
+        "search_documents",
+        "get_runbook"
+      ],
+      "missing_tools": [],
+      "confidence": "high",
+      "summary": "DOCUMENT_SEARCH ('How should we')"
+    },
+    {
+      "id": "RT-12",
+      "query": "What are the configuration options for the notification service?",
+      "expected_type": "DOCUMENT_SEARCH",
+      "predicted_type": "DOCUMENT_SEARCH",
+      "tools": [
+        "search_documents"
+      ],
+      "missing_tools": [],
+      "confidence": "high",
+      "summary": "DOCUMENT_SEARCH ('What are the configuration options', 'configuration')"
+    },
+    {
+      "id": "RT-13",
+      "query": "Describe the data model of the order service.",
+      "expected_type": "DOCUMENT_SEARCH",
+      "predicted_type": "DOCUMENT_SEARCH",
+      "tools": [
+        "search_documents"
+      ],
+      "missing_tools": [],
+      "confidence": "high",
+      "summary": "DOCUMENT_SEARCH ('Describe', 'data model')"
+    },
+    {
+      "id": "RT-14",
+      "query": "What is the canary analysis policy for deployments?",
+      "expected_type": "DOCUMENT_SEARCH",
+      "predicted_type": "DOCUMENT_SEARCH",
+      "tools": [
+        "search_documents"
+      ],
+      "missing_tools": [],
+      "confidence": "high",
+      "summary": "DOCUMENT_SEARCH ('What is the canary analysis policy', 'policy')"
+    },
+    {
+      "id": "RT-15",
+      "query": "What happened in INC-0406?",
+      "expected_type": "INCIDENT_SEARCH",
+      "predicted_type": "INCIDENT_SEARCH",
+      "tools": [
+        "search_incidents"
+      ],
+      "missing_tools": [],
+      "confidence": "high",
+      "summary": "INCIDENT_SEARCH ('INC-0406', 'What happened')"
+    },
+    {
+      "id": "RT-16",
+      "query": "Have we had incidents where Redis ran out of memory?",
+      "expected_type": "INCIDENT_SEARCH",
+      "predicted_type": "INCIDENT_SEARCH",
+      "tools": [
+        "search_incidents"
+      ],
+      "missing_tools": [],
+      "confidence": "high",
+      "summary": "INCIDENT_SEARCH ('Have we had incidents', 'incidents')"
+    },
+    {
+      "id": "RT-17",
+      "query": "Show me past outages of the checkout flow.",
+      "expected_type": "INCIDENT_SEARCH",
+      "predicted_type": "INCIDENT_SEARCH",
+      "tools": [
+        "search_incidents"
+      ],
+      "missing_tools": [],
+      "confidence": "high",
+      "summary": "INCIDENT_SEARCH ('past outages', 'outages')"
+    },
+    {
+      "id": "RT-18",
+      "query": "Was there an incident about stale prices in product-service?",
+      "expected_type": "INCIDENT_SEARCH",
+      "predicted_type": "INCIDENT_SEARCH",
+      "tools": [
+        "search_incidents"
+      ],
+      "missing_tools": [],
+      "confidence": "high",
+      "summary": "INCIDENT_SEARCH ('Was there an incident', 'incident')"
+    },
+    {
+      "id": "RT-19",
+      "query": "Summarize the postmortem for the JWKS key rotation incident.",
+      "expected_type": "INCIDENT_SEARCH",
+      "predicted_type": "INCIDENT_SEARCH",
+      "tools": [
+        "search_incidents"
+      ],
+      "missing_tools": [],
+      "confidence": "high",
+      "summary": "INCIDENT_SEARCH ('postmortem', 'incident')"
+    },
+    {
+      "id": "RT-20",
+      "query": "Which incident involved the warehouse stock drift?",
+      "expected_type": "INCIDENT_SEARCH",
+      "predicted_type": "INCIDENT_SEARCH",
+      "tools": [
+        "search_incidents"
+      ],
+      "missing_tools": [],
+      "confidence": "high",
+      "summary": "INCIDENT_SEARCH ('Which incident', 'incident')"
+    },
+    {
+      "id": "RT-21",
+      "query": "Why did the auth-service return 401s after the key rotation?",
+      "expected_type": "INCIDENT_SEARCH",
+      "predicted_type": "INCIDENT_SEARCH",
+      "tools": [
+        "search_incidents"
+      ],
+      "missing_tools": [],
+      "confidence": "high",
+      "summary": "INCIDENT_SEARCH ('Why did the auth-service return')"
+    },
+    {
+      "id": "RT-22",
+      "query": "Show me the IdempotencyStore class.",
+      "expected_type": "CODE_SEARCH",
+      "predicted_type": "CODE_SEARCH",
+      "tools": [
+        "search_code"
+      ],
+      "missing_tools": [],
+      "confidence": "high",
+      "summary": "CODE_SEARCH ('IdempotencyStore', 'Show me the IdempotencyStore class', 'class')"
+    },
+    {
+      "id": "RT-23",
+      "query": "Which function escapes user input for OpenSearch queries?",
+      "expected_type": "CODE_SEARCH",
+      "predicted_type": "CODE_SEARCH",
+      "tools": [
+        "search_code"
+      ],
+      "missing_tools": [],
+      "confidence": "high",
+      "summary": "CODE_SEARCH ('OpenSearch', 'Which function', 'function')"
+    },
+    {
+      "id": "RT-24",
+      "query": "Where is the token bucket rate limiter implemented?",
+      "expected_type": "CODE_SEARCH",
+      "predicted_type": "CODE_SEARCH",
+      "tools": [
+        "search_code"
+      ],
+      "missing_tools": [],
+      "confidence": "high",
+      "summary": "CODE_SEARCH ('Where is the token bucket rate limiter implemented')"
+    },
+    {
+      "id": "RT-25",
+      "query": "How is the circuit breaker implemented in novacart_common?",
+      "expected_type": "CODE_SEARCH",
+      "predicted_type": "CODE_SEARCH",
+      "tools": [
+        "search_code"
+      ],
+      "missing_tools": [],
+      "confidence": "high",
+      "summary": "CODE_SEARCH ('novacart_common', 'How is the circuit breaker implemented')"
+    },
+    {
+      "id": "RT-26",
+      "query": "What does PaymentProcessor.create_payment do?",
+      "expected_type": "CODE_SEARCH",
+      "predicted_type": "CODE_SEARCH",
+      "tools": [
+        "search_code"
+      ],
+      "missing_tools": [],
+      "confidence": "high",
+      "summary": "CODE_SEARCH ('PaymentProcessor.create_payment', 'PaymentProcessor', 'create_payment')"
+    },
+    {
+      "id": "RT-27",
+      "query": "Find the code that reserves inventory during checkout.",
+      "expected_type": "CODE_SEARCH",
+      "predicted_type": "CODE_SEARCH",
+      "tools": [
+        "search_code"
+      ],
+      "missing_tools": [],
+      "confidence": "high",
+      "summary": "CODE_SEARCH ('Find the code', 'code')"
+    },
+    {
+      "id": "RT-28",
+      "query": "Where is the Kafka producer configured in order-service code?",
+      "expected_type": "CODE_SEARCH",
+      "predicted_type": "CODE_SEARCH",
+      "tools": [
+        "search_code"
+      ],
+      "missing_tools": [],
+      "confidence": "high",
+      "summary": "CODE_SEARCH ('in order-service code', 'code')"
+    },
+    {
+      "id": "RT-29",
+      "query": "Count SEV1 incidents per service in 2026.",
+      "expected_type": "SQL_QUERY",
+      "predicted_type": "SQL_QUERY",
+      "tools": [
+        "query_database"
+      ],
+      "missing_tools": [],
+      "confidence": "high",
+      "summary": "aggregation requested ('Count', 'per service')"
+    },
+    {
+      "id": "RT-30",
+      "query": "Which service had the most incidents in the last 90 days?",
+      "expected_type": "SQL_QUERY",
+      "predicted_type": "SQL_QUERY",
+      "tools": [
+        "query_database"
+      ],
+      "missing_tools": [],
+      "confidence": "high",
+      "summary": "aggregation requested ('the most incidents')"
+    },
+    {
+      "id": "RT-31",
+      "query": "What is the average resolution time for database incidents?",
+      "expected_type": "SQL_QUERY",
+      "predicted_type": "SQL_QUERY",
+      "tools": [
+        "query_database"
+      ],
+      "missing_tools": [],
+      "confidence": "high",
+      "summary": "aggregation requested ('average')"
+    },
+    {
+      "id": "RT-32",
+      "query": "How many deployments were rolled back this year?",
+      "expected_type": "SQL_QUERY",
+      "predicted_type": "SQL_QUERY",
+      "tools": [
+        "query_database"
+      ],
+      "missing_tools": [],
+      "confidence": "high",
+      "summary": "aggregation requested ('How many')"
+    },
+    {
+      "id": "RT-33",
+      "query": "List the top 5 services by number of deployments.",
+      "expected_type": "SQL_QUERY",
+      "predicted_type": "SQL_QUERY",
+      "tools": [
+        "query_database"
+      ],
+      "missing_tools": [],
+      "confidence": "high",
+      "summary": "aggregation requested ('number of', 'top 5')"
+    },
+    {
+      "id": "RT-34",
+      "query": "What percentage of incidents were caused by deployments?",
+      "expected_type": "SQL_QUERY",
+      "predicted_type": "SQL_QUERY",
+      "tools": [
+        "query_database"
+      ],
+      "missing_tools": [],
+      "confidence": "high",
+      "summary": "aggregation requested ('percentage')"
+    },
+    {
+      "id": "RT-35",
+      "query": "How many pull requests were merged for cart-service in June 2026?",
+      "expected_type": "SQL_QUERY",
+      "predicted_type": "SQL_QUERY",
+      "tools": [
+        "query_database"
+      ],
+      "missing_tools": [],
+      "confidence": "high",
+      "summary": "aggregation requested ('How many')"
+    },
+    {
+      "id": "RT-36",
+      "query": "What changed in payment-service v2.8.1?",
+      "expected_type": "DEPLOYMENT_SEARCH",
+      "predicted_type": "DEPLOYMENT_SEARCH",
+      "tools": [
+        "search_deployments"
+      ],
+      "missing_tools": [],
+      "confidence": "high",
+      "summary": "DEPLOYMENT_SEARCH ('v2.8.1', 'What changed in')"
+    },
+    {
+      "id": "RT-37",
+      "query": "Which pull requests shipped in DEP-0296?",
+      "expected_type": "DEPLOYMENT_SEARCH",
+      "predicted_type": "DEPLOYMENT_SEARCH",
+      "tools": [
+        "search_deployments"
+      ],
+      "missing_tools": [],
+      "confidence": "high",
+      "summary": "DEPLOYMENT_SEARCH ('DEP-0296', 'shipped in', 'shipped')"
+    },
+    {
+      "id": "RT-38",
+      "query": "Show recent deployments of inventory-service.",
+      "expected_type": "DEPLOYMENT_SEARCH",
+      "predicted_type": "DEPLOYMENT_SEARCH",
+      "tools": [
+        "search_deployments"
+      ],
+      "missing_tools": [],
+      "confidence": "high",
+      "summary": "DEPLOYMENT_SEARCH ('recent deployments', 'deployments')"
+    },
+    {
+      "id": "RT-39",
+      "query": "When was cart-service last rolled back?",
+      "expected_type": "DEPLOYMENT_SEARCH",
+      "predicted_type": "DEPLOYMENT_SEARCH",
+      "tools": [
+        "search_deployments"
+      ],
+      "missing_tools": [],
+      "confidence": "high",
+      "summary": "DEPLOYMENT_SEARCH ('When was cart-service last rolled back', 'rolled back')"
+    },
+    {
+      "id": "RT-40",
+      "query": "What was released in payment-service v2.8.2?",
+      "expected_type": "DEPLOYMENT_SEARCH",
+      "predicted_type": "DEPLOYMENT_SEARCH",
+      "tools": [
+        "search_deployments"
+      ],
+      "missing_tools": [],
+      "confidence": "high",
+      "summary": "DEPLOYMENT_SEARCH ('v2.8.2', 'What was released in', 'released')"
+    },
+    {
+      "id": "RT-41",
+      "query": "Which version of search-service is currently deployed?",
+      "expected_type": "DEPLOYMENT_SEARCH",
+      "predicted_type": "DEPLOYMENT_SEARCH",
+      "tools": [
+        "search_deployments"
+      ],
+      "missing_tools": [],
+      "confidence": "high",
+      "summary": "DEPLOYMENT_SEARCH ('Which version', 'version')"
+    },
+    {
+      "id": "RT-42",
+      "query": "Show error logs for payment-service during the last hour.",
+      "expected_type": "LOG_SEARCH",
+      "predicted_type": "LOG_SEARCH",
+      "tools": [
+        "search_logs"
+      ],
+      "missing_tools": [],
+      "confidence": "high",
+      "summary": "LOG_SEARCH ('ERROR', 'Show error logs', 'error logs')"
+    },
+    {
+      "id": "RT-43",
+      "query": "Find log lines containing 'QueuePool limit' for payment-service.",
+      "expected_type": "LOG_SEARCH",
+      "predicted_type": "LOG_SEARCH",
+      "tools": [
+        "search_logs"
+      ],
+      "missing_tools": [],
+      "confidence": "high",
+      "summary": "LOG_SEARCH ('Find log lines', 'log lines', 'log')"
+    },
+    {
+      "id": "RT-44",
+      "query": "What did the logs say for trace 4bf92f3577b34da6a3ce929d0e0e4736?",
+      "expected_type": "LOG_SEARCH",
+      "predicted_type": "LOG_SEARCH",
+      "tools": [
+        "search_logs"
+      ],
+      "missing_tools": [],
+      "confidence": "high",
+      "summary": "LOG_SEARCH ('4bf92f3577b34da6a3ce929d0e0e4736', 'What did the logs', 'logs')"
+    },
+    {
+      "id": "RT-45",
+      "query": "Are there WARN logs from api-gateway about upstream timeouts?",
+      "expected_type": "LOG_SEARCH",
+      "predicted_type": "LOG_SEARCH",
+      "tools": [
+        "search_logs"
+      ],
+      "missing_tools": [],
+      "confidence": "high",
+      "summary": "LOG_SEARCH ('WARNING', 'Are there WARN logs', 'WARN logs')"
+    },
+    {
+      "id": "RT-46",
+      "query": "Show the logs emitted during deployment DEP-0296.",
+      "expected_type": "LOG_SEARCH",
+      "predicted_type": "LOG_SEARCH",
+      "tools": [
+        "search_logs"
+      ],
+      "missing_tools": [],
+      "confidence": "high",
+      "summary": "LOG_SEARCH ('Show the logs', 'logs')"
+    },
+    {
+      "id": "RT-47",
+      "query": "grep logs for \"deadlock detected\" in inventory-service",
+      "expected_type": "LOG_SEARCH",
+      "predicted_type": "LOG_SEARCH",
+      "tools": [
+        "search_logs"
+      ],
+      "missing_tools": [],
+      "confidence": "high",
+      "summary": "LOG_SEARCH ('grep logs', 'logs')"
+    },
+    {
+      "id": "RT-48",
+      "query": "Why did payment requests start returning HTTP 500 errors after deployment v2.8.1?",
+      "expected_type": "MULTI_SOURCE",
+      "predicted_type": "MULTI_SOURCE",
+      "tools": [
+        "search_incidents",
+        "search_deployments",
+        "search_logs"
+      ],
+      "missing_tools": [],
+      "confidence": "high",
+      "summary": "links a change to a failure ('after deployment v2.8.1')"
+    },
+    {
+      "id": "RT-49",
+      "query": "Correlate the cart-service latency incident with deployments and logs.",
+      "expected_type": "MULTI_SOURCE",
+      "predicted_type": "MULTI_SOURCE",
+      "tools": [
+        "search_incidents",
+        "search_deployments",
+        "search_logs"
+      ],
+      "missing_tools": [],
+      "confidence": "high",
+      "summary": "links a change to a failure ('Correlate')"
+    },
+    {
+      "id": "RT-50",
+      "query": "What deployments happened right before INC-0406 started?",
+      "expected_type": "MULTI_SOURCE",
+      "predicted_type": "MULTI_SOURCE",
+      "tools": [
+        "search_incidents",
+        "search_deployments",
+        "search_logs"
+      ],
+      "missing_tools": [],
+      "confidence": "high",
+      "summary": "links a change to a failure ('right before INC-0406')"
+    },
+    {
+      "id": "RT-51",
+      "query": "Build a timeline of the inventory stock drift incident, including deploys and errors.",
+      "expected_type": "MULTI_SOURCE",
+      "predicted_type": "MULTI_SOURCE",
+      "tools": [
+        "search_incidents",
+        "search_deployments",
+        "search_logs"
+      ],
+      "missing_tools": [],
+      "confidence": "high",
+      "summary": "links a change to a failure ('timeline')"
+    },
+    {
+      "id": "RT-52",
+      "query": "Did the v2.8.1 release cause the spike in database errors?",
+      "expected_type": "MULTI_SOURCE",
+      "predicted_type": "MULTI_SOURCE",
+      "tools": [
+        "search_incidents",
+        "search_deployments",
+        "search_logs"
+      ],
+      "missing_tools": [],
+      "confidence": "high",
+      "summary": "links a change to a failure ('Did the v2.8.1 release cause')"
+    },
+    {
+      "id": "RT-53",
+      "query": "What's the weather in Paris?",
+      "expected_type": "UNKNOWN",
+      "predicted_type": "UNKNOWN",
+      "tools": [],
+      "missing_tools": [],
+      "confidence": "high",
+      "summary": "no operations vocabulary or record ids"
+    },
+    {
+      "id": "RT-54",
+      "query": "Tell me a joke.",
+      "expected_type": "UNKNOWN",
+      "predicted_type": "UNKNOWN",
+      "tools": [],
+      "missing_tools": [],
+      "confidence": "high",
+      "summary": "no operations vocabulary or record ids"
+    },
+    {
+      "id": "RT-55",
+      "query": "asdfgh qwerty",
+      "expected_type": "UNKNOWN",
+      "predicted_type": "UNKNOWN",
+      "tools": [],
+      "missing_tools": [],
+      "confidence": "high",
+      "summary": "no operations vocabulary or record ids"
+    },
+    {
+      "id": "RT-56",
+      "query": "Who won the football match yesterday?",
+      "expected_type": "UNKNOWN",
+      "predicted_type": "UNKNOWN",
+      "tools": [],
+      "missing_tools": [],
+      "confidence": "high",
+      "summary": "no operations vocabulary or record ids"
+    },
+    {
+      "id": "RT-57",
+      "query": "Write a poem about the ocean.",
+      "expected_type": "UNKNOWN",
+      "predicted_type": "UNKNOWN",
+      "tools": [],
+      "missing_tools": [],
+      "confidence": "high",
+      "summary": "no operations vocabulary or record ids"
+    },
+    {
+      "id": "RT-58",
+      "query": "hello",
+      "expected_type": "UNKNOWN",
+      "predicted_type": "UNKNOWN",
+      "tools": [],
+      "missing_tools": [],
+      "confidence": "high",
+      "summary": "no operations vocabulary or record ids"
+    }
+  ],
+  "cross_check": [
+    {
+      "id": "RQ-01",
+      "question": "How do we handle database connection exhaustion?",
+      "category": "runbook",
+      "acceptable": [
+        "DOCUMENT_SEARCH"
+      ],
+      "predicted_type": "DOCUMENT_SEARCH",
+      "agrees": true,
+      "summary": "DOCUMENT_SEARCH ('How do we handle', 'How do we')"
+    },
+    {
+      "id": "RQ-02",
+      "question": "Redis writes are failing with 'OOM command not allowed'. What should I check?",
+      "category": "runbook",
+      "acceptable": [
+        "DOCUMENT_SEARCH"
+      ],
+      "predicted_type": "DOCUMENT_SEARCH",
+      "agrees": true,
+      "summary": "DOCUMENT_SEARCH ('What should I check')"
+    },
+    {
+      "id": "RQ-03",
+      "question": "A Kafka consumer group keeps falling further behind. How do I troubleshoot it?",
+      "category": "runbook",
+      "acceptable": [
+        "DOCUMENT_SEARCH"
+      ],
+      "predicted_type": "DOCUMENT_SEARCH",
+      "agrees": true,
+      "summary": "DOCUMENT_SEARCH ('How do I')"
+    },
+    {
+      "id": "RQ-04",
+      "question": "Customers get 401 errors right after the signing keys were rotated. What do we do?",
+      "category": "runbook",
+      "acceptable": [
+        "DOCUMENT_SEARCH"
+      ],
+      "predicted_type": "DOCUMENT_SEARCH",
+      "agrees": true,
+      "summary": "operations question without a specific signal; general search"
+    },
+    {
+      "id": "RQ-05",
+      "question": "What is the procedure to roll back a bad release?",
+      "category": "runbook",
+      "acceptable": [
+        "DOCUMENT_SEARCH"
+      ],
+      "predicted_type": "DOCUMENT_SEARCH",
+      "agrees": true,
+      "summary": "DOCUMENT_SEARCH ('procedure')"
+    },
+    {
+      "id": "RQ-06",
+      "question": "Postgres keeps logging 'deadlock detected' on writes. How should we respond?",
+      "category": "runbook",
+      "acceptable": [
+        "DOCUMENT_SEARCH"
+      ],
+      "predicted_type": "DOCUMENT_SEARCH",
+      "agrees": true,
+      "summary": "DOCUMENT_SEARCH ('How should we')"
+    },
+    {
+      "id": "RQ-07",
+      "question": "Pods keep restarting because they are OOMKilled.",
+      "category": "runbook",
+      "acceptable": [
+        "DOCUMENT_SEARCH"
+      ],
+      "predicted_type": "DOCUMENT_SEARCH",
+      "agrees": true,
+      "summary": "operations question without a specific signal; general search"
+    },
+    {
+      "id": "RQ-08",
+      "question": "Mobile clients are receiving HTTP 429 Too Many Requests from the API.",
+      "category": "runbook",
+      "acceptable": [
+        "DOCUMENT_SEARCH"
+      ],
+      "predicted_type": "DOCUMENT_SEARCH",
+      "agrees": true,
+      "summary": "DOCUMENT_SEARCH ('API')"
+    },
+    {
+      "id": "RQ-09",
+      "question": "Product pages still show the old price after a price update.",
+      "category": "runbook",
+      "acceptable": [
+        "DOCUMENT_SEARCH"
+      ],
+      "predicted_type": "INCIDENT_SEARCH",
+      "agrees": false,
+      "summary": "INCIDENT_SEARCH ('pages')"
+    },
+    {
+      "id": "RQ-10",
+      "question": "Our stock levels no longer match what the warehouse system reports.",
+      "category": "runbook",
+      "acceptable": [
+        "DOCUMENT_SEARCH"
+      ],
+      "predicted_type": "DOCUMENT_SEARCH",
+      "agrees": true,
+      "summary": "operations question without a specific signal; general search"
+    },
+    {
+      "id": "RQ-11",
+      "question": "Order confirmation emails are arriving hours late.",
+      "category": "runbook",
+      "acceptable": [
+        "DOCUMENT_SEARCH"
+      ],
+      "predicted_type": "DOCUMENT_SEARCH",
+      "agrees": true,
+      "summary": "operations question without a specific signal; general search"
+    },
+    {
+      "id": "RQ-12",
+      "question": "The API gateway is returning 504 Gateway Timeout for many requests.",
+      "category": "runbook",
+      "acceptable": [
+        "DOCUMENT_SEARCH"
+      ],
+      "predicted_type": "DOCUMENT_SEARCH",
+      "agrees": true,
+      "summary": "DOCUMENT_SEARCH ('API')"
+    },
+    {
+      "id": "RQ-13",
+      "question": "Card authorizations are failing because the payment processor returns errors.",
+      "category": "runbook",
+      "acceptable": [
+        "DOCUMENT_SEARCH"
+      ],
+      "predicted_type": "DOCUMENT_SEARCH",
+      "agrees": true,
+      "summary": "operations question without a specific signal; general search"
+    },
+    {
+      "id": "RQ-14",
+      "question": "Where is payment database configuration?",
+      "category": "documentation",
+      "acceptable": [
+        "DOCUMENT_SEARCH"
+      ],
+      "predicted_type": "DOCUMENT_SEARCH",
+      "agrees": true,
+      "summary": "DOCUMENT_SEARCH ('configuration')"
+    },
+    {
+      "id": "RQ-15",
+      "question": "What timeout and retry settings does order-service use when it calls other services?",
+      "category": "documentation",
+      "acceptable": [
+        "DOCUMENT_SEARCH"
+      ],
+      "predicted_type": "DOCUMENT_SEARCH",
+      "agrees": true,
+      "summary": "operations question without a specific signal; general search"
+    },
+    {
+      "id": "RQ-16",
+      "question": "Which services depend on inventory-service?",
+      "category": "documentation",
+      "acceptable": [
+        "DOCUMENT_SEARCH"
+      ],
+      "predicted_type": "DOCUMENT_SEARCH",
+      "agrees": true,
+      "summary": "operations question without a specific signal; general search"
+    },
+    {
+      "id": "RQ-17",
+      "question": "How does canary analysis decide whether a deployment continues?",
+      "category": "documentation",
+      "acceptable": [
+        "DOCUMENT_SEARCH"
+      ],
+      "predicted_type": "DEPLOYMENT_SEARCH",
+      "agrees": false,
+      "summary": "DEPLOYMENT_SEARCH ('canary')"
+    },
+    {
+      "id": "RQ-18",
+      "question": "Is it safe to rename a field in a Kafka event?",
+      "category": "documentation",
+      "acceptable": [
+        "DOCUMENT_SEARCH"
+      ],
+      "predicted_type": "DOCUMENT_SEARCH",
+      "agrees": true,
+      "summary": "operations question without a specific signal; general search"
+    },
+    {
+      "id": "RQ-19",
+      "question": "How long are access tokens valid and how does the gateway validate them?",
+      "category": "documentation",
+      "acceptable": [
+        "DOCUMENT_SEARCH"
+      ],
+      "predicted_type": "DOCUMENT_SEARCH",
+      "agrees": true,
+      "summary": "DOCUMENT_SEARCH ('how does the gateway validate')"
+    },
+    {
+      "id": "RQ-20",
+      "question": "Which alerts are defined for cart-service and what are their thresholds?",
+      "category": "documentation",
+      "acceptable": [
+        "DOCUMENT_SEARCH"
+      ],
+      "predicted_type": "DOCUMENT_SEARCH",
+      "agrees": true,
+      "summary": "DOCUMENT_SEARCH ('alerts')"
+    },
+    {
+      "id": "RQ-21",
+      "question": "What columns does the payments table have?",
+      "category": "documentation",
+      "acceptable": [
+        "DOCUMENT_SEARCH"
+      ],
+      "predicted_type": "DOCUMENT_SEARCH",
+      "agrees": true,
+      "summary": "operations question without a specific signal; general search"
+    },
+    {
+      "id": "RQ-22",
+      "question": "What request rate limits apply to API clients?",
+      "category": "documentation",
+      "acceptable": [
+        "DOCUMENT_SEARCH"
+      ],
+      "predicted_type": "DOCUMENT_SEARCH",
+      "agrees": true,
+      "summary": "DOCUMENT_SEARCH ('rate limits')"
+    },
+    {
+      "id": "RQ-23",
+      "question": "Where is the database connection pool size set for payment-service?",
+      "category": "code",
+      "acceptable": [
+        "CODE_SEARCH"
+      ],
+      "predicted_type": "DOCUMENT_SEARCH",
+      "agrees": false,
+      "summary": "operations question without a specific signal; general search"
+    },
+    {
+      "id": "RQ-24",
+      "question": "Where is the token bucket rate limiter implemented?",
+      "category": "code",
+      "acceptable": [
+        "CODE_SEARCH"
+      ],
+      "predicted_type": "CODE_SEARCH",
+      "agrees": true,
+      "summary": "CODE_SEARCH ('Where is the token bucket rate limiter implemented')"
+    },
+    {
+      "id": "RQ-25",
+      "question": "Which code prevents charging a customer twice when a payment request is retried?",
+      "category": "code",
+      "acceptable": [
+        "CODE_SEARCH"
+      ],
+      "predicted_type": "CODE_SEARCH",
+      "agrees": true,
+      "summary": "CODE_SEARCH ('code')"
+    },
+    {
+      "id": "RQ-26",
+      "question": "Where does checkout reserve inventory and authorize the payment?",
+      "category": "code",
+      "acceptable": [
+        "CODE_SEARCH"
+      ],
+      "predicted_type": "DOCUMENT_SEARCH",
+      "agrees": false,
+      "summary": "operations question without a specific signal; general search"
+    },
+    {
+      "id": "RQ-27",
+      "question": "How does the gateway cache the JWKS signing keys?",
+      "category": "code",
+      "acceptable": [
+        "CODE_SEARCH"
+      ],
+      "predicted_type": "DOCUMENT_SEARCH",
+      "agrees": false,
+      "summary": "operations question without a specific signal; general search"
+    },
+    {
+      "id": "RQ-28",
+      "question": "Where is user input escaped before the OpenSearch query is built?",
+      "category": "code",
+      "acceptable": [
+        "CODE_SEARCH"
+      ],
+      "predicted_type": "CODE_SEARCH",
+      "agrees": true,
+      "summary": "CODE_SEARCH ('OpenSearch')"
+    },
+    {
+      "id": "RQ-29",
+      "question": "How are shopping carts stored in Redis and when do they expire?",
+      "category": "code",
+      "acceptable": [
+        "CODE_SEARCH"
+      ],
+      "predicted_type": "DOCUMENT_SEARCH",
+      "agrees": false,
+      "summary": "operations question without a specific signal; general search"
+    },
+    {
+      "id": "RQ-30",
+      "question": "Why did payment-service fail?",
+      "category": "incident",
+      "acceptable": [
+        "INCIDENT_SEARCH",
+        "MULTI_SOURCE"
+      ],
+      "predicted_type": "INCIDENT_SEARCH",
+      "agrees": true,
+      "summary": "INCIDENT_SEARCH ('Why did payment-service fail')"
+    },
+    {
+      "id": "RQ-31",
+      "question": "Why did payment requests start returning HTTP 500 errors after deployment v2.8.1?",
+      "category": "incident",
+      "acceptable": [
+        "INCIDENT_SEARCH",
+        "MULTI_SOURCE"
+      ],
+      "predicted_type": "MULTI_SOURCE",
+      "agrees": true,
+      "summary": "links a change to a failure ('after deployment v2.8.1')"
+    },
+    {
+      "id": "RQ-32",
+      "question": "What caused inventory stock to drift away from the warehouse system?",
+      "category": "incident",
+      "acceptable": [
+        "INCIDENT_SEARCH",
+        "MULTI_SOURCE"
+      ],
+      "predicted_type": "INCIDENT_SEARCH",
+      "agrees": true,
+      "summary": "INCIDENT_SEARCH ('What caused')"
+    },
+    {
+      "id": "RQ-33",
+      "question": "Why were valid tokens rejected by the API gateway after a key rotation?",
+      "category": "incident",
+      "acceptable": [
+        "INCIDENT_SEARCH",
+        "MULTI_SOURCE"
+      ],
+      "predicted_type": "DOCUMENT_SEARCH",
+      "agrees": false,
+      "summary": "DOCUMENT_SEARCH ('API')"
+    },
+    {
+      "id": "RQ-34",
+      "question": "What happened when the cart Redis cluster ran out of memory?",
+      "category": "incident",
+      "acceptable": [
+        "INCIDENT_SEARCH",
+        "MULTI_SOURCE"
+      ],
+      "predicted_type": "INCIDENT_SEARCH",
+      "agrees": true,
+      "summary": "INCIDENT_SEARCH ('What happened')"
+    },
+    {
+      "id": "RQ-35",
+      "question": "Consumers failed to process product events after a field was renamed. What happened?",
+      "category": "incident",
+      "acceptable": [
+        "INCIDENT_SEARCH",
+        "MULTI_SOURCE"
+      ],
+      "predicted_type": "INCIDENT_SEARCH",
+      "agrees": true,
+      "summary": "INCIDENT_SEARCH ('What happened')"
+    },
+    {
+      "id": "RQ-36",
+      "question": "Which pull requests reduced the database connection pool size?",
+      "category": "change",
+      "acceptable": [
+        "DEPLOYMENT_SEARCH",
+        "MULTI_SOURCE"
+      ],
+      "predicted_type": "DOCUMENT_SEARCH",
+      "agrees": false,
+      "summary": "operations question without a specific signal; general search"
+    },
+    {
+      "id": "RQ-37",
+      "question": "What changed in payment-service v2.8.1?",
+      "category": "change",
+      "acceptable": [
+        "DEPLOYMENT_SEARCH",
+        "MULTI_SOURCE"
+      ],
+      "predicted_type": "DEPLOYMENT_SEARCH",
+      "agrees": true,
+      "summary": "DEPLOYMENT_SEARCH ('v2.8.1', 'What changed in')"
+    },
+    {
+      "id": "RQ-38",
+      "question": "Our Kafka consumers keep logging 'Revoking previously assigned partitions'.",
+      "category": "exact-match",
+      "acceptable": [
+        "DOCUMENT_SEARCH",
+        "INCIDENT_SEARCH",
+        "LOG_SEARCH"
+      ],
+      "predicted_type": "DOCUMENT_SEARCH",
+      "agrees": true,
+      "summary": "operations question without a specific signal; general search"
+    },
+    {
+      "id": "RQ-39",
+      "question": "Requests are rejected with 'token is not yet valid'.",
+      "category": "exact-match",
+      "acceptable": [
+        "DOCUMENT_SEARCH",
+        "INCIDENT_SEARCH",
+        "LOG_SEARCH"
+      ],
+      "predicted_type": "DOCUMENT_SEARCH",
+      "agrees": true,
+      "summary": "operations question without a specific signal; general search"
+    },
+    {
+      "id": "RQ-40",
+      "question": "Pods log 'Temporary failure in name resolution' when calling other services.",
+      "category": "exact-match",
+      "acceptable": [
+        "DOCUMENT_SEARCH",
+        "INCIDENT_SEARCH",
+        "LOG_SEARCH"
+      ],
+      "predicted_type": "LOG_SEARCH",
+      "agrees": true,
+      "summary": "LOG_SEARCH ('log')"
+    },
+    {
+      "id": "RQ-41",
+      "question": "What does 'unknown signing key' mean and how do we fix it?",
+      "category": "exact-match",
+      "acceptable": [
+        "DOCUMENT_SEARCH",
+        "INCIDENT_SEARCH",
+        "LOG_SEARCH"
+      ],
+      "predicted_type": "SQL_QUERY",
+      "agrees": false,
+      "summary": "aggregation requested ('mean')"
+    },
+    {
+      "id": "RQ-42",
+      "question": "payment-service logs 'QueuePool limit of size 20 overflow 10 reached, connection timed out'.",
+      "category": "exact-match",
+      "acceptable": [
+        "DOCUMENT_SEARCH",
+        "INCIDENT_SEARCH",
+        "LOG_SEARCH"
+      ],
+      "predicted_type": "LOG_SEARCH",
+      "agrees": true,
+      "summary": "LOG_SEARCH ('logs')"
+    },
+    {
+      "id": "RQ-43",
+      "question": "What happened in INC-0406?",
+      "category": "exact-match",
+      "acceptable": [
+        "INCIDENT_SEARCH"
+      ],
+      "predicted_type": "INCIDENT_SEARCH",
+      "agrees": true,
+      "summary": "INCIDENT_SEARCH ('INC-0406', 'What happened')"
+    },
+    {
+      "id": "RQ-44",
+      "question": "Give me the details of INC-0329.",
+      "category": "exact-match",
+      "acceptable": [
+        "INCIDENT_SEARCH"
+      ],
+      "predicted_type": "INCIDENT_SEARCH",
+      "agrees": true,
+      "summary": "INCIDENT_SEARCH ('INC-0329')"
+    },
+    {
+      "id": "RQ-45",
+      "question": "What was the root cause of INC-0380?",
+      "category": "exact-match",
+      "acceptable": [
+        "INCIDENT_SEARCH"
+      ],
+      "predicted_type": "INCIDENT_SEARCH",
+      "agrees": true,
+      "summary": "INCIDENT_SEARCH ('INC-0380', 'root cause')"
+    },
+    {
+      "id": "RQ-46",
+      "question": "Which pull requests shipped in DEP-0296?",
+      "category": "exact-match",
+      "acceptable": [
+        "DEPLOYMENT_SEARCH"
+      ],
+      "predicted_type": "DEPLOYMENT_SEARCH",
+      "agrees": true,
+      "summary": "DEPLOYMENT_SEARCH ('DEP-0296', 'shipped in', 'shipped')"
+    },
+    {
+      "id": "RQ-47",
+      "question": "What was released in payment-service v2.8.2?",
+      "category": "exact-match",
+      "acceptable": [
+        "DEPLOYMENT_SEARCH",
+        "MULTI_SOURCE"
+      ],
+      "predicted_type": "DEPLOYMENT_SEARCH",
+      "agrees": true,
+      "summary": "DEPLOYMENT_SEARCH ('v2.8.2', 'What was released in', 'released')"
+    },
+    {
+      "id": "RQ-48",
+      "question": "Why was inventory-service v1.17.2 rolled back?",
+      "category": "exact-match",
+      "acceptable": [
+        "DEPLOYMENT_SEARCH",
+        "MULTI_SOURCE"
+      ],
+      "predicted_type": "DEPLOYMENT_SEARCH",
+      "agrees": true,
+      "summary": "DEPLOYMENT_SEARCH ('v1.17.2', 'rolled back')"
+    },
+    {
+      "id": "RQ-49",
+      "question": "What is RECONCILIATION_TOLERANCE_UNITS used for?",
+      "category": "exact-match",
+      "acceptable": [
+        "CODE_SEARCH",
+        "DOCUMENT_SEARCH"
+      ],
+      "predicted_type": "CODE_SEARCH",
+      "agrees": true,
+      "summary": "CODE_SEARCH ('RECONCILIATION_TOLERANCE_UNITS')"
+    },
+    {
+      "id": "RQ-50",
+      "question": "Where is JWKS_CACHE_TTL_SECONDS defined?",
+      "category": "exact-match",
+      "acceptable": [
+        "CODE_SEARCH",
+        "DOCUMENT_SEARCH"
+      ],
+      "predicted_type": "CODE_SEARCH",
+      "agrees": true,
+      "summary": "CODE_SEARCH ('JWKS_CACHE_TTL_SECONDS', 'Where is JWKS_CACHE_TTL_SECONDS defined')"
+    },
+    {
+      "id": "RQ-51",
+      "question": "What does PAYMENT_SERVICE_DB_POOL_TIMEOUT_SECONDS control?",
+      "category": "exact-match",
+      "acceptable": [
+        "CODE_SEARCH",
+        "DOCUMENT_SEARCH"
+      ],
+      "predicted_type": "CODE_SEARCH",
+      "agrees": true,
+      "summary": "CODE_SEARCH ('PAYMENT_SERVICE_DB_POOL_TIMEOUT_SECONDS')"
+    },
+    {
+      "id": "RQ-52",
+      "question": "What is the value of RISK_DECLINE_THRESHOLD?",
+      "category": "exact-match",
+      "acceptable": [
+        "CODE_SEARCH",
+        "DOCUMENT_SEARCH"
+      ],
+      "predicted_type": "CODE_SEARCH",
+      "agrees": true,
+      "summary": "CODE_SEARCH ('RISK_DECLINE_THRESHOLD')"
+    },
+    {
+      "id": "RQ-53",
+      "question": "What does MAX_STACKED_PROMOTIONS limit?",
+      "category": "exact-match",
+      "acceptable": [
+        "CODE_SEARCH",
+        "DOCUMENT_SEARCH"
+      ],
+      "predicted_type": "CODE_SEARCH",
+      "agrees": true,
+      "summary": "CODE_SEARCH ('MAX_STACKED_PROMOTIONS')"
+    },
+    {
+      "id": "RQ-54",
+      "question": "Show me the IdempotencyStore class.",
+      "category": "exact-match",
+      "acceptable": [
+        "CODE_SEARCH"
+      ],
+      "predicted_type": "CODE_SEARCH",
+      "agrees": true,
+      "summary": "CODE_SEARCH ('IdempotencyStore', 'Show me the IdempotencyStore class', 'class')"
+    },
+    {
+      "id": "RQ-55",
+      "question": "Where is CheckoutOrchestrator defined?",
+      "category": "exact-match",
+      "acceptable": [
+        "CODE_SEARCH"
+      ],
+      "predicted_type": "CODE_SEARCH",
+      "agrees": true,
+      "summary": "CODE_SEARCH ('CheckoutOrchestrator', 'Where is CheckoutOrchestrator defined')"
+    },
+    {
+      "id": "RQ-56",
+      "question": "When is CircuitOpenError raised?",
+      "category": "exact-match",
+      "acceptable": [
+        "CODE_SEARCH"
+      ],
+      "predicted_type": "CODE_SEARCH",
+      "agrees": true,
+      "summary": "CODE_SEARCH ('CircuitOpenError')"
+    },
+    {
+      "id": "RQ-57",
+      "question": "Which code raises InsufficientStock?",
+      "category": "exact-match",
+      "acceptable": [
+        "CODE_SEARCH"
+      ],
+      "predicted_type": "CODE_SEARCH",
+      "agrees": true,
+      "summary": "CODE_SEARCH ('InsufficientStock', 'code')"
+    },
+    {
+      "id": "RQ-58",
+      "question": "What does escape_query do?",
+      "category": "exact-match",
+      "acceptable": [
+        "CODE_SEARCH"
+      ],
+      "predicted_type": "CODE_SEARCH",
+      "agrees": true,
+      "summary": "CODE_SEARCH ('escape_query', 'What does escape_query do')"
+    },
+    {
+      "id": "RQ-59",
+      "question": "How does consume_refresh_token work?",
+      "category": "exact-match",
+      "acceptable": [
+        "CODE_SEARCH"
+      ],
+      "predicted_type": "DOCUMENT_SEARCH",
+      "agrees": false,
+      "summary": "DOCUMENT_SEARCH ('How does consume_refresh_token work')"
+    },
+    {
+      "id": "RQ-60",
+      "question": "Where is effective_price implemented?",
+      "category": "exact-match",
+      "acceptable": [
+        "CODE_SEARCH"
+      ],
+      "predicted_type": "CODE_SEARCH",
+      "agrees": true,
+      "summary": "CODE_SEARCH ('effective_price', 'Where is effective_price implemented')"
+    },
+    {
+      "id": "RQ-61",
+      "question": "Which pull requests changed OrderSaga._advance?",
+      "category": "exact-match",
+      "acceptable": [
+        "CODE_SEARCH"
+      ],
+      "predicted_type": "CODE_SEARCH",
+      "agrees": true,
+      "summary": "CODE_SEARCH ('OrderSaga._advance', 'OrderSaga')"
+    },
+    {
+      "id": "RQ-62",
+      "question": "Which incidents involved redis-payments?",
+      "category": "exact-match",
+      "acceptable": [
+        "INCIDENT_SEARCH"
+      ],
+      "predicted_type": "INCIDENT_SEARCH",
+      "agrees": true,
+      "summary": "INCIDENT_SEARCH ('Which incidents', 'incidents')"
+    },
+    {
+      "id": "RQ-63",
+      "question": "What does the PaymentServiceDBPoolSaturated alert mean?",
+      "category": "exact-match",
+      "acceptable": [
+        "DOCUMENT_SEARCH"
+      ],
+      "predicted_type": "SQL_QUERY",
+      "agrees": false,
+      "summary": "aggregation requested ('mean')"
+    }
+  ]
+}

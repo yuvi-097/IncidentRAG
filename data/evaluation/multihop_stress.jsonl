@@ -1,0 +1,26 @@
+{"id": "MS-01", "kind": "paraphrase", "question": "INC-0303: which file was changed by the deployment that caused it?", "expected": {"file": "services/recommendation-service/recommendation_service/ranker.py"}, "hops": ["file"]}
+{"id": "MS-02", "kind": "paraphrase", "question": "INC-0391: which file was changed by the deployment that caused it?", "expected": {"file": "services/user-service/user_service/db/repository.py"}, "hops": ["file"]}
+{"id": "MS-03", "kind": "paraphrase", "question": "Name the source file whose change led to INC-0437.", "expected": {"file": "services/recommendation-service/recommendation_service/ranker.py"}, "hops": ["file"]}
+{"id": "MS-04", "kind": "paraphrase", "question": "Name the source file whose change led to INC-0434.", "expected": {"file": "services/api-gateway/api_gateway/cache.py"}, "hops": ["file"]}
+{"id": "MS-05", "kind": "paraphrase", "question": "Which merge commit is linked to the root cause of INC-0476?", "expected": {"commit": "c1eb2bb"}, "hops": ["commit"]}
+{"id": "MS-06", "kind": "paraphrase", "question": "Which merge commit is linked to the root cause of INC-0499?", "expected": {"commit": "c8e9ab0"}, "hops": ["commit"]}
+{"id": "MS-07", "kind": "paraphrase", "question": "What did the diff behind INC-0236 change?", "expected": {"change": ["for record_id in sorted(record_ids):", "for record_id in record_ids: # keep caller order for the audit trail"]}, "hops": ["change"]}
+{"id": "MS-08", "kind": "paraphrase", "question": "What did the diff behind INC-0148 change?", "expected": {"change": ["self._redis.delete(self._key(entity_id))", "# Refresh the TTL instead of deleting to avoid a cache stampede on hot keys.", "self._redis.expire(self._key(entity_id), self._ttl_seconds)"]}, "hops": ["change"]}
+{"id": "MS-09", "kind": "paraphrase", "question": "Which pull request introduced the bug in INC-0481, and what did it touch?", "expected": {"pull_request": "PR-1574", "file": "services/payment-service/deploy/payment-service.yaml"}, "hops": ["pull_request", "file"]}
+{"id": "MS-10", "kind": "paraphrase", "question": "Which pull request introduced the bug in INC-0403, and what did it touch?", "expected": {"pull_request": "PR-1485", "file": "services/product-service/product_service/pricing.py"}, "hops": ["pull_request", "file"]}
+{"id": "MS-11", "kind": "paraphrase", "question": "Which deployment broke things in INC-0210?", "expected": {"deployment": "DEP-0141"}, "hops": ["deployment"]}
+{"id": "MS-12", "kind": "paraphrase", "question": "Which deployment broke things in INC-0067?", "expected": {"deployment": "DEP-0068"}, "hops": ["deployment"]}
+{"id": "MS-13", "kind": "author", "question": "Who wrote the change that caused INC-0252?", "expected": {"author": "daniel.kim"}, "hops": ["author"]}
+{"id": "MS-14", "kind": "author", "question": "Who wrote the change that caused INC-0285?", "expected": {"author": "grace.okafor"}, "hops": ["author"]}
+{"id": "MS-15", "kind": "cascade", "question": "What upstream failure was INC-0423 a symptom of?", "expected": {"parent_incident": "INC-0422"}, "hops": ["parent_incident"]}
+{"id": "MS-16", "kind": "cascade", "question": "What upstream failure was INC-0247 a symptom of?", "expected": {"parent_incident": "INC-0246"}, "hops": ["parent_incident"]}
+{"id": "MS-17", "kind": "config_key", "question": "Which configuration key did the change behind INC-0056 modify?", "expected": {"key": ["SEARCH_SERVICE_PRODUCT_SERVICE_URL"]}, "hops": ["key"]}
+{"id": "MS-18", "kind": "config_key", "question": "Which configuration key did the change behind INC-0380 modify?", "expected": {"key": ["CLOCK_SKEW_LEEWAY_SECONDS"]}, "hops": ["key"]}
+{"id": "MS-19", "kind": "reverse", "question": "Which incidents followed from DEP-0046?", "expected": {"incidents": ["INC-0045"]}, "hops": ["incidents"]}
+{"id": "MS-20", "kind": "reverse", "question": "Which incidents followed from DEP-0149?", "expected": {"incidents": ["INC-0215", "INC-0216", "INC-0217"]}, "hops": ["incidents"]}
+{"id": "MS-21", "kind": "reverse", "question": "Which files did DEP-0154 change, and which incidents did it cause?", "expected": {"incidents": ["INC-0221"], "files": ["services/inventory-service/inventory_service/db/database.py", "services/inventory-service/inventory_service/warehouse_sync.py"]}, "hops": ["incidents", "files"]}
+{"id": "MS-22", "kind": "reverse", "question": "Which files did DEP-0285 change, and which incidents did it cause?", "expected": {"incidents": ["INC-0391"], "files": ["services/user-service/requirements.txt", "services/user-service/tests/test_cache.py", "services/user-service/user_service/db/repository.py"]}, "hops": ["incidents", "files"]}
+{"id": "MS-23", "kind": "no_cause", "question": "Which deployment and commit caused INC-0376?", "expected": {"no_cause": true}, "hops": ["no_cause"]}
+{"id": "MS-24", "kind": "no_cause", "question": "Trace INC-0129 to the code change responsible.", "expected": {"no_cause": true}, "hops": ["no_cause"]}
+{"id": "MS-25", "kind": "remediation", "question": "In which commit was the regression behind INC-0351 fixed?", "expected": {"commit": "a4e611c"}, "hops": ["commit"]}
+{"id": "MS-26", "kind": "remediation", "question": "In which commit was the regression behind INC-0147 fixed?", "expected": {"commit": "257587f"}, "hops": ["commit"]}

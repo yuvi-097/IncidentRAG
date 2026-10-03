@@ -1,0 +1,10 @@
+[00:53:23] run phase10-final: 227 questions x methods ABCDEF
+[00:53:23] resuming the evaluation database (seeded and ingested earlier)
+[00:53:23] embed with BAAI/bge-small-en-v1.5 (first run only; several minutes)
+[00:59:35] 10/227 questions; last method correct so far: 7/10
+[01:04:23] 20/227 questions; last method correct so far: 9/20
+[01:10:33] 30/227 questions; last method correct so far: 14/30
+[01:25:09] 40/227 questions; last method correct so far: 21/40
+[01:35:46] 50/227 questions; last method correct so far: 28/50
+[01:48:32] 60/227 questions; last method correct so far: 34/60
+[01:56:36] 70/227 questions; last method correct so far: 44/70

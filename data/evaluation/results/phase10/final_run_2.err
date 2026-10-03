@@ -1,0 +1,13 @@
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights:  67%|██████▋   | 133/199 [00:00<00:00, 1267.20it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 1255.76it/s]
+Loading weights:   0%|          | 0/105 [00:00<?, ?it/s]Loading weights: 100%|██████████| 105/105 [00:00<00:00, 1329.43it/s]
+C:\Users\sriva\OneDrive\Desktop\amazon\opsrag\.venv\Lib\site-packages\torch\jit\_script.py:1491: FutureWarning: `torch.jit.script` is deprecated. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+Loading weights:   0%|          | 0/202 [00:00<?, ?it/s]Loading weights:  39%|███▊      | 78/202 [00:00<00:00, 750.15it/s]Loading weights: 100%|██████████| 202/202 [00:00<00:00, 1251.75it/s]
+Loading weights:   0%|          | 0/202 [00:00<?, ?it/s]Loading weights:  16%|█▋        | 33/202 [00:00<00:00, 319.41it/s]Loading weights:  32%|███▏      | 65/202 [00:00<00:00, 279.18it/s]Loading weights:  47%|████▋     | 94/202 [00:00<00:00, 277.74it/s]Loading weights:  63%|██████▎   | 128/202 [00:00<00:00, 299.65it/s]Loading weights:  86%|████████▌ | 174/202 [00:00<00:00, 348.98it/s]Loading weights: 100%|██████████| 202/202 [00:00<00:00, 345.88it/s]
+Loading weights:   0%|          | 0/202 [00:00<?, ?it/s]Loading weights:  37%|███▋      | 75/202 [00:00<00:00, 716.74it/s]Loading weights: 100%|██████████| 202/202 [00:00<00:00, 1290.06it/s]
+security.query_injection
+security.query_injection
+security.query_injection
+security.query_injection
+security.query_injection
+security.query_injection

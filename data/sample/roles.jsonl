@@ -1,0 +1,4 @@
+{"created_at":"2023-01-09T09:00:00Z","updated_at":"2023-01-09T09:00:00Z","id":"developer","name":"Developer","description":"Product engineers: engineering documentation, source code, non-sensitive incidents."}
+{"created_at":"2023-01-09T09:00:00Z","updated_at":"2023-01-09T09:00:00Z","id":"sre","name":"Site Reliability Engineer","description":"On-call responders: engineering docs, incidents, logs, runbooks, deployments."}
+{"created_at":"2023-01-09T09:00:00Z","updated_at":"2023-01-09T09:00:00Z","id":"manager","name":"Manager","description":"Engineering and support management: operational reports, incidents, non-sensitive documents."}
+{"created_at":"2023-01-09T09:00:00Z","updated_at":"2023-01-09T09:00:00Z","id":"admin","name":"Administrator","description":"Platform and security administrators: all project data the assistant may use."}

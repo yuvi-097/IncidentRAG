@@ -1,0 +1,1247 @@
+{
+ "label": "stress_first",
+ "suite": "stress",
+ "temporal": {
+  "summary": {
+   "questions": 36,
+   "correct": 23,
+   "accuracy": 0.639,
+   "by_group": {
+    "after": {
+     "questions": 4,
+     "correct": 4
+    },
+    "at_time_of": {
+     "questions": 6,
+     "correct": 3
+    },
+    "before": {
+     "questions": 2,
+     "correct": 2
+    },
+    "during": {
+     "questions": 2,
+     "correct": 2
+    },
+    "immediately_after": {
+     "questions": 2,
+     "correct": 0
+    },
+    "immediately_before": {
+     "questions": 10,
+     "correct": 4
+    },
+    "latest": {
+     "questions": 4,
+     "correct": 2
+    },
+    "next": {
+     "questions": 4,
+     "correct": 4
+    },
+    "previous": {
+     "questions": 2,
+     "correct": 2
+    }
+   },
+   "seconds": 4.2
+  },
+  "results": [
+   {
+    "id": "TS-01",
+    "group": "immediately_before",
+    "question": "Which release was the last one to go out before INC-0049?",
+    "correct": true,
+    "detail": {
+     "predicted": [
+      "DEP-0033"
+     ],
+     "query_type": "DEPLOYMENT_SEARCH",
+     "plan": "temporal"
+    },
+    "answer": "Deployment of auth-service immediately before INC-0049 (auth-service, started 2025-10-22 01:00 UTC): DEP-0033, auth-service v1.10.0 (succeeded), deployed 2025-10-01 12:54 UTC, 20 d 12 h before INC-0049 [E1].",
+    "tools": [
+     "search_incidents",
+     "search_deployments"
+    ]
+   },
+   {
+    "id": "TS-02",
+    "group": "immediately_before",
+    "question": "Which release was the last one to go out before INC-0334?",
+    "correct": true,
+    "detail": {
+     "predicted": [
+      "DEP-0234"
+     ],
+     "query_type": "DEPLOYMENT_SEARCH",
+     "plan": "temporal"
+    },
+    "answer": "Deployment of order-service immediately before INC-0334 (order-service, started 2026-04-19 09:43 UTC): DEP-0234, order-service v3.3.7 (succeeded), deployed 2026-04-10 12:22 UTC, 8 d 21 h before INC-0334 [E1].",
+    "tools": [
+     "search_incidents",
+     "search_deployments"
+    ]
+   },
+   {
+    "id": "TS-03",
+    "group": "next",
+    "question": "Which notification-service deployment came next after DEP-0092?",
+    "correct": true,
+    "detail": {
+     "predicted": [
+      "DEP-0113"
+     ],
+     "query_type": "DEPLOYMENT_SEARCH",
+     "plan": "temporal"
+    },
+    "answer": "Next deployment of notification-service after DEP-0092 (notification-service v1.6.6, deployed 2025-12-02 13:18 UTC): DEP-0113, notification-service v1.6.7 (succeeded), deployed 2025-12-22 12:02 UTC, 19 d 22 h after DEP-0092 [E1].",
+    "tools": [
+     "search_deployments",
+     "search_deployments"
+    ]
+   },
+   {
+    "id": "TS-04",
+    "group": "next",
+    "question": "Which cart-service deployment came next after DEP-0360?",
+    "correct": true,
+    "detail": {
+     "predicted": [
+      "DEP-0372"
+     ],
+     "query_type": "DEPLOYMENT_SEARCH",
+     "plan": "temporal"
+    },
+    "answer": "Next deployment of cart-service after DEP-0360 (cart-service v2.7.33, deployed 2026-08-17 13:03 UTC): DEP-0372, cart-service v2.7.34 (failed), deployed 2026-08-25 13:00 UTC, 7 d 23 h after DEP-0360 [E1].",
+    "tools": [
+     "search_deployments",
+     "search_deployments"
+    ]
+   },
+   {
+    "id": "TS-05",
+    "group": "next",
+    "question": "Which incident on notification-service came after INC-0390?",
+    "correct": true,
+    "detail": {
+     "predicted": [
+      "INC-0477"
+     ],
+     "query_type": "INCIDENT_SEARCH",
+     "plan": "temporal"
+    },
+    "answer": "Next incident after INC-0390 (notification-service, started 2026-06-02 11:42 UTC): INC-0477 (notification-service, SEV3), notification-service CPU saturation and elevated latency, started 2026-07-24 03:02 UTC, 51 d 15 h after INC-0390 [E1].",
+    "tools": [
+     "search_incidents",
+     "search_incidents"
+    ]
+   },
+   {
+    "id": "TS-06",
+    "group": "next",
+    "question": "Which incident on cart-service came after INC-0097?",
+    "correct": true,
+    "detail": {
+     "predicted": [
+      "INC-0099"
+     ],
+     "query_type": "INCIDENT_SEARCH",
+     "plan": "temporal"
+    },
+    "answer": "Next incident after INC-0097 (cart-service, started 2025-11-21 15:31 UTC): INC-0099 (cart-service, SEV3), cart-service pods OOMKilled repeatedly, started 2025-11-26 03:31 UTC, 4 d 12 h after INC-0097 [E1].",
+    "tools": [
+     "search_incidents",
+     "search_incidents"
+    ]
+   },
+   {
+    "id": "TS-07",
+    "group": "latest",
+    "question": "What was the newest version of payment-service?",
+    "correct": true,
+    "detail": {
+     "predicted": [
+      "v2.9.4"
+     ],
+     "query_type": "DEPLOYMENT_SEARCH",
+     "plan": "temporal"
+    },
+    "answer": "Latest deployment of payment-service as of 2026-09-01 00:00 UTC: DEP-0363, payment-service v2.9.4 (succeeded), deployed 2026-08-21 11:38 UTC [E1].",
+    "tools": [
+     "search_deployments"
+    ]
+   },
+   {
+    "id": "TS-08",
+    "group": "latest",
+    "question": "What was the newest version of product-service?",
+    "correct": true,
+    "detail": {
+     "predicted": [
+      "v4.3.20"
+     ],
+     "query_type": "DEPLOYMENT_SEARCH",
+     "plan": "temporal"
+    },
+    "answer": "Latest deployment of product-service as of 2026-09-01 00:00 UTC: DEP-0373, product-service v4.3.20 (succeeded), deployed 2026-08-25 13:13 UTC [E1].",
+    "tools": [
+     "search_deployments"
+    ]
+   },
+   {
+    "id": "TS-09",
+    "group": "before",
+    "question": "Which inventory-service incidents happened in the 2 days before INC-0449?",
+    "correct": true,
+    "detail": {
+     "predicted": [
+      "INC-0444"
+     ],
+     "precision": 1.0,
+     "recall": 1.0,
+     "query_type": "INCIDENT_SEARCH",
+     "plan": "temporal"
+    },
+    "answer": "Incidents in the 2 d before INC-0449 (inventory-service, started 2026-07-10 19:27 UTC), in time order: INC-0444 (inventory-service, SEV2), Inventory Service requests failing with database connection pool timeouts, started 2026-07-08 19:58 UTC [E1].",
+    "tools": [
+     "search_incidents",
+     "search_incidents"
+    ]
+   },
+   {
+    "id": "TS-10",
+    "group": "before",
+    "question": "Which api-gateway incidents happened in the 2 days before INC-0462?",
+    "correct": true,
+    "detail": {
+     "predicted": [
+      "INC-0454",
+      "INC-0460"
+     ],
+     "precision": 1.0,
+     "recall": 1.0,
+     "query_type": "INCIDENT_SEARCH",
+     "plan": "temporal"
+    },
+    "answer": "Incidents in the 2 d before INC-0462 (api-gateway, started 2026-07-15 16:20 UTC), in time order: INC-0454 (api-gateway, SEV3), API Gateway errors caused by cart-service failures, started 2026-07-15 10:03 UTC; INC-0460 (api-gateway, SEV2), Timeouts on GET /v1/{service}/{path} (api-gateway), started 2026-07-15 15:38 UTC [E1].",
+    "tools": [
+     "search_incidents",
+     "search_incidents"
+    ]
+   },
+   {
+    "id": "TS-11",
+    "group": "during",
+    "question": "What deployments did notification-service get while INC-0306 was open?",
+    "correct": true,
+    "detail": {
+     "predicted": [
+      "DEP-0218"
+     ],
+     "precision": 1.0,
+     "recall": 1.0,
+     "query_type": "DEPLOYMENT_SEARCH",
+     "plan": "temporal"
+    },
+    "answer": "Deployments of notification-service during INC-0306 (notification-service, started 2026-03-25 17:46 UTC), in time order: DEP-0218, notification-service v1.7.0 (succeeded), deployed 2026-03-25 19:10 UTC [E1].",
+    "tools": [
+     "search_incidents",
+     "search_deployments"
+    ]
+   },
+   {
+    "id": "TS-12",
+    "group": "during",
+    "question": "What deployments did inventory-service get while INC-0221 was open?",
+    "correct": true,
+    "detail": {
+     "predicted": [
+      "DEP-0156"
+     ],
+     "precision": 1.0,
+     "recall": 1.0,
+     "query_type": "DEPLOYMENT_SEARCH",
+     "plan": "temporal"
+    },
+    "answer": "Deployments of inventory-service during INC-0221 (inventory-service, started 2026-01-28 13:01 UTC), in time order: DEP-0156, inventory-service v1.17.1 (succeeded), deployed 2026-01-28 13:42 UTC [E1].",
+    "tools": [
+     "search_incidents",
+     "search_deployments"
+    ]
+   },
+   {
+    "id": "TS-13",
+    "group": "after",
+    "question": "List the incidents that started within 12 hours after DEP-0151.",
+    "correct": true,
+    "detail": {
+     "predicted": [
+      "INC-0219"
+     ],
+     "precision": 1.0,
+     "recall": 1.0,
+     "query_type": "INCIDENT_SEARCH",
+     "plan": "temporal"
+    },
+    "answer": "Incidents in the 12 h after DEP-0151 (payment-service v2.6.14, deployed 2026-01-26 10:50 UTC), in time order: INC-0219 (notification-service, SEV4), Elevated HTTP 500s on GET /v1/notifications/{notification_id} (notification-service), started 2026-01-26 12:21 UTC [E1].",
+    "tools": [
+     "search_deployments",
+     "search_incidents"
+    ]
+   },
+   {
+    "id": "TS-14",
+    "group": "after",
+    "question": "List the incidents that started within 12 hours after DEP-0123.",
+    "correct": true,
+    "detail": {
+     "predicted": [
+      "INC-0184",
+      "INC-0185"
+     ],
+     "precision": 1.0,
+     "recall": 1.0,
+     "query_type": "INCIDENT_SEARCH",
+     "plan": "temporal"
+    },
+    "answer": "Incidents in the 12 h after DEP-0123 (recommendation-service v1.8.1, deployed 2025-12-31 10:45 UTC), in time order: INC-0184 (payment-service, SEV3), Payment Service: DB connection pool exhausted, started 2025-12-31 17:18 UTC; INC-0185 (api-gateway, SEV3), api-gateway: upstream search-service unavailable, started 2025-12-31 20:27 UTC [E1].",
+    "tools": [
+     "search_deployments",
+     "search_incidents"
+    ]
+   },
+   {
+    "id": "TS-15",
+    "group": "previous",
+    "question": "Which deployment of cart-service preceded DEP-0328?",
+    "correct": true,
+    "detail": {
+     "predicted": [
+      "DEP-0327"
+     ],
+     "query_type": "DEPLOYMENT_SEARCH",
+     "plan": "temporal"
+    },
+    "answer": "Previous deployment of cart-service before DEP-0328 (cart-service v2.7.29, deployed 2026-07-15 10:38 UTC): DEP-0327, cart-service v2.7.30 (rolled_back), deployed 2026-07-15 09:42 UTC, 56 min before DEP-0328 [E1].",
+    "tools": [
+     "search_deployments",
+     "search_deployments"
+    ]
+   },
+   {
+    "id": "TS-16",
+    "group": "previous",
+    "question": "Which deployment of cart-service preceded DEP-0208?",
+    "correct": true,
+    "detail": {
+     "predicted": [
+      "DEP-0194"
+     ],
+     "query_type": "DEPLOYMENT_SEARCH",
+     "plan": "temporal"
+    },
+    "answer": "Previous deployment of cart-service before DEP-0208 (cart-service v2.7.17, deployed 2026-03-16 11:51 UTC): DEP-0194, cart-service v2.7.16 (succeeded), deployed 2026-03-02 10:26 UTC, 14 d 1 h before DEP-0208 [E1].",
+    "tools": [
+     "search_deployments",
+     "search_deployments"
+    ]
+   },
+   {
+    "id": "TS-17",
+    "group": "at_time_of",
+    "question": "What was running on api-gateway at the time INC-0464 was detected?",
+    "correct": true,
+    "detail": {
+     "predicted": [
+      "DEP-0311"
+     ],
+     "query_type": "DEPLOYMENT_SEARCH",
+     "plan": "temporal"
+    },
+    "answer": "Deployment of api-gateway live at the time of INC-0464 (api-gateway, started 2026-07-15 21:51 UTC): DEP-0311, api-gateway v3.8.2 (succeeded), deployed 2026-06-30 03:02 UTC, 15 d 18 h before INC-0464 [E1]. Failed deployments never served traffic and are not counted [E1].",
+    "tools": [
+     "search_incidents",
+     "search_deployments"
+    ]
+   },
+   {
+    "id": "TS-18",
+    "group": "at_time_of",
+    "question": "What was running on order-service at the time INC-0284 was detected?",
+    "correct": true,
+    "detail": {
+     "predicted": [
+      "DEP-0200"
+     ],
+     "query_type": "DEPLOYMENT_SEARCH",
+     "plan": "temporal"
+    },
+    "answer": "Deployment of order-service live at the time of INC-0284 (order-service, started 2026-03-20 10:31 UTC): DEP-0200, order-service v3.3.5 (succeeded), deployed 2026-03-05 13:12 UTC, 14 d 21 h before INC-0284 [E1]. Failed deployments never served traffic and are not counted [E1].",
+    "tools": [
+     "search_incidents",
+     "search_deployments"
+    ]
+   },
+   {
+    "id": "TS-19",
+    "group": "after",
+    "question": "Which deployments went out to product-service in the 48 hours after INC-0145 started?",
+    "correct": true,
+    "detail": {
+     "predicted": [
+      "DEP-0087",
+      "DEP-0090"
+     ],
+     "precision": 1.0,
+     "recall": 1.0,
+     "query_type": "DEPLOYMENT_SEARCH",
+     "plan": "temporal"
+    },
+    "answer": "Deployments of product-service in the 2 d after INC-0145 (product-service, started 2025-12-01 22:13 UTC), in time order: DEP-0087, product-service v4.3.2 (rolled_back), deployed 2025-12-02 10:57 UTC; DEP-0090, product-service v4.3.1 (succeeded), deployed 2025-12-02 13:00 UTC [E1].",
+    "tools": [
+     "search_incidents",
+     "search_deployments"
+    ]
+   },
+   {
+    "id": "TS-20",
+    "group": "after",
+    "question": "Which deployments went out to cart-service in the 48 hours after INC-0452 started?",
+    "correct": true,
+    "detail": {
+     "predicted": [
+      "DEP-0328"
+     ],
+     "precision": 1.0,
+     "recall": 1.0,
+     "query_type": "DEPLOYMENT_SEARCH",
+     "plan": "temporal"
+    },
+    "answer": "Deployments of cart-service in the 2 d after INC-0452 (cart-service, started 2026-07-15 09:58 UTC), in time order: DEP-0328, cart-service v2.7.29 (succeeded), deployed 2026-07-15 10:38 UTC [E1].",
+    "tools": [
+     "search_incidents",
+     "search_deployments"
+    ]
+   },
+   {
+    "id": "TS-21",
+    "group": "immediately_before",
+    "question": "Before INC-0126 began, what was the most recent deployment to api-gateway?",
+    "correct": true,
+    "detail": {
+     "predicted": [
+      "DEP-0075"
+     ],
+     "query_type": "MULTI_SOURCE",
+     "plan": "routed"
+    },
+    "answer": "INC-0126 (SEV2, api-gateway): API Gateway errors caused by cart-service failures; started 2025-11-28 23:42 UTC, resolved 2025-11-29 00:49 UTC [E1].\nRoot cause: Downstream impact of INC-0125 in cart-service (redis-carts at maxmemory; cart-service writes failing). api-gateway has a hard dependency on cart-service (routes /v1/carts/*) [E1].\nResolution: No change needed in api-gateway; errors stopped when INC-0125 was mitigated at 00:36 UTC [E1]. Responders followed RB-0053 (API Gateway Timeout) [E1].\nDEP-0075: api-gateway v3.5.1 (succeeded), deployed 2025-11-12 10:19 UTC [E2].\nChanges: Release v3.5.1 - PR-1066: Bump fastapi to 0.115.6 (@arjun.mehta) - PR-1069: Tune replicas for api-gateway (6 -> 8) (@arjun.mehta) - PR-1080: Refactor JwksCache._refresh (@leila.haddad) - PR-1095: Add structured logging to JwksCache._refresh (@arjun.mehta) - PR-1113: Tidy JwksCache._refresh\u2026 [E2].\nLinked incidents: INC-0088 (during); INC-0090 (during); INC-0102 (during); INC-0105 (during); INC-0107 (during); INC-0109 (during); INC-0111 (during); INC-0113 (during); INC-0120 (during); INC-0126 (during); INC-0137 (during) [E2].\nLogs of api-gateway between 2025-11-28 23:12 UTC and 2025-11-29 00:49 UTC: 28 matching lines (ERROR 19, WARNING 9) [E3].\nMost frequent: ERROR \"request.failed GET /v1/{service}/{path} 502: UpstreamUnavailable: POST cart-service failed: 500 Internal Server Error\" (19 of the returned lines) [E3].",
+    "tools": [
+     "search_incidents",
+     "search_deployments",
+     "search_logs"
+    ]
+   },
+   {
+    "id": "TS-22",
+    "group": "immediately_before",
+    "question": "Before INC-0225 began, what was the most recent deployment to search-service?",
+    "correct": true,
+    "detail": {
+     "predicted": [
+      "DEP-0145"
+     ],
+     "query_type": "MULTI_SOURCE",
+     "plan": "routed"
+    },
+    "answer": "INC-0225 (SEV3, search-service): Errors on GET /v1/search (search-service); started 2026-01-30 18:45 UTC, resolved 2026-01-30 20:47 UTC [E1].\nRoot cause: A LaunchPad flag change enabled `search_batch_lookups` for 100% of traffic instead of the planned 5% cohort; the new code path was not ready for full load [E1].\nResolution: Reverted `search_batch_lookups` to 5%; production flag changes above 10% now need a second approver [E1]. Responders followed RB-0046 (Search Service: High 5xx Error Rate) [E1].\nDEP-0145: search-service v2.3.8 (succeeded), deployed 2026-01-19 15:27 UTC [E2].\nChanges: Hotfix v2.3.8 for INC-0210 - PR-1238: Restore search-service upstream timeout and retry budget (@hannah.cho) [E2].\nLinked incidents: INC-0210 (remediation); INC-0225 (during) [E2].\nLogs of search-service between 2026-01-30 18:15 UTC and 2026-01-30 20:47 UTC: 11 matching lines (ERROR 11) [E3].\nMost frequent: ERROR \"request.failed GET /v1/search 500: RuntimeError: unhandled error in search_batch_lookups path\" (11 of the returned lines) [E3].",
+    "tools": [
+     "search_incidents",
+     "search_deployments",
+     "search_logs"
+    ]
+   },
+   {
+    "id": "TS-23",
+    "group": "immediately_before",
+    "question": "INC-0442: which deployment preceded it?",
+    "correct": false,
+    "detail": {
+     "predicted": [],
+     "query_type": "INCIDENT_SEARCH",
+     "plan": "routed"
+    },
+    "answer": "INC-0442 (SEV2, order-service): order-service: upstream inventory-service unavailable; started 2026-07-07 16:10 UTC, resolved 2026-07-07 16:49 UTC [E1].\nRoot cause: Downstream impact of INC-0441 in inventory-service (Inventory Service memory growth and pod restarts). order-service has a hard dependency on inventory-service (reserves stock) [E1].\nResolution: No change needed in order-service; errors stopped when INC-0441 was mitigated at 16:44 UTC [E1].",
+    "tools": [
+     "search_incidents"
+    ]
+   },
+   {
+    "id": "TS-24",
+    "group": "immediately_before",
+    "question": "INC-0055: which deployment preceded it?",
+    "correct": false,
+    "detail": {
+     "predicted": [],
+     "query_type": "INCIDENT_SEARCH",
+     "plan": "routed"
+    },
+    "answer": "INC-0055 (SEV3, notification-service): Notification Service latency spike and timeouts on GET /v1/notifications/{notification_id}; started 2025-10-27 11:02 UTC, resolved 2025-10-27 13:36 UTC [E1].\nRoot cause: Autovacuum fell behind on `notifications`; bloat pushed the main lookup to a sequential scan and p99 latency exceeded client timeouts [E1].\nResolution: Ran VACUUM (ANALYZE) on `notifications` and lowered autovacuum_vacuum_scale_factor for it; latency returned to baseline [E1]. Responders followed RB-0041 (Notification Service: Elevated Latency) [E1].",
+    "tools": [
+     "search_incidents"
+    ]
+   },
+   {
+    "id": "TS-25",
+    "group": "immediately_after",
+    "question": "After INC-0453, which deployment was the first to reach order-service?",
+    "correct": false,
+    "detail": {
+     "predicted": [
+      "DEP-0327"
+     ],
+     "query_type": "MULTI_SOURCE",
+     "plan": "routed"
+    },
+    "answer": "INC-0453 (SEV2, order-service): Order Service errors caused by cart-service failures; started 2026-07-15 10:00 UTC, resolved 2026-07-15 11:13 UTC [E1].\nRoot cause: Downstream impact of INC-0452 in cart-service (Elevated HTTP 500s from cart-service). order-service has a hard dependency on cart-service (loads the checked-out cart) [E1].\nResolution: No change needed in order-service; errors stopped when INC-0452 was mitigated at 11:02 UTC [E1]. Responders followed RB-0051 (Checkout Failures) [E1].\nDEP-0327: cart-service v2.7.30 (rolled_back), deployed 2026-07-15 09:42 UTC [E2].\nChanges: Release v2.7.30 - PR-1549: Tighten cart pricing lookups (@marco.conti) [E2].\nLinked incidents: INC-0452 (root_cause); INC-0453 (root_cause); INC-0454 (root_cause) [E2].\nLogs of order-service between 2026-07-15 09:30 UTC and 2026-07-15 11:13 UTC: 28 matching lines (ERROR 23, WARNING 5) [E3].\nMost frequent: ERROR \"request.failed POST /v1/orders 502: UpstreamUnavailable: POST cart-service failed: 500 Internal Server Error\" (23 of the returned lines) [E3].",
+    "tools": [
+     "search_incidents",
+     "search_deployments",
+     "search_logs"
+    ]
+   },
+   {
+    "id": "TS-26",
+    "group": "immediately_after",
+    "question": "After INC-0490, which deployment was the first to reach search-service?",
+    "correct": false,
+    "detail": {
+     "predicted": [
+      "DEP-0332"
+     ],
+     "query_type": "MULTI_SOURCE",
+     "plan": "routed"
+    },
+    "answer": "INC-0490 (SEV4, search-service): search-service: upstream product-service unavailable; started 2026-07-31 12:43 UTC, resolved 2026-07-31 15:39 UTC [E1].\nRoot cause: `product-service` returned intermittent 503s while its pods were evicted during a node pool upgrade; search-service has a soft dependency on it (full product reindex) [E1].\nResolution: Paused the node pool upgrade and let `product-service` stabilise; degraded mode kept core flows working [E1].\nDEP-0332: search-service v2.5.1 (succeeded), deployed 2026-07-21 14:09 UTC [E2].\nChanges: Release v2.5.1 - PR-1551: Restore search-service upstream timeout and retry budget (@lucas.silva) - PR-1553: Tune http timeout seconds for search-service (0.8 -> 1.0) (@lucas.silva) - PR-1555: Bump fastapi to 0.115.6 (@emma.larsen) - PR-1561: Refactor SearchService.search_products (@emma.larsen) [E2].\nLinked incidents: INC-0490 (during) [E2].\nLogs of search-service between 2026-07-31 12:13 UTC and 2026-07-31 15:39 UTC: 11 matching lines (WARNING 11) [E3].\nMost frequent: WARNING \"request.completed GET /v1/search 200 served stale data: GET product-service failed: 503 Service Unavailable\" (8 of the returned lines) [E3].",
+    "tools": [
+     "search_incidents",
+     "search_deployments",
+     "search_logs"
+    ]
+   },
+   {
+    "id": "TS-27",
+    "group": "at_time_of",
+    "question": "Which version was deployed to order-service when INC-0052 occurred?",
+    "correct": false,
+    "detail": {
+     "predicted": [],
+     "query_type": "DEPLOYMENT_SEARCH",
+     "plan": "routed"
+    },
+    "answer": "I don't have sufficient evidence in the available knowledge base to answer this question.\nAdditional evidence that would help:\n- More specific identifiers: an incident id, service, version or time window.",
+    "tools": [
+     "search_deployments"
+    ]
+   },
+   {
+    "id": "TS-28",
+    "group": "at_time_of",
+    "question": "Which version was deployed to product-service when INC-0473 occurred?",
+    "correct": true,
+    "detail": {
+     "predicted": [
+      "v4.3.17",
+      "v4.3.18",
+      "v4.3.16"
+     ],
+     "query_type": "DEPLOYMENT_SEARCH",
+     "plan": "routed"
+    },
+    "answer": "DEP-0323: product-service v4.3.17 (succeeded), deployed 2026-07-13 14:23 UTC [E1].\nChanges: Release v4.3.17 - PR-1507: Clean up CatalogService.update_price (@olivia.brown) - PR-1525: Tune replicas for product-service (3 -> 6) (@nina.alvarez) [E1].\nLinked incidents: INC-0458 (during); INC-0473 (during); INC-0480 (during); INC-0486 (during) [E1].\nDEP-0341: product-service v4.3.18 (succeeded), deployed 2026-07-29 14:24 UTC [E2].\nChanges: Release v4.3.18 - PR-1560: Tune replicas for product-service (7 -> 6) (@kenji.watanabe) - PR-1566: Tune db pool size for product-service (15 -> 20) (@olivia.brown) - PR-1569: Bump httpx to 0.28.1 (@kenji.watanabe) [E2].\nLinked incidents: INC-0495 (during); INC-0498 (during) [E2].\nDEP-0295: product-service v4.3.16 (succeeded), deployed 2026-06-16 12:17 UTC [E3].\nChanges: Hotfix v4.3.16 for INC-0403 - PR-1502: Clamp effective price at zero (@olivia.brown) [E3].\nLinked incidents: INC-0403 (remediation); INC-0435 (during); INC-0443 (during) [E3].",
+    "tools": [
+     "search_deployments"
+    ]
+   },
+   {
+    "id": "TS-29",
+    "group": "immediately_before",
+    "question": "Which deployment happened immediately before INC-0408, counting only successful deployments?",
+    "correct": false,
+    "detail": {
+     "predicted": [
+      "DEP-0287"
+     ],
+     "query_type": "DEPLOYMENT_SEARCH",
+     "plan": "temporal"
+    },
+    "answer": "Deployment of order-service immediately before INC-0408 (order-service, started 2026-06-16 17:12 UTC): DEP-0287, order-service v3.4.1 (failed), deployed 2026-06-04 14:54 UTC, 12 d 2 h before INC-0408 [E1].",
+    "tools": [
+     "search_incidents",
+     "search_deployments"
+    ]
+   },
+   {
+    "id": "TS-30",
+    "group": "immediately_before",
+    "question": "Which deployment happened immediately before INC-0519, counting only successful deployments?",
+    "correct": false,
+    "detail": {
+     "predicted": [
+      "DEP-0362"
+     ],
+     "query_type": "DEPLOYMENT_SEARCH",
+     "plan": "temporal"
+    },
+    "answer": "Deployment of recommendation-service immediately before INC-0519 (recommendation-service, started 2026-08-21 17:46 UTC): DEP-0362, recommendation-service v1.12.5 (rolled_back), deployed 2026-08-21 10:50 UTC, 6 h 56 min before INC-0519 [E1].",
+    "tools": [
+     "search_incidents",
+     "search_deployments"
+    ]
+   },
+   {
+    "id": "TS-31",
+    "group": "immediately_before",
+    "question": "Which deployment on any service happened immediately before INC-0448?",
+    "correct": false,
+    "detail": {
+     "predicted": [
+      "DEP-0317"
+     ],
+     "query_type": "DEPLOYMENT_SEARCH",
+     "plan": "temporal"
+    },
+    "answer": "Deployment of recommendation-service immediately before INC-0448 (recommendation-service, started 2026-07-10 17:56 UTC): DEP-0317, recommendation-service v1.12.1 (succeeded), deployed 2026-07-03 12:30 UTC, 7 d 5 h before INC-0448 [E1].",
+    "tools": [
+     "search_incidents",
+     "search_deployments"
+    ]
+   },
+   {
+    "id": "TS-32",
+    "group": "immediately_before",
+    "question": "Which deployment on any service happened immediately before INC-0208?",
+    "correct": false,
+    "detail": {
+     "predicted": [
+      "DEP-0135"
+     ],
+     "query_type": "DEPLOYMENT_SEARCH",
+     "plan": "temporal"
+    },
+    "answer": "Deployment of recommendation-service immediately before INC-0208 (recommendation-service, started 2026-01-16 17:16 UTC): DEP-0135, recommendation-service v1.8.3 (succeeded), deployed 2026-01-12 12:10 UTC, 4 d 5 h before INC-0208 [E1].",
+    "tools": [
+     "search_incidents",
+     "search_deployments"
+    ]
+   },
+   {
+    "id": "TS-33",
+    "group": "latest",
+    "question": "What was the latest deployment of payment-service before 2026-03-01?",
+    "correct": false,
+    "detail": {
+     "predicted": [],
+     "query_type": "DEPLOYMENT_SEARCH",
+     "plan": "routed"
+    },
+    "answer": "I don't have sufficient evidence in the available knowledge base to answer this question.\nAdditional evidence that would help:\n- More specific identifiers: an incident id, service, version or time window.",
+    "tools": [
+     "search_deployments"
+    ]
+   },
+   {
+    "id": "TS-34",
+    "group": "latest",
+    "question": "What was the latest deployment of recommendation-service before 2025-12-15?",
+    "correct": false,
+    "detail": {
+     "predicted": [],
+     "query_type": "DEPLOYMENT_SEARCH",
+     "plan": "routed"
+    },
+    "answer": "I don't have sufficient evidence in the available knowledge base to answer this question.\nAdditional evidence that would help:\n- More specific identifiers: an incident id, service, version or time window.",
+    "tools": [
+     "search_deployments"
+    ]
+   },
+   {
+    "id": "TS-35",
+    "group": "at_time_of",
+    "question": "Which incidents were already open when DEP-0315 went out?",
+    "correct": false,
+    "detail": {
+     "predicted": [
+      "INC-0201",
+      "INC-0267",
+      "INC-0315"
+     ],
+     "precision": 0.0,
+     "recall": 0.0,
+     "query_type": "INCIDENT_SEARCH",
+     "plan": "routed"
+    },
+    "answer": "INC-0315 (SEV3, inventory-service): Inventory Service: updates not visible to customers; started 2026-04-01 02:48 UTC, resolved 2026-04-01 06:38 UTC [E4].\nRoot cause: Update events were handled before the database transaction committed; readers repopulated the cache with the old value, which then lived for the full TTL (30s) [E4].\nINC-0201 (SEV1, product-service): product-service CPU saturation and elevated latency; started 2026-01-10 17:16 UTC, resolved 2026-01-10 19:27 UTC [E6].\nRoot cause: the lunchtime peak traffic (1.5x) pushed product-service CPU to its 750m limit; the HPA was already at its maximum of 18 replicas [E6].\nINC-0267 (SEV1, payment-service): payment-service CPU saturation and elevated latency; started 2026-03-12 11:11 UTC, resolved 2026-03-12 12:04 UTC [E7].\nRoot cause: the lunchtime peak traffic (1.5x) pushed payment-service CPU to its 1000m limit; the HPA was already at its maximum of 18 replicas [E7].",
+    "tools": [
+     "search_incidents"
+    ]
+   },
+   {
+    "id": "TS-36",
+    "group": "at_time_of",
+    "question": "Which incidents were already open when DEP-0323 went out?",
+    "correct": false,
+    "detail": {
+     "predicted": [
+      "INC-0458",
+      "INC-0473",
+      "INC-0486"
+     ],
+     "precision": 0.0,
+     "recall": 0.0,
+     "query_type": "INCIDENT_SEARCH",
+     "plan": "routed"
+    },
+    "answer": "INC-0473 (SEV3, product-service): product-service CPU saturation and elevated latency; started 2026-07-20 06:05 UTC, resolved 2026-07-20 09:03 UTC [E2].\nRoot cause: the lunchtime peak traffic (2.1x) pushed product-service CPU to its 750m limit; the HPA was already at its maximum of 18 replicas [E2].\nINC-0486 (SEV3, product-service): Elevated HTTP 500s on GET /v1/products/{product_id} (product-service); started 2026-07-28 19:00 UTC, resolved 2026-07-28 21:06 UTC [E4].\nRoot cause: A node drain rescheduled all product-service pods within a minute; each new pod opened its full pool at once and PgBouncer for `catalog` hit max_client_conn [E4].\nINC-0458 (SEV4, product-service): product-service failing on schema mismatch; started 2026-07-15 13:43 UTC, resolved 2026-07-15 19:04 UTC [E7].\nRoot cause: Migration 0021 for `catalog` was applied by hand ahead of the release that needed it; the running version inserted rows into `products` without the new NOT NULL column [E7].",
+    "tools": [
+     "search_incidents"
+    ]
+   }
+  ]
+ },
+ "multihop": {
+  "summary": {
+   "questions": 26,
+   "correct": 20,
+   "accuracy": 0.769,
+   "by_group": {
+    "author": {
+     "questions": 2,
+     "correct": 0
+    },
+    "cascade": {
+     "questions": 2,
+     "correct": 2
+    },
+    "config_key": {
+     "questions": 2,
+     "correct": 2
+    },
+    "no_cause": {
+     "questions": 2,
+     "correct": 2
+    },
+    "paraphrase": {
+     "questions": 12,
+     "correct": 12
+    },
+    "remediation": {
+     "questions": 2,
+     "correct": 0
+    },
+    "reverse": {
+     "questions": 4,
+     "correct": 2
+    }
+   },
+   "by_hop": {
+    "author": {
+     "checked": 2,
+     "correct": 0
+    },
+    "change": {
+     "checked": 2,
+     "correct": 2
+    },
+    "commit": {
+     "checked": 4,
+     "correct": 2
+    },
+    "deployment": {
+     "checked": 2,
+     "correct": 2
+    },
+    "file": {
+     "checked": 6,
+     "correct": 6
+    },
+    "files": {
+     "checked": 2,
+     "correct": 2
+    },
+    "incidents": {
+     "checked": 4,
+     "correct": 2
+    },
+    "key": {
+     "checked": 2,
+     "correct": 2
+    },
+    "no_cause": {
+     "checked": 2,
+     "correct": 2
+    },
+    "parent_incident": {
+     "checked": 2,
+     "correct": 2
+    },
+    "pull_request": {
+     "checked": 2,
+     "correct": 2
+    }
+   },
+   "seconds": 1.2
+  },
+  "results": [
+   {
+    "id": "MS-01",
+    "group": "paraphrase",
+    "question": "INC-0303: which file was changed by the deployment that caused it?",
+    "correct": true,
+    "detail": {
+     "hops": {
+      "file": true
+     },
+     "query_type": "MULTI_SOURCE",
+     "plan": "chain"
+    },
+    "answer": "The deployment recorded as the cause of INC-0303 is DEP-0214: recommendation-service v1.10.1 (rolled_back), deployed 2026-03-23 15:52 UTC, commit c6de722 [E2].\nPR-1351 modified services/recommendation-service/recommendation_service/ranker.py [E3].\nChanged lines in services/recommendation-service/recommendation_service/ranker.py: - features = self._features.user_features(user_id) or DEFAULT_USER_FEATURES; + features = self._features.user_features(user_id) [E3].",
+    "tools": [
+     "trace_change"
+    ]
+   },
+   {
+    "id": "MS-02",
+    "group": "paraphrase",
+    "question": "INC-0391: which file was changed by the deployment that caused it?",
+    "correct": true,
+    "detail": {
+     "hops": {
+      "file": true
+     },
+     "query_type": "MULTI_SOURCE",
+     "plan": "chain"
+    },
+    "answer": "The deployment recorded as the cause of INC-0391 is DEP-0285: user-service v2.6.2 (rolled_back), deployed 2026-06-03 16:27 UTC, commit 06f4a2e [E2].\nPR-1479 modified services/user-service/user_service/db/repository.py [E3].\nChanged lines in services/user-service/user_service/db/repository.py: - from user_service.db.database import session_scope; + from user_service.db.database import SessionLocal, session_scope; - with session_scope() as session:; - row = session.get(User, record_id); - return row.to_dict() if row else None; + session = SessionLocal() [E3].",
+    "tools": [
+     "trace_change"
+    ]
+   },
+   {
+    "id": "MS-03",
+    "group": "paraphrase",
+    "question": "Name the source file whose change led to INC-0437.",
+    "correct": true,
+    "detail": {
+     "hops": {
+      "file": true
+     },
+     "query_type": "MULTI_SOURCE",
+     "plan": "chain"
+    },
+    "answer": "The deployment recorded as the cause of INC-0437 is DEP-0314: recommendation-service v1.12.0 (succeeded), deployed 2026-07-03 11:21 UTC, commit 4f5559f [E2].\nPR-1529 modified services/recommendation-service/recommendation_service/ranker.py [E3].\nChanged lines in services/recommendation-service/recommendation_service/ranker.py: - features = self._features.user_features(user_id) or DEFAULT_USER_FEATURES; + features = self._features.user_features(user_id) [E3].",
+    "tools": [
+     "trace_change"
+    ]
+   },
+   {
+    "id": "MS-04",
+    "group": "paraphrase",
+    "question": "Name the source file whose change led to INC-0434.",
+    "correct": true,
+    "detail": {
+     "hops": {
+      "file": true
+     },
+     "query_type": "MULTI_SOURCE",
+     "plan": "chain"
+    },
+    "answer": "The deployment recorded as the cause of INC-0434 is DEP-0309: api-gateway v3.9.1 (rolled_back), deployed 2026-06-29 11:31 UTC, commit 9432d4f [E2].\nPR-1518 modified services/api-gateway/api_gateway/cache.py [E3].\nChanged lines in services/api-gateway/api_gateway/cache.py: - self._redis.delete(self._key(entity_id)); + # Refresh the TTL instead of deleting to avoid a cache stampede on hot keys.; + self._redis.expire(self._key(entity_id), self._ttl_seconds) [E3].",
+    "tools": [
+     "trace_change"
+    ]
+   },
+   {
+    "id": "MS-05",
+    "group": "paraphrase",
+    "question": "Which merge commit is linked to the root cause of INC-0476?",
+    "correct": true,
+    "detail": {
+     "hops": {
+      "commit": true
+     },
+     "query_type": "MULTI_SOURCE",
+     "plan": "chain"
+    },
+    "answer": "The deployment recorded as the cause of INC-0476 is DEP-0333: auth-service v1.15.9 (rolled_back), deployed 2026-07-23 11:08 UTC, commit c1eb2bb [E2].\nPR-1546 modified services/auth-service/auth_service/db/database.py [E3].\nChanged lines in services/auth-service/auth_service/db/database.py: - pool_size=settings.db_pool_size,; - max_overflow=settings.db_max_overflow,; + # Fewer idle connections per pod so we stay under the PgBouncer client limit.; + pool_size=4,; + max_overflow=0, [E3].",
+    "tools": [
+     "trace_change"
+    ]
+   },
+   {
+    "id": "MS-06",
+    "group": "paraphrase",
+    "question": "Which merge commit is linked to the root cause of INC-0499?",
+    "correct": true,
+    "detail": {
+     "hops": {
+      "commit": true
+     },
+     "query_type": "MULTI_SOURCE",
+     "plan": "chain"
+    },
+    "answer": "The deployment recorded as the cause of INC-0499 is DEP-0353: recommendation-service v1.12.4 (rolled_back), deployed 2026-08-12 12:06 UTC, commit c8e9ab0 [E2].\nPR-1599 modified services/recommendation-service/deploy/recommendation-service.yaml [E3].\nChanged lines in services/recommendation-service/deploy/recommendation-service.yaml: - RECOMMENDATION_SERVICE_HTTP_TIMEOUT_SECONDS: \"0.8\"; - RECOMMENDATION_SERVICE_HTTP_MAX_RETRIES: \"0\"; + RECOMMENDATION_SERVICE_HTTP_TIMEOUT_SECONDS: \"0.2\"; + RECOMMENDATION_SERVICE_HTTP_MAX_RETRIES: \"2\" [E3].",
+    "tools": [
+     "trace_change"
+    ]
+   },
+   {
+    "id": "MS-07",
+    "group": "paraphrase",
+    "question": "What did the diff behind INC-0236 change?",
+    "correct": true,
+    "detail": {
+     "hops": {
+      "change": true
+     },
+     "query_type": "MULTI_SOURCE",
+     "plan": "chain"
+    },
+    "answer": "The deployment recorded as the cause of INC-0236 is DEP-0170: inventory-service v1.17.3 (succeeded), deployed 2026-02-10 14:51 UTC, commit 80cb192 [E2].\nPR-1272 modified services/inventory-service/inventory_service/db/repository.py [E3].\nChanged lines in services/inventory-service/inventory_service/db/repository.py: - for record_id in sorted(record_ids):; + for record_id in record_ids: # keep caller order for the audit trail [E3].",
+    "tools": [
+     "trace_change"
+    ]
+   },
+   {
+    "id": "MS-08",
+    "group": "paraphrase",
+    "question": "What did the diff behind INC-0148 change?",
+    "correct": true,
+    "detail": {
+     "hops": {
+      "change": true
+     },
+     "query_type": "MULTI_SOURCE",
+     "plan": "chain"
+    },
+    "answer": "The deployment recorded as the cause of INC-0148 is DEP-0093: api-gateway v3.5.2 (succeeded), deployed 2025-12-02 13:50 UTC, commit 03ddc28 [E2].\nPR-1142 modified services/api-gateway/api_gateway/cache.py [E3].\nChanged lines in services/api-gateway/api_gateway/cache.py: - self._redis.delete(self._key(entity_id)); + # Refresh the TTL instead of deleting to avoid a cache stampede on hot keys.; + self._redis.expire(self._key(entity_id), self._ttl_seconds) [E3].",
+    "tools": [
+     "trace_change"
+    ]
+   },
+   {
+    "id": "MS-09",
+    "group": "paraphrase",
+    "question": "Which pull request introduced the bug in INC-0481, and what did it touch?",
+    "correct": true,
+    "detail": {
+     "hops": {
+      "pull_request": true,
+      "file": true
+     },
+     "query_type": "MULTI_SOURCE",
+     "plan": "chain"
+    },
+    "answer": "The deployment recorded as the cause of INC-0481 is DEP-0336: payment-service v2.9.1 (rolled_back), deployed 2026-07-27 13:26 UTC, commit 4a73a42 [E2].\nPR-1574 modified services/payment-service/deploy/payment-service.yaml [E3].\nChanged lines in services/payment-service/deploy/payment-service.yaml: - PAYMENT_SERVICE_LOG_LEVEL: \"INFO\"; + PAYMENT_SERVICE_LOG_LEVEL: \"DEBUG\" [E3].",
+    "tools": [
+     "trace_change"
+    ]
+   },
+   {
+    "id": "MS-10",
+    "group": "paraphrase",
+    "question": "Which pull request introduced the bug in INC-0403, and what did it touch?",
+    "correct": true,
+    "detail": {
+     "hops": {
+      "pull_request": true,
+      "file": true
+     },
+     "query_type": "MULTI_SOURCE",
+     "plan": "chain"
+    },
+    "answer": "The deployment recorded as the cause of INC-0403 is DEP-0294: product-service v4.3.15 (succeeded), deployed 2026-06-16 10:09 UTC, commit 7e61aa2 [E2].\nPR-1485 modified services/product-service/product_service/pricing.py [E3].\nChanged lines in services/product-service/product_service/pricing.py: - return max(list_price_minor - discount_minor, 0); + return list_price_minor - discount_minor [E3].",
+    "tools": [
+     "trace_change"
+    ]
+   },
+   {
+    "id": "MS-11",
+    "group": "paraphrase",
+    "question": "Which deployment broke things in INC-0210?",
+    "correct": true,
+    "detail": {
+     "hops": {
+      "deployment": true
+     },
+     "query_type": "INCIDENT_SEARCH",
+     "plan": "routed"
+    },
+    "answer": "INC-0210 (SEV3, search-service): Timeouts on GET /v1/search (search-service); started 2026-01-19 13:41 UTC, resolved 2026-01-19 15:52 UTC [E1].\nRoot cause: Introduced by deployment DEP-0141; upstream timeout and retry settings changed in the release [E1].\nResolution: Shipped hotfix DEP-0145 (v2.3.8) containing PR-1238 (\"Restore search-service upstream timeout and retry budget\"); recovered by 15:52 UTC [E1]. Responders followed RB-0047 (Search Service: Elevated Latency) [E1].",
+    "tools": [
+     "search_incidents"
+    ]
+   },
+   {
+    "id": "MS-12",
+    "group": "paraphrase",
+    "question": "Which deployment broke things in INC-0067?",
+    "correct": true,
+    "detail": {
+     "hops": {
+      "deployment": true
+     },
+     "query_type": "INCIDENT_SEARCH",
+     "plan": "routed"
+    },
+    "answer": "INC-0067 (SEV2, user-service): Errors on GET /v1/users/{user_id} (user-service); started 2025-11-04 09:42 UTC, resolved 2025-11-04 10:38 UTC [E1].\nRoot cause: Deployment DEP-0068 (user-service v2.2.3) shipped PR-1099 \"Consolidate Redis settings for user-service\" (commit 21ffaef), which changed `services/user-service/deploy/user-service.yaml` [E1]. The production manifest was copied from the staging overlay: `USER_SERVICE_REDIS_URL` pointed at `redis-users.staging.novacart.internal`, which does not resolve from the production network [E1].\nResolution: Rolled back user-service to v2.2.2 (DEP-0069) at 10:13 UTC; metrics recovered by 10:38 UTC [E1]. Permanent fix PR-1109 (\"Use the production Redis host for user-service\") shipped in DEP-0082 (v2.3.0) [E1].",
+    "tools": [
+     "search_incidents"
+    ]
+   },
+   {
+    "id": "MS-13",
+    "group": "author",
+    "question": "Who wrote the change that caused INC-0252?",
+    "correct": false,
+    "detail": {
+     "hops": {
+      "author": false
+     },
+     "query_type": "INCIDENT_SEARCH",
+     "plan": "routed"
+    },
+    "answer": "INC-0252 (SEV4, api-gateway): ApiGateway requests returning HTTP 504 after v3.7.2 deploy; started 2026-02-23 15:00 UTC, resolved 2026-02-23 17:18 UTC [E1].\nRoot cause: Introduced by deployment DEP-0185; upstream timeout and retry settings changed in the release [E1].\nResolution: Shipped hotfix DEP-0187 (v3.7.3) containing PR-1310 (\"Restore api-gateway upstream timeout and retry budget\"); recovered by 17:18 UTC [E1]. Responders followed RB-0053 (API Gateway Timeout) [E1].",
+    "tools": [
+     "search_incidents"
+    ]
+   },
+   {
+    "id": "MS-14",
+    "group": "author",
+    "question": "Who wrote the change that caused INC-0285?",
+    "correct": false,
+    "detail": {
+     "hops": {
+      "author": false
+     },
+     "query_type": "INCIDENT_SEARCH",
+     "plan": "routed"
+    },
+    "answer": "INC-0285 (SEV3, auth-service): Auth Service: updates not visible to customers; started 2026-03-20 11:36 UTC, resolved 2026-03-20 14:44 UTC [E1].\nRoot cause: Deployment DEP-0211 (auth-service v1.15.0) shipped PR-1345 \"Avoid cache stampede on auth invalidation\" (commit f2ddcee), which changed `services/auth-service/auth_service/cache.py` [E1]. `AuthCache.invalidate` stopped deleting keys and only refreshed their TTL (900s), so updated records kept being served from stale cache entries [E1].\nResolution: Rolled back auth-service to v1.14.0 (DEP-0212) at 13:12 UTC; metrics recovered by 14:44 UTC [E1]. Permanent fix PR-1349 (\"Delete cache entries on invalidation again\") shipped in DEP-0223 (v1.15.1) [E1].",
+    "tools": [
+     "search_incidents"
+    ]
+   },
+   {
+    "id": "MS-15",
+    "group": "cascade",
+    "question": "What upstream failure was INC-0423 a symptom of?",
+    "correct": true,
+    "detail": {
+     "hops": {
+      "parent_incident": true
+     },
+     "query_type": "MULTI_SOURCE",
+     "plan": "chain"
+    },
+    "answer": "INC-0423 was downstream impact of INC-0422 (Cart Service: updates not visible to customers, cart-service, started 2026-06-22 20:49 UTC) [E1][E2].\nThe deployment recorded as the cause of INC-0423 is DEP-0304: cart-service v2.7.26 (succeeded), deployed 2026-06-22 10:52 UTC, commit 263efdb [E3].\nPR-1494 modified services/cart-service/cart_service/cache.py [E4].\nChanged lines in services/cart-service/cart_service/cache.py: - self._redis.delete(self._key(entity_id)); + # Refresh the TTL instead of deleting to avoid a cache stampede on hot keys.; + self._redis.expire(self._key(entity_id), self._ttl_seconds) [E4].",
+    "tools": [
+     "trace_change"
+    ]
+   },
+   {
+    "id": "MS-16",
+    "group": "cascade",
+    "question": "What upstream failure was INC-0247 a symptom of?",
+    "correct": true,
+    "detail": {
+     "hops": {
+      "parent_incident": true
+     },
+     "query_type": "MULTI_SOURCE",
+     "plan": "chain"
+    },
+    "answer": "INC-0247 was downstream impact of INC-0246 (Payment requests returning HTTP 500 after v2.6.16 deploy, payment-service, started 2026-02-18 19:17 UTC) [E1][E2].\nThe deployment recorded as the cause of INC-0247 is DEP-0180: payment-service v2.6.16 (rolled_back), deployed 2026-02-17 10:14 UTC, commit 56e6a1e [E3].\nPR-1289 modified services/payment-service/payment_service/cache.py [E4].\nChanged lines in services/payment-service/payment_service/cache.py: - self._redis.set(self._key(entity_id), payload, ex=self._ttl_seconds); + self._redis.set(self._key(entity_id), payload) [E4].",
+    "tools": [
+     "trace_change"
+    ]
+   },
+   {
+    "id": "MS-17",
+    "group": "config_key",
+    "question": "Which configuration key did the change behind INC-0056 modify?",
+    "correct": true,
+    "detail": {
+     "hops": {
+      "key": true
+     },
+     "query_type": "MULTI_SOURCE",
+     "plan": "chain"
+    },
+    "answer": "The deployment recorded as the cause of INC-0056 is DEP-0059: search-service v2.3.2 (succeeded), deployed 2025-10-27 11:54 UTC, commit da12cc3 [E2].\nPR-1093 modified services/search-service/deploy/search-service.yaml [E3].\nChanged lines in services/search-service/deploy/search-service.yaml: - SEARCH_SERVICE_PRODUCT_SERVICE_URL: \"http://product-service.novacart.svc.cluster.local:8083\"; + SEARCH_SERVICE_PRODUCT_SERVICE_URL: \"http://product-service.novacart.svc.cluster.local:8080\" [E3].",
+    "tools": [
+     "trace_change"
+    ]
+   },
+   {
+    "id": "MS-18",
+    "group": "config_key",
+    "question": "Which configuration key did the change behind INC-0380 modify?",
+    "correct": true,
+    "detail": {
+     "hops": {
+      "key": true
+     },
+     "query_type": "MULTI_SOURCE",
+     "plan": "chain"
+    },
+    "answer": "The deployment recorded as the cause of INC-0380 is DEP-0277: auth-service v1.15.5 (rolled_back), deployed 2026-05-27 12:45 UTC, commit 9cb99eb [E2].\nPR-1457 modified services/auth-service/auth_service/tokens.py [E3].\nChanged lines in services/auth-service/auth_service/tokens.py: - CLOCK_SKEW_LEEWAY_SECONDS = 30; + CLOCK_SKEW_LEEWAY_SECONDS = 0 [E3].",
+    "tools": [
+     "trace_change"
+    ]
+   },
+   {
+    "id": "MS-19",
+    "group": "reverse",
+    "question": "Which incidents followed from DEP-0046?",
+    "correct": false,
+    "detail": {
+     "hops": {
+      "incidents": false
+     },
+     "query_type": "INCIDENT_SEARCH",
+     "plan": "temporal"
+    },
+    "answer": "Incidents in the 1 d after DEP-0046 (product-service v4.2.5, deployed 2025-10-15 09:51 UTC), in time order: INC-0043 (payment-service, SEV4), HTTP 429 spike affecting payment-service, started 2025-10-16 06:16 UTC [E1].",
+    "tools": [
+     "search_deployments",
+     "search_incidents"
+    ]
+   },
+   {
+    "id": "MS-20",
+    "group": "reverse",
+    "question": "Which incidents followed from DEP-0149?",
+    "correct": false,
+    "detail": {
+     "hops": {
+      "incidents": false
+     },
+     "query_type": "INCIDENT_SEARCH",
+     "plan": "temporal"
+    },
+    "answer": "Incidents in the 1 d after DEP-0149 (cart-service v2.7.12, deployed 2026-01-21 14:30 UTC): none found [E1].",
+    "tools": [
+     "search_deployments",
+     "search_incidents"
+    ]
+   },
+   {
+    "id": "MS-21",
+    "group": "reverse",
+    "question": "Which files did DEP-0154 change, and which incidents did it cause?",
+    "correct": true,
+    "detail": {
+     "hops": {
+      "incidents": true,
+      "files": true
+     },
+     "query_type": "MULTI_SOURCE",
+     "plan": "chain"
+    },
+    "answer": "DEP-0154 (inventory-service v1.17.2, rolled_back, deployed 2026-01-28 10:58 UTC) is recorded as the cause of: INC-0221 (Inventory Service requests failing with database connection pool timeouts, started 2026-01-28 13:01 UTC) [E1].\nPR-1244 modified services/inventory-service/inventory_service/warehouse_sync.py [E2].\nChanged lines in services/inventory-service/inventory_service/warehouse_sync.py: + self._events = events [E2].\nPR-1245 modified services/inventory-service/inventory_service/db/database.py [E3].\nChanged lines in services/inventory-service/inventory_service/db/database.py: - pool_size=settings.db_pool_size,; - max_overflow=settings.db_max_overflow,; + # Fewer idle connections per pod so we stay under the PgBouncer client limit.; + pool_size=5,; + max_overflow=0, [E3].",
+    "tools": [
+     "trace_change"
+    ]
+   },
+   {
+    "id": "MS-22",
+    "group": "reverse",
+    "question": "Which files did DEP-0285 change, and which incidents did it cause?",
+    "correct": true,
+    "detail": {
+     "hops": {
+      "incidents": true,
+      "files": true
+     },
+     "query_type": "MULTI_SOURCE",
+     "plan": "chain"
+    },
+    "answer": "DEP-0285 (user-service v2.6.2, rolled_back, deployed 2026-06-03 16:27 UTC) is recorded as the cause of: INC-0391 (User Service requests failing with database connection pool timeouts, started 2026-06-04 00:08 UTC) [E1].\nPR-1471 modified services/user-service/tests/test_cache.py [E2].\nChanged lines in services/user-service/tests/test_cache.py: + def test_invalidate_deletes_key() -> None:; + client = MagicMock(); + UserCache(client=client, ttl_seconds=60).invalidate(\"abc\"); + client.delete.assert_called_once() [E2].\nPR-1477 modified services/user-service/requirements.txt [E3].\nChanged lines in services/user-service/requirements.txt: - httpx==0.28.0; + httpx==0.28.1 [E3].\nPR-1479 modified services/user-service/user_service/db/repository.py [E4].\nChanged lines in services/user-service/user_service/db/repository.py: - from user_service.db.database import session_scope; + from user_service.db.database import SessionLocal, session_scope; - with session_scope() as session:; - row = session.get(User, record_id); - return row.to_dict() if row else None; + session = SessionLocal() [E4].",
+    "tools": [
+     "trace_change"
+    ]
+   },
+   {
+    "id": "MS-23",
+    "group": "no_cause",
+    "question": "Which deployment and commit caused INC-0376?",
+    "correct": true,
+    "detail": {
+     "hops": {
+      "no_cause": true
+     },
+     "query_type": "MULTI_SOURCE",
+     "plan": "chain"
+    },
+    "answer": "No deployment is recorded as the cause of INC-0376; the deployment live at the time was DEP-0265 [E1].",
+    "tools": [
+     "trace_change"
+    ]
+   },
+   {
+    "id": "MS-24",
+    "group": "no_cause",
+    "question": "Trace INC-0129 to the code change responsible.",
+    "correct": true,
+    "detail": {
+     "hops": {
+      "no_cause": true
+     },
+     "query_type": "MULTI_SOURCE",
+     "plan": "chain"
+    },
+    "answer": "No deployment is recorded as the cause of INC-0129; the deployment live at the time was DEP-0080 [E1].",
+    "tools": [
+     "trace_change"
+    ]
+   },
+   {
+    "id": "MS-25",
+    "group": "remediation",
+    "question": "In which commit was the regression behind INC-0351 fixed?",
+    "correct": false,
+    "detail": {
+     "hops": {
+      "commit": false
+     },
+     "query_type": "MULTI_SOURCE",
+     "plan": "chain"
+    },
+    "answer": "The deployment recorded as the cause of INC-0351 is DEP-0255: inventory-service v1.17.10 (rolled_back), deployed 2026-05-04 10:23 UTC, commit dd4963f [E2].\nPR-1421 modified services/inventory-service/inventory_service/warehouse_sync.py [E3].\nChanged lines in services/inventory-service/inventory_service/warehouse_sync.py: - if delta[\"sequence\"] <= self._last_sequence.get(delta[\"warehouse_id\"], 0):; - continue [E3].",
+    "tools": [
+     "trace_change"
+    ]
+   },
+   {
+    "id": "MS-26",
+    "group": "remediation",
+    "question": "In which commit was the regression behind INC-0147 fixed?",
+    "correct": false,
+    "detail": {
+     "hops": {
+      "commit": false
+     },
+     "query_type": "MULTI_SOURCE",
+     "plan": "chain"
+    },
+    "answer": "The deployment recorded as the cause of INC-0147 is DEP-0087: product-service v4.3.2 (rolled_back), deployed 2025-12-02 10:57 UTC, commit 6f786ce [E2].\nPR-1138 modified services/product-service/product_service/db/database.py [E3].\nChanged lines in services/product-service/product_service/db/database.py: - pool_size=settings.db_pool_size,; - max_overflow=settings.db_max_overflow,; + # Fewer idle connections per pod so we stay under the PgBouncer client limit.; + pool_size=4,; + max_overflow=0, [E3].",
+    "tools": [
+     "trace_change"
+    ]
+   }
+  ]
+ }
+}

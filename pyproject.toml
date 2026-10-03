@@ -1,0 +1,42 @@
+# Tool configuration only; dependencies live in requirements*.txt.
+
+[tool.pytest.ini_options]
+minversion = "8.0"
+testpaths = ["tests"]
+pythonpath = ["."]
+addopts = "-ra --strict-markers --strict-config"
+markers = [
+    "integration: needs external services (PostgreSQL). Opt in with OPSRAG_RUN_INTEGRATION_TESTS=1.",
+    "model: needs the real embedding model. Opt in with OPSRAG_RUN_MODEL_TESTS=1.",
+]
+
+[tool.ruff]
+target-version = "py311"
+line-length = 100
+# data/ holds generated output, including the synthetic NovaCart repository.
+extend-exclude = [".venv", "data"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP", "SIM", "RUF"]
+
+[tool.ruff.lint.per-file-ignores]
+# Content modules: long prose, templates and catalog rows read better unwrapped.
+"app/synthetic/{catalog,code_repo,domain_code,changes,documents,narrative,operations,logs,timeline}.py" = ["E501"]
+"tests/synthetic/*.py" = ["E501"]
+# Streamlit pages: UI copy and HTML fragments read better on one line.
+"frontend/pages/*.py" = ["E501"]
+
+[tool.ruff.lint.isort]
+known-first-party = ["app", "opsrag_ui"]
+
+[tool.pyrefly]
+# The frontend runs from frontend/ (`streamlit run app.py`), so editors resolve opsrag_ui there.
+search-path = [".", "frontend"]
+
+[tool.coverage.run]
+# QA audit: python -m coverage run -m pytest, then python -m coverage report
+source = ["app", "frontend"]
+branch = true
+
+[tool.coverage.report]
+skip_empty = true

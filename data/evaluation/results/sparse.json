@@ -1,0 +1,2609 @@
+{
+  "questions": 63,
+  "recall": {
+    "1": 0.5556,
+    "5": 0.678,
+    "10": 0.7659
+  },
+  "hit": {
+    "1": 0.5556,
+    "5": 0.8254,
+    "10": 0.8571
+  },
+  "ndcg": {
+    "1": 0.5556,
+    "5": 0.6115,
+    "10": 0.6523
+  },
+  "mrr": 0.6644,
+  "latency_ms_median": 3.0,
+  "retriever": "bm25",
+  "model": "BAAI/bge-small-en-v1.5",
+  "ks": [
+    1,
+    5,
+    10
+  ],
+  "by_category": {
+    "change": {
+      "questions": 2,
+      "recall": {
+        "1": 1.0,
+        "5": 0.75,
+        "10": 1.0
+      },
+      "hit": {
+        "1": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "ndcg": {
+        "1": 1.0,
+        "5": 0.8066,
+        "10": 0.8989
+      },
+      "mrr": 1.0,
+      "latency_ms_median": 4.5
+    },
+    "code": {
+      "questions": 7,
+      "recall": {
+        "1": 0.5714,
+        "5": 0.8333,
+        "10": 0.8333
+      },
+      "hit": {
+        "1": 0.5714,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "ndcg": {
+        "1": 0.5714,
+        "5": 0.6651,
+        "10": 0.6651
+      },
+      "mrr": 0.6714,
+      "latency_ms_median": 3.0
+    },
+    "documentation": {
+      "questions": 9,
+      "recall": {
+        "1": 0.3333,
+        "5": 0.5278,
+        "10": 0.6667
+      },
+      "hit": {
+        "1": 0.3333,
+        "5": 0.6667,
+        "10": 0.7778
+      },
+      "ndcg": {
+        "1": 0.3333,
+        "5": 0.4592,
+        "10": 0.5068
+      },
+      "mrr": 0.4769,
+      "latency_ms_median": 3.4
+    },
+    "exact-match": {
+      "questions": 26,
+      "recall": {
+        "1": 0.6923,
+        "5": 0.8154,
+        "10": 0.9038
+      },
+      "hit": {
+        "1": 0.6923,
+        "5": 0.9231,
+        "10": 0.9231
+      },
+      "ndcg": {
+        "1": 0.6923,
+        "5": 0.7469,
+        "10": 0.7908
+      },
+      "mrr": 0.7981,
+      "latency_ms_median": 2.8
+    },
+    "incident": {
+      "questions": 6,
+      "recall": {
+        "1": 0.3333,
+        "5": 0.25,
+        "10": 0.4083
+      },
+      "hit": {
+        "1": 0.3333,
+        "5": 0.5,
+        "10": 0.6667
+      },
+      "ndcg": {
+        "1": 0.3333,
+        "5": 0.2728,
+        "10": 0.3552
+      },
+      "mrr": 0.4444,
+      "latency_ms_median": 3.7
+    },
+    "runbook": {
+      "questions": 13,
+      "recall": {
+        "1": 0.4615,
+        "5": 0.6103,
+        "10": 0.6513
+      },
+      "hit": {
+        "1": 0.4615,
+        "5": 0.7692,
+        "10": 0.7692
+      },
+      "ndcg": {
+        "1": 0.4615,
+        "5": 0.5438,
+        "10": 0.5686
+      },
+      "mrr": 0.5731,
+      "latency_ms_median": 3.0
+    }
+  },
+  "results": [
+    {
+      "id": "RQ-01",
+      "question": "How do we handle database connection exhaustion?",
+      "category": "runbook",
+      "relevant": [
+        "RB-0001"
+      ],
+      "retrieved": [
+        "RB-0001",
+        "RB-0001",
+        "PM-0046",
+        "INC-0476",
+        "INC-0446",
+        "INC-0493",
+        "INC-0476",
+        "INC-0391",
+        "INC-0238",
+        "INC-0540"
+      ],
+      "first_relevant_rank": 1,
+      "recall": {
+        "1": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "hit": {
+        "1": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "ndcg": {
+        "1": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "latency_ms": 2.7
+    },
+    {
+      "id": "RQ-02",
+      "question": "Redis writes are failing with 'OOM command not allowed'. What should I check?",
+      "category": "runbook",
+      "relevant": [
+        "RB-0002",
+        "RB-0057"
+      ],
+      "retrieved": [
+        "RB-0002",
+        "RB-0057",
+        "INC-0297",
+        "INC-0492",
+        "INC-0273",
+        "DOC-0008",
+        "DOC-0048",
+        "DOC-0024",
+        "DOC-0032",
+        "INC-0502"
+      ],
+      "first_relevant_rank": 1,
+      "recall": {
+        "1": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "hit": {
+        "1": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "ndcg": {
+        "1": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "latency_ms": 3.7
+    },
+    {
+      "id": "RQ-03",
+      "question": "A Kafka consumer group keeps falling further behind. How do I troubleshoot it?",
+      "category": "runbook",
+      "relevant": [
+        "RB-0003"
+      ],
+      "retrieved": [
+        "RB-0003",
+        "INC-0341",
+        "INC-0108",
+        "INC-0136",
+        "INC-0159",
+        "INC-0170",
+        "INC-0359",
+        "RB-0058",
+        "DOC-0073",
+        "RB-0003"
+      ],
+      "first_relevant_rank": 1,
+      "recall": {
+        "1": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "hit": {
+        "1": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "ndcg": {
+        "1": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "latency_ms": 2.6
+    },
+    {
+      "id": "RQ-04",
+      "question": "Customers get 401 errors right after the signing keys were rotated. What do we do?",
+      "category": "runbook",
+      "relevant": [
+        "RB-0005",
+        "RB-0054",
+        "RB-0055"
+      ],
+      "retrieved": [
+        "INC-0129",
+        "INC-0290",
+        "INC-0042",
+        "INC-0151",
+        "RB-0054",
+        "INC-0104",
+        "RB-0005",
+        "PM-0012",
+        "INC-0039",
+        "INC-0357"
+      ],
+      "first_relevant_rank": 5,
+      "recall": {
+        "1": 0.0,
+        "5": 0.3333333333333333,
+        "10": 0.6666666666666666
+      },
+      "hit": {
+        "1": 0.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "ndcg": {
+        "1": 0.0,
+        "5": 0.18154179253735267,
+        "10": 0.3379680345449381
+      },
+      "latency_ms": 4.0
+    },
+    {
+      "id": "RQ-05",
+      "question": "What is the procedure to roll back a bad release?",
+      "category": "runbook",
+      "relevant": [
+        "RB-0006",
+        "RB-0062"
+      ],
+      "retrieved": [
+        "RB-0062",
+        "DOC-0021",
+        "DOC-0029",
+        "DOC-0069",
+        "RB-0054",
+        "DOC-0077",
+        "DOC-0085",
+        "DOC-0013",
+        "DOC-0037",
+        "DOC-0053"
+      ],
+      "first_relevant_rank": 1,
+      "recall": {
+        "1": 1.0,
+        "5": 0.5,
+        "10": 0.5
+      },
+      "hit": {
+        "1": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "ndcg": {
+        "1": 1.0,
+        "5": 0.6131471927654584,
+        "10": 0.6131471927654584
+      },
+      "latency_ms": 2.6
+    },
+    {
+      "id": "RQ-06",
+      "question": "Postgres keeps logging 'deadlock detected' on writes. How should we respond?",
+      "category": "runbook",
+      "relevant": [
+        "RB-0008"
+      ],
+      "retrieved": [
+        "RB-0008",
+        "INC-0256",
+        "INC-0256",
+        "INC-0103",
+        "INC-0073",
+        "INC-0424",
+        "PM-0041",
+        "PM-0024",
+        "RB-0008",
+        "INC-0306"
+      ],
+      "first_relevant_rank": 1,
+      "recall": {
+        "1": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "hit": {
+        "1": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "ndcg": {
+        "1": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "latency_ms": 3.0
+    },
+    {
+      "id": "RQ-07",
+      "question": "Pods keep restarting because they are OOMKilled.",
+      "category": "runbook",
+      "relevant": [
+        "RB-0009",
+        "RB-0018",
+        "RB-0021",
+        "RB-0024",
+        "RB-0027",
+        "RB-0030",
+        "RB-0033",
+        "RB-0036",
+        "RB-0039",
+        "RB-0042",
+        "RB-0045",
+        "RB-0048"
+      ],
+      "retrieved": [
+        "INC-0045",
+        "RB-0018",
+        "RB-0045",
+        "RB-0024",
+        "PM-0035",
+        "RB-0036",
+        "RB-0027",
+        "RB-0030",
+        "RB-0048",
+        "RB-0021"
+      ],
+      "first_relevant_rank": 2,
+      "recall": {
+        "1": 0.0,
+        "5": 0.6,
+        "10": 0.8
+      },
+      "hit": {
+        "1": 0.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "ndcg": {
+        "1": 0.0,
+        "5": 0.5296347172140421,
+        "10": 0.6947651160602989
+      },
+      "latency_ms": 2.5
+    },
+    {
+      "id": "RQ-08",
+      "question": "Mobile clients are receiving HTTP 429 Too Many Requests from the API.",
+      "category": "runbook",
+      "relevant": [
+        "RB-0013",
+        "RB-0056"
+      ],
+      "retrieved": [
+        "INC-0072",
+        "INC-0365",
+        "PM-0036",
+        "RB-0056",
+        "RB-0013",
+        "INC-0251",
+        "INC-0529",
+        "CF-0016",
+        "DOC-0001",
+        "RB-0056"
+      ],
+      "first_relevant_rank": 4,
+      "recall": {
+        "1": 0.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "hit": {
+        "1": 0.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "ndcg": {
+        "1": 0.0,
+        "5": 0.5012658353418871,
+        "10": 0.5012658353418871
+      },
+      "latency_ms": 8.3
+    },
+    {
+      "id": "RQ-09",
+      "question": "Product pages still show the old price after a price update.",
+      "category": "runbook",
+      "relevant": [
+        "RB-0014",
+        "RB-0061"
+      ],
+      "retrieved": [
+        "RB-0061",
+        "CF-0189",
+        "CF-0235",
+        "DOC-0030",
+        "PR-1566",
+        "INC-0403",
+        "CF-0197",
+        "DOC-0027",
+        "PR-1408",
+        "RB-0058"
+      ],
+      "first_relevant_rank": 1,
+      "recall": {
+        "1": 1.0,
+        "5": 0.5,
+        "10": 0.5
+      },
+      "hit": {
+        "1": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "ndcg": {
+        "1": 1.0,
+        "5": 0.6131471927654584,
+        "10": 0.6131471927654584
+      },
+      "latency_ms": 3.9
+    },
+    {
+      "id": "RQ-10",
+      "question": "Our stock levels no longer match what the warehouse system reports.",
+      "category": "runbook",
+      "relevant": [
+        "RB-0052"
+      ],
+      "retrieved": [
+        "CF-0075",
+        "DOC-0033",
+        "CF-0073",
+        "PM-0009",
+        "INC-0351",
+        "INC-0534",
+        "INC-0078",
+        "PM-0050",
+        "CF-0003",
+        "CF-0093"
+      ],
+      "first_relevant_rank": null,
+      "recall": {
+        "1": 0.0,
+        "5": 0.0,
+        "10": 0.0
+      },
+      "hit": {
+        "1": 0.0,
+        "5": 0.0,
+        "10": 0.0
+      },
+      "ndcg": {
+        "1": 0.0,
+        "5": 0.0,
+        "10": 0.0
+      },
+      "latency_ms": 2.2
+    },
+    {
+      "id": "RQ-11",
+      "question": "Order confirmation emails are arriving hours late.",
+      "category": "runbook",
+      "relevant": [
+        "RB-0059"
+      ],
+      "retrieved": [
+        "INC-0108",
+        "CF-0148",
+        "RB-0003",
+        "CF-0004",
+        "INC-0074",
+        "INC-0140",
+        "PR-1161",
+        "PR-1216",
+        "PR-1509",
+        "CF-0132"
+      ],
+      "first_relevant_rank": null,
+      "recall": {
+        "1": 0.0,
+        "5": 0.0,
+        "10": 0.0
+      },
+      "hit": {
+        "1": 0.0,
+        "5": 0.0,
+        "10": 0.0
+      },
+      "ndcg": {
+        "1": 0.0,
+        "5": 0.0,
+        "10": 0.0
+      },
+      "latency_ms": 2.5
+    },
+    {
+      "id": "RQ-12",
+      "question": "The API gateway is returning 504 Gateway Timeout for many requests.",
+      "category": "runbook",
+      "relevant": [
+        "RB-0053"
+      ],
+      "retrieved": [
+        "INC-0252",
+        "RB-0053",
+        "INC-0263",
+        "DOC-0004",
+        "RB-0049",
+        "DOC-0003",
+        "INC-0244",
+        "RB-0004",
+        "INC-0365",
+        "INC-0072"
+      ],
+      "first_relevant_rank": 2,
+      "recall": {
+        "1": 0.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "hit": {
+        "1": 0.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "ndcg": {
+        "1": 0.0,
+        "5": 0.6309297535714575,
+        "10": 0.6309297535714575
+      },
+      "latency_ms": 4.5
+    },
+    {
+      "id": "RQ-13",
+      "question": "Card authorizations are failing because the payment processor returns errors.",
+      "category": "runbook",
+      "relevant": [
+        "RB-0050"
+      ],
+      "retrieved": [
+        "PR-1240",
+        "CF-0174",
+        "PR-1234",
+        "INC-0084",
+        "CF-0159",
+        "PR-1240",
+        "DOC-0057",
+        "CF-0153",
+        "CF-0157",
+        "PR-1008"
+      ],
+      "first_relevant_rank": null,
+      "recall": {
+        "1": 0.0,
+        "5": 0.0,
+        "10": 0.0
+      },
+      "hit": {
+        "1": 0.0,
+        "5": 0.0,
+        "10": 0.0
+      },
+      "ndcg": {
+        "1": 0.0,
+        "5": 0.0,
+        "10": 0.0
+      },
+      "latency_ms": 4.0
+    },
+    {
+      "id": "RQ-14",
+      "question": "Where is payment database configuration?",
+      "category": "documentation",
+      "relevant": [
+        "CF-0154",
+        "CF-0164",
+        "CF-0166",
+        "DOC-0060"
+      ],
+      "retrieved": [
+        "PR-1475",
+        "PR-1504",
+        "DOC-0060",
+        "PR-1475",
+        "PR-1504",
+        "PM-0039",
+        "RB-0049",
+        "DOC-0052",
+        "PR-1103",
+        "CF-0164"
+      ],
+      "first_relevant_rank": 3,
+      "recall": {
+        "1": 0.0,
+        "5": 0.25,
+        "10": 0.5
+      },
+      "hit": {
+        "1": 0.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "ndcg": {
+        "1": 0.0,
+        "5": 0.19519002499605084,
+        "10": 0.3080351663449861
+      },
+      "latency_ms": 2.2
+    },
+    {
+      "id": "RQ-15",
+      "question": "What timeout and retry settings does order-service use when it calls other services?",
+      "category": "documentation",
+      "relevant": [
+        "DOC-0051"
+      ],
+      "retrieved": [
+        "DOC-0051",
+        "RB-0035",
+        "DOC-0003",
+        "CF-0135",
+        "CF-0137",
+        "CF-0134",
+        "RB-0051",
+        "CF-0136",
+        "RB-0004",
+        "DOC-0059"
+      ],
+      "first_relevant_rank": 1,
+      "recall": {
+        "1": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "hit": {
+        "1": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "ndcg": {
+        "1": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "latency_ms": 5.2
+    },
+    {
+      "id": "RQ-16",
+      "question": "Which services depend on inventory-service?",
+      "category": "documentation",
+      "relevant": [
+        "DOC-0033",
+        "DOC-0090"
+      ],
+      "retrieved": [
+        "PR-1013",
+        "PR-1087",
+        "PR-1489",
+        "PR-1178",
+        "PR-1550",
+        "PR-1034",
+        "RB-0028",
+        "INC-0182",
+        "INC-0020",
+        "INC-0270"
+      ],
+      "first_relevant_rank": null,
+      "recall": {
+        "1": 0.0,
+        "5": 0.0,
+        "10": 0.0
+      },
+      "hit": {
+        "1": 0.0,
+        "5": 0.0,
+        "10": 0.0
+      },
+      "ndcg": {
+        "1": 0.0,
+        "5": 0.0,
+        "10": 0.0
+      },
+      "latency_ms": 4.8
+    },
+    {
+      "id": "RQ-17",
+      "question": "How does canary analysis decide whether a deployment continues?",
+      "category": "documentation",
+      "relevant": [
+        "DOC-0091"
+      ],
+      "retrieved": [
+        "RB-0006",
+        "DOC-0091",
+        "DOC-0005",
+        "DOC-0045",
+        "DOC-0013",
+        "DOC-0037",
+        "DOC-0053",
+        "DOC-0061",
+        "DEP-0372",
+        "DOC-0093"
+      ],
+      "first_relevant_rank": 2,
+      "recall": {
+        "1": 0.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "hit": {
+        "1": 0.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "ndcg": {
+        "1": 0.0,
+        "5": 0.6309297535714575,
+        "10": 0.6309297535714575
+      },
+      "latency_ms": 3.1
+    },
+    {
+      "id": "RQ-18",
+      "question": "Is it safe to rename a field in a Kafka event?",
+      "category": "documentation",
+      "relevant": [
+        "DOC-0102"
+      ],
+      "retrieved": [
+        "DOC-0102",
+        "CF-0263",
+        "CF-0044",
+        "PR-1402",
+        "PR-1456",
+        "CF-0090",
+        "CF-0146",
+        "CF-0197",
+        "CF-0171",
+        "PR-1408"
+      ],
+      "first_relevant_rank": 1,
+      "recall": {
+        "1": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "hit": {
+        "1": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "ndcg": {
+        "1": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "latency_ms": 3.4
+    },
+    {
+      "id": "RQ-19",
+      "question": "How long are access tokens valid and how does the gateway validate them?",
+      "category": "documentation",
+      "relevant": [
+        "DOC-0099"
+      ],
+      "retrieved": [
+        "DOC-0099",
+        "DOC-0010",
+        "PM-0029",
+        "CF-0031",
+        "CF-0030",
+        "CF-0047",
+        "PM-0037",
+        "PR-1473",
+        "DOC-0009",
+        "INC-0266"
+      ],
+      "first_relevant_rank": 1,
+      "recall": {
+        "1": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "hit": {
+        "1": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "ndcg": {
+        "1": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "latency_ms": 1.9
+    },
+    {
+      "id": "RQ-20",
+      "question": "Which alerts are defined for cart-service and what are their thresholds?",
+      "category": "documentation",
+      "relevant": [
+        "DOC-0047"
+      ],
+      "retrieved": [
+        "PM-0044",
+        "PM-0010",
+        "PM-0026",
+        "PM-0022",
+        "PM-0040",
+        "CF-0065",
+        "CF-0064",
+        "DOC-0047",
+        "INC-0338",
+        "INC-0340"
+      ],
+      "first_relevant_rank": 8,
+      "recall": {
+        "1": 0.0,
+        "5": 0.0,
+        "10": 1.0
+      },
+      "hit": {
+        "1": 0.0,
+        "5": 0.0,
+        "10": 1.0
+      },
+      "ndcg": {
+        "1": 0.0,
+        "5": 0.0,
+        "10": 0.31546487678572877
+      },
+      "latency_ms": 4.3
+    },
+    {
+      "id": "RQ-21",
+      "question": "What columns does the payments table have?",
+      "category": "documentation",
+      "relevant": [
+        "CF-0167",
+        "DOC-0062"
+      ],
+      "retrieved": [
+        "CF-0155",
+        "CF-0155",
+        "CF-0167",
+        "CF-0167",
+        "CF-0167",
+        "CF-0167",
+        "CF-0127",
+        "CF-0183",
+        "CF-0103",
+        "CF-0141"
+      ],
+      "first_relevant_rank": 3,
+      "recall": {
+        "1": 0.0,
+        "5": 0.5,
+        "10": 0.5
+      },
+      "hit": {
+        "1": 0.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "ndcg": {
+        "1": 0.0,
+        "5": 0.3065735963827292,
+        "10": 0.3065735963827292
+      },
+      "latency_ms": 2.1
+    },
+    {
+      "id": "RQ-22",
+      "question": "What request rate limits apply to API clients?",
+      "category": "documentation",
+      "relevant": [
+        "CF-0023",
+        "DOC-0098"
+      ],
+      "retrieved": [
+        "CF-0016",
+        "PM-0036",
+        "DOC-0001",
+        "PR-1113",
+        "RB-0013",
+        "PR-1020",
+        "PR-1215",
+        "PR-1033",
+        "RB-0056",
+        "PR-1433"
+      ],
+      "first_relevant_rank": null,
+      "recall": {
+        "1": 0.0,
+        "5": 0.0,
+        "10": 0.0
+      },
+      "hit": {
+        "1": 0.0,
+        "5": 0.0,
+        "10": 0.0
+      },
+      "ndcg": {
+        "1": 0.0,
+        "5": 0.0,
+        "10": 0.0
+      },
+      "latency_ms": 4.9
+    },
+    {
+      "id": "RQ-23",
+      "question": "Where is the database connection pool size set for payment-service?",
+      "category": "code",
+      "relevant": [
+        "CF-0154",
+        "CF-0164",
+        "CF-0166"
+      ],
+      "retrieved": [
+        "PR-1475",
+        "PR-1504",
+        "PR-1470",
+        "PR-1501",
+        "CF-0166",
+        "PM-0039",
+        "PR-1475",
+        "PR-1504",
+        "DOC-0060",
+        "RB-0049"
+      ],
+      "first_relevant_rank": 5,
+      "recall": {
+        "1": 0.0,
+        "5": 0.3333333333333333,
+        "10": 0.3333333333333333
+      },
+      "hit": {
+        "1": 0.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "ndcg": {
+        "1": 0.0,
+        "5": 0.18154179253735267,
+        "10": 0.18154179253735267
+      },
+      "latency_ms": 10.7
+    },
+    {
+      "id": "RQ-24",
+      "question": "Where is the token bucket rate limiter implemented?",
+      "category": "code",
+      "relevant": [
+        "CF-0023"
+      ],
+      "retrieved": [
+        "PR-1020",
+        "PR-1033",
+        "PR-1215",
+        "CF-0023",
+        "CF-0023",
+        "PR-1433",
+        "PR-1033",
+        "PR-1215",
+        "PR-1066",
+        "DOC-0006"
+      ],
+      "first_relevant_rank": 4,
+      "recall": {
+        "1": 0.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "hit": {
+        "1": 0.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "ndcg": {
+        "1": 0.0,
+        "5": 0.43067655807339306,
+        "10": 0.43067655807339306
+      },
+      "latency_ms": 2.7
+    },
+    {
+      "id": "RQ-25",
+      "question": "Which code prevents charging a customer twice when a payment request is retried?",
+      "category": "code",
+      "relevant": [
+        "CF-0172",
+        "CF-0174"
+      ],
+      "retrieved": [
+        "CF-0172",
+        "DOC-0059",
+        "RB-0008",
+        "RB-0011",
+        "RB-0004",
+        "CF-0162",
+        "CF-0163",
+        "CF-0136",
+        "PR-1574",
+        "PR-1305"
+      ],
+      "first_relevant_rank": 1,
+      "recall": {
+        "1": 1.0,
+        "5": 0.5,
+        "10": 0.5
+      },
+      "hit": {
+        "1": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "ndcg": {
+        "1": 1.0,
+        "5": 0.6131471927654584,
+        "10": 0.6131471927654584
+      },
+      "latency_ms": 4.2
+    },
+    {
+      "id": "RQ-26",
+      "question": "Where does checkout reserve inventory and authorize the payment?",
+      "category": "code",
+      "relevant": [
+        "CF-0132"
+      ],
+      "retrieved": [
+        "CF-0132",
+        "DOC-0049",
+        "CF-0125",
+        "CF-0129",
+        "DOC-0089",
+        "PR-1076",
+        "PR-1392",
+        "CF-0132",
+        "RB-0051",
+        "CF-0144"
+      ],
+      "first_relevant_rank": 1,
+      "recall": {
+        "1": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "hit": {
+        "1": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "ndcg": {
+        "1": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "latency_ms": 3.3
+    },
+    {
+      "id": "RQ-27",
+      "question": "How does the gateway cache the JWKS signing keys?",
+      "category": "code",
+      "relevant": [
+        "CF-0019"
+      ],
+      "retrieved": [
+        "CF-0019",
+        "RB-0005",
+        "PM-0029",
+        "RB-0054",
+        "PR-1334",
+        "PR-1326",
+        "INC-0042",
+        "INC-0151",
+        "PR-1334",
+        "DOC-0099"
+      ],
+      "first_relevant_rank": 1,
+      "recall": {
+        "1": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "hit": {
+        "1": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "ndcg": {
+        "1": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "latency_ms": 2.9
+    },
+    {
+      "id": "RQ-28",
+      "question": "Where is user input escaped before the OpenSearch query is built?",
+      "category": "code",
+      "relevant": [
+        "CF-0238"
+      ],
+      "retrieved": [
+        "CF-0238",
+        "PR-1187",
+        "PR-1622",
+        "PR-1187",
+        "PR-1622",
+        "PM-0018",
+        "PR-1168",
+        "PR-1617",
+        "INC-0180",
+        "INC-0533"
+      ],
+      "first_relevant_rank": 1,
+      "recall": {
+        "1": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "hit": {
+        "1": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "ndcg": {
+        "1": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "latency_ms": 3.0
+    },
+    {
+      "id": "RQ-29",
+      "question": "How are shopping carts stored in Redis and when do they expire?",
+      "category": "code",
+      "relevant": [
+        "CF-0062"
+      ],
+      "retrieved": [
+        "CF-0057",
+        "DOC-0041",
+        "PR-1251",
+        "CF-0062",
+        "RB-0057",
+        "CF-0056",
+        "PR-1583",
+        "PM-0022",
+        "PR-1242",
+        "PR-1386"
+      ],
+      "first_relevant_rank": 4,
+      "recall": {
+        "1": 0.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "hit": {
+        "1": 0.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "ndcg": {
+        "1": 0.0,
+        "5": 0.43067655807339306,
+        "10": 0.43067655807339306
+      },
+      "latency_ms": 2.6
+    },
+    {
+      "id": "RQ-30",
+      "question": "Why did payment-service fail?",
+      "category": "incident",
+      "relevant": [
+        "INC-0007",
+        "INC-0008",
+        "INC-0025",
+        "INC-0029",
+        "INC-0033",
+        "INC-0043",
+        "INC-0046",
+        "INC-0084",
+        "INC-0096",
+        "INC-0103",
+        "INC-0117",
+        "INC-0118",
+        "INC-0135",
+        "INC-0149",
+        "INC-0179",
+        "INC-0184",
+        "INC-0186",
+        "INC-0211",
+        "INC-0214",
+        "INC-0218",
+        "INC-0246",
+        "INC-0262",
+        "INC-0267",
+        "INC-0280",
+        "INC-0301",
+        "INC-0304",
+        "INC-0335",
+        "INC-0343",
+        "INC-0384",
+        "INC-0406",
+        "INC-0414",
+        "INC-0426",
+        "INC-0427",
+        "INC-0428",
+        "INC-0431",
+        "INC-0481",
+        "INC-0510",
+        "PM-0003",
+        "PM-0014",
+        "PM-0027",
+        "PM-0028",
+        "PM-0030",
+        "PM-0039",
+        "PM-0047"
+      ],
+      "retrieved": [
+        "INC-0218",
+        "PR-1055",
+        "PR-1123",
+        "INC-0343",
+        "PM-0047",
+        "PM-0003",
+        "INC-0096",
+        "INC-0318",
+        "INC-0302",
+        "INC-0269"
+      ],
+      "first_relevant_rank": 1,
+      "recall": {
+        "1": 1.0,
+        "5": 0.6,
+        "10": 0.5
+      },
+      "hit": {
+        "1": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "ndcg": {
+        "1": 1.0,
+        "5": 0.6164336326286644,
+        "10": 0.5517854393872873
+      },
+      "latency_ms": 4.5
+    },
+    {
+      "id": "RQ-31",
+      "question": "Why did payment requests start returning HTTP 500 errors after deployment v2.8.1?",
+      "category": "incident",
+      "relevant": [
+        "DEP-0296",
+        "INC-0406",
+        "PM-0039",
+        "PR-1501"
+      ],
+      "retrieved": [
+        "INC-0406",
+        "PM-0039",
+        "INC-0406",
+        "PM-0039",
+        "PM-0039",
+        "PM-0039",
+        "RB-0049",
+        "DEP-0296",
+        "INC-0408",
+        "DEP-0297"
+      ],
+      "first_relevant_rank": 1,
+      "recall": {
+        "1": 1.0,
+        "5": 0.5,
+        "10": 0.75
+      },
+      "hit": {
+        "1": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "ndcg": {
+        "1": 1.0,
+        "5": 0.6366824387328317,
+        "10": 0.7598336331031966
+      },
+      "latency_ms": 5.3
+    },
+    {
+      "id": "RQ-32",
+      "question": "What caused inventory stock to drift away from the warehouse system?",
+      "category": "incident",
+      "relevant": [
+        "INC-0078",
+        "INC-0351",
+        "INC-0534"
+      ],
+      "retrieved": [
+        "PM-0009",
+        "PM-0050",
+        "CF-0075",
+        "CF-0073",
+        "DOC-0033",
+        "CF-0093",
+        "INC-0401",
+        "PR-1122",
+        "PR-1431",
+        "PR-1624"
+      ],
+      "first_relevant_rank": null,
+      "recall": {
+        "1": 0.0,
+        "5": 0.0,
+        "10": 0.0
+      },
+      "hit": {
+        "1": 0.0,
+        "5": 0.0,
+        "10": 0.0
+      },
+      "ndcg": {
+        "1": 0.0,
+        "5": 0.0,
+        "10": 0.0
+      },
+      "latency_ms": 2.7
+    },
+    {
+      "id": "RQ-33",
+      "question": "Why were valid tokens rejected by the API gateway after a key rotation?",
+      "category": "incident",
+      "relevant": [
+        "INC-0042",
+        "INC-0088",
+        "INC-0137",
+        "INC-0151",
+        "INC-0167",
+        "INC-0195",
+        "INC-0223",
+        "INC-0266",
+        "INC-0357",
+        "INC-0364"
+      ],
+      "retrieved": [
+        "RB-0005",
+        "INC-0357",
+        "INC-0167",
+        "RB-0054",
+        "PM-0012",
+        "INC-0104",
+        "INC-0042",
+        "INC-0151",
+        "DOC-0099",
+        "DOC-0010"
+      ],
+      "first_relevant_rank": 2,
+      "recall": {
+        "1": 0.0,
+        "5": 0.4,
+        "10": 0.4
+      },
+      "hit": {
+        "1": 0.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "ndcg": {
+        "1": 0.0,
+        "5": 0.38356636737133565,
+        "10": 0.39170347105873193
+      },
+      "latency_ms": 2.9
+    },
+    {
+      "id": "RQ-34",
+      "question": "What happened when the cart Redis cluster ran out of memory?",
+      "category": "incident",
+      "relevant": [
+        "INC-0097",
+        "INC-0125",
+        "INC-0196",
+        "INC-0215",
+        "INC-0281"
+      ],
+      "retrieved": [
+        "CF-0068",
+        "RB-0002",
+        "RB-0057",
+        "RB-0057",
+        "CF-0005",
+        "INC-0097",
+        "DOC-0044",
+        "INC-0125",
+        "INC-0281",
+        "INC-0196"
+      ],
+      "first_relevant_rank": 6,
+      "recall": {
+        "1": 0.0,
+        "5": 0.0,
+        "10": 0.8
+      },
+      "hit": {
+        "1": 0.0,
+        "5": 0.0,
+        "10": 1.0
+      },
+      "ndcg": {
+        "1": 0.0,
+        "5": 0.0,
+        "10": 0.4279411160210267
+      },
+      "latency_ms": 2.5
+    },
+    {
+      "id": "RQ-35",
+      "question": "Consumers failed to process product events after a field was renamed. What happened?",
+      "category": "incident",
+      "relevant": [
+        "INC-0336",
+        "INC-0369",
+        "PR-1402"
+      ],
+      "retrieved": [
+        "RB-0015",
+        "CF-0216",
+        "CF-0235",
+        "INC-0074",
+        "INC-0127",
+        "CF-0144",
+        "CF-0118",
+        "INC-0276",
+        "CF-0144",
+        "DOC-0102"
+      ],
+      "first_relevant_rank": null,
+      "recall": {
+        "1": 0.0,
+        "5": 0.0,
+        "10": 0.0
+      },
+      "hit": {
+        "1": 0.0,
+        "5": 0.0,
+        "10": 0.0
+      },
+      "ndcg": {
+        "1": 0.0,
+        "5": 0.0,
+        "10": 0.0
+      },
+      "latency_ms": 4.8
+    },
+    {
+      "id": "RQ-36",
+      "question": "Which pull requests reduced the database connection pool size?",
+      "category": "change",
+      "relevant": [
+        "PR-1138",
+        "PR-1245",
+        "PR-1470",
+        "PR-1501",
+        "PR-1546"
+      ],
+      "retrieved": [
+        "PR-1138",
+        "PR-1245",
+        "PR-1470",
+        "PR-1546",
+        "PR-1501",
+        "INC-0221",
+        "PM-0023",
+        "PR-1568",
+        "PR-1148",
+        "PR-1256"
+      ],
+      "first_relevant_rank": 1,
+      "recall": {
+        "1": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "hit": {
+        "1": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "ndcg": {
+        "1": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "latency_ms": 4.5
+    },
+    {
+      "id": "RQ-37",
+      "question": "What changed in payment-service v2.8.1?",
+      "category": "change",
+      "relevant": [
+        "DEP-0296",
+        "PR-1501"
+      ],
+      "retrieved": [
+        "DEP-0296",
+        "INC-0406",
+        "PM-0039",
+        "DEP-0297",
+        "INC-0406",
+        "PM-0039",
+        "PM-0039",
+        "PM-0039",
+        "PR-1501",
+        "RB-0049"
+      ],
+      "first_relevant_rank": 1,
+      "recall": {
+        "1": 1.0,
+        "5": 0.5,
+        "10": 1.0
+      },
+      "hit": {
+        "1": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "ndcg": {
+        "1": 1.0,
+        "5": 0.6131471927654584,
+        "10": 0.7977228895450266
+      },
+      "latency_ms": 4.5
+    },
+    {
+      "id": "RQ-38",
+      "question": "Our Kafka consumers keep logging 'Revoking previously assigned partitions'.",
+      "category": "exact-match",
+      "relevant": [
+        "RB-0003"
+      ],
+      "retrieved": [
+        "RB-0003",
+        "DOC-0097",
+        "INC-0341",
+        "INC-0108",
+        "INC-0136",
+        "INC-0359",
+        "INC-0531",
+        "INC-0074",
+        "INC-0390",
+        "CF-0004"
+      ],
+      "first_relevant_rank": 1,
+      "recall": {
+        "1": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "hit": {
+        "1": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "ndcg": {
+        "1": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "latency_ms": 2.8
+    },
+    {
+      "id": "RQ-39",
+      "question": "Requests are rejected with 'token is not yet valid'.",
+      "category": "exact-match",
+      "relevant": [
+        "RB-0005"
+      ],
+      "retrieved": [
+        "PR-1473",
+        "RB-0005",
+        "RB-0054",
+        "PM-0037",
+        "PM-0012",
+        "INC-0104",
+        "INC-0357",
+        "INC-0167",
+        "DOC-0010",
+        "INC-0266"
+      ],
+      "first_relevant_rank": 2,
+      "recall": {
+        "1": 0.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "hit": {
+        "1": 0.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "ndcg": {
+        "1": 0.0,
+        "5": 0.6309297535714575,
+        "10": 0.6309297535714575
+      },
+      "latency_ms": 5.4
+    },
+    {
+      "id": "RQ-40",
+      "question": "Pods log 'Temporary failure in name resolution' when calling other services.",
+      "category": "exact-match",
+      "relevant": [
+        "RB-0012"
+      ],
+      "retrieved": [
+        "RB-0012",
+        "RB-0050",
+        "RB-0054",
+        "RB-0051",
+        "CF-0046",
+        "CF-0067",
+        "CF-0173",
+        "CF-0198",
+        "CF-0264",
+        "CF-0022"
+      ],
+      "first_relevant_rank": 1,
+      "recall": {
+        "1": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "hit": {
+        "1": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "ndcg": {
+        "1": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "latency_ms": 5.4
+    },
+    {
+      "id": "RQ-41",
+      "question": "What does 'unknown signing key' mean and how do we fix it?",
+      "category": "exact-match",
+      "relevant": [
+        "CF-0019",
+        "PM-0029",
+        "RB-0005",
+        "RB-0054"
+      ],
+      "retrieved": [
+        "PR-1334",
+        "RB-0005",
+        "CF-0019",
+        "DOC-0099",
+        "RB-0054",
+        "PR-1260",
+        "CF-0045",
+        "PM-0029",
+        "PR-1492",
+        "PR-1334"
+      ],
+      "first_relevant_rank": 2,
+      "recall": {
+        "1": 0.0,
+        "5": 0.75,
+        "10": 1.0
+      },
+      "hit": {
+        "1": 0.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "ndcg": {
+        "1": 0.0,
+        "5": 0.592512031964586,
+        "10": 0.715663226334951
+      },
+      "latency_ms": 2.4
+    },
+    {
+      "id": "RQ-42",
+      "question": "payment-service logs 'QueuePool limit of size 20 overflow 10 reached, connection timed out'.",
+      "category": "exact-match",
+      "relevant": [
+        "DOC-0064",
+        "RB-0001",
+        "RB-0049"
+      ],
+      "retrieved": [
+        "RB-0001",
+        "DOC-0064",
+        "RB-0049",
+        "DOC-0032",
+        "DOC-0024",
+        "DOC-0072",
+        "DOC-0056",
+        "DOC-0040",
+        "PM-0039",
+        "DOC-0016"
+      ],
+      "first_relevant_rank": 1,
+      "recall": {
+        "1": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "hit": {
+        "1": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "ndcg": {
+        "1": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "latency_ms": 5.3
+    },
+    {
+      "id": "RQ-43",
+      "question": "What happened in INC-0406?",
+      "category": "exact-match",
+      "relevant": [
+        "INC-0406",
+        "PM-0039"
+      ],
+      "retrieved": [
+        "INC-0406",
+        "PM-0039",
+        "INC-0408",
+        "INC-0406",
+        "INC-0407",
+        "PM-0039",
+        "DEP-0297",
+        "PM-0039",
+        "RB-0049",
+        "PM-0039"
+      ],
+      "first_relevant_rank": 1,
+      "recall": {
+        "1": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "hit": {
+        "1": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "ndcg": {
+        "1": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "latency_ms": 2.4
+    },
+    {
+      "id": "RQ-44",
+      "question": "Give me the details of INC-0329.",
+      "category": "exact-match",
+      "relevant": [
+        "INC-0329",
+        "PM-0031"
+      ],
+      "retrieved": [
+        "PM-0031",
+        "INC-0329",
+        "INC-0330",
+        "PM-0031",
+        "RB-0008",
+        "DEP-0329",
+        "PR-1544",
+        "INC-0351",
+        "INC-0534",
+        "INC-0172"
+      ],
+      "first_relevant_rank": 1,
+      "recall": {
+        "1": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "hit": {
+        "1": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "ndcg": {
+        "1": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "latency_ms": 2.5
+    },
+    {
+      "id": "RQ-45",
+      "question": "What was the root cause of INC-0380?",
+      "category": "exact-match",
+      "relevant": [
+        "INC-0380",
+        "PM-0037"
+      ],
+      "retrieved": [
+        "INC-0380",
+        "INC-0381",
+        "INC-0380",
+        "PM-0037",
+        "DEP-0278",
+        "PM-0037",
+        "PM-0037",
+        "RB-0054",
+        "PR-1473",
+        "INC-0369"
+      ],
+      "first_relevant_rank": 1,
+      "recall": {
+        "1": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "hit": {
+        "1": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "ndcg": {
+        "1": 1.0,
+        "5": 0.8772153153380493,
+        "10": 0.8772153153380493
+      },
+      "latency_ms": 2.8
+    },
+    {
+      "id": "RQ-46",
+      "question": "Which pull requests shipped in DEP-0296?",
+      "category": "exact-match",
+      "relevant": [
+        "DEP-0296",
+        "PR-1501"
+      ],
+      "retrieved": [
+        "DEP-0296",
+        "INC-0406",
+        "DEP-0297",
+        "PR-1504",
+        "PM-0039",
+        "PR-1501",
+        "PM-0039",
+        "PM-0039",
+        "INC-0408",
+        "INC-0407"
+      ],
+      "first_relevant_rank": 1,
+      "recall": {
+        "1": 1.0,
+        "5": 0.5,
+        "10": 1.0
+      },
+      "hit": {
+        "1": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "ndcg": {
+        "1": 1.0,
+        "5": 0.6131471927654584,
+        "10": 0.8315546295836225
+      },
+      "latency_ms": 4.7
+    },
+    {
+      "id": "RQ-47",
+      "question": "What was released in payment-service v2.8.2?",
+      "category": "exact-match",
+      "relevant": [
+        "DEP-0308",
+        "PR-1504",
+        "PR-1510",
+        "PR-1514",
+        "PR-1517"
+      ],
+      "retrieved": [
+        "DEP-0308",
+        "DEP-0326",
+        "PR-1514",
+        "PR-1504",
+        "INC-0428",
+        "PR-1517",
+        "PR-1510",
+        "INC-0431",
+        "INC-0406",
+        "PR-1504"
+      ],
+      "first_relevant_rank": 1,
+      "recall": {
+        "1": 1.0,
+        "5": 0.6,
+        "10": 1.0
+      },
+      "hit": {
+        "1": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "ndcg": {
+        "1": 1.0,
+        "5": 0.6548086577531307,
+        "10": 0.8886733622104969
+      },
+      "latency_ms": 4.2
+    },
+    {
+      "id": "RQ-48",
+      "question": "Why was inventory-service v1.17.2 rolled back?",
+      "category": "exact-match",
+      "relevant": [
+        "DEP-0154",
+        "DEP-0156",
+        "INC-0221",
+        "PM-0023",
+        "PR-1245"
+      ],
+      "retrieved": [
+        "DEP-0154",
+        "DEP-0156",
+        "INC-0221",
+        "INC-0221",
+        "PR-1244",
+        "PM-0023",
+        "PR-1245",
+        "PM-0023",
+        "PR-1256",
+        "DEP-0340"
+      ],
+      "first_relevant_rank": 1,
+      "recall": {
+        "1": 1.0,
+        "5": 0.6,
+        "10": 1.0
+      },
+      "hit": {
+        "1": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "ndcg": {
+        "1": 1.0,
+        "5": 0.7227265726449519,
+        "10": 0.9565912771023182
+      },
+      "latency_ms": 4.5
+    },
+    {
+      "id": "RQ-49",
+      "question": "What is RECONCILIATION_TOLERANCE_UNITS used for?",
+      "category": "exact-match",
+      "relevant": [
+        "CF-0093"
+      ],
+      "retrieved": [
+        "CF-0093",
+        "CF-0093",
+        "RB-0052",
+        "INC-0078",
+        "INC-0351",
+        "INC-0534",
+        "PR-1350",
+        "PM-0009",
+        "PM-0050",
+        "DOC-0039"
+      ],
+      "first_relevant_rank": 1,
+      "recall": {
+        "1": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "hit": {
+        "1": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "ndcg": {
+        "1": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "latency_ms": 2.2
+    },
+    {
+      "id": "RQ-50",
+      "question": "Where is JWKS_CACHE_TTL_SECONDS defined?",
+      "category": "exact-match",
+      "relevant": [
+        "CF-0019"
+      ],
+      "retrieved": [
+        "PR-1334",
+        "PR-1326",
+        "PM-0029",
+        "CF-0019",
+        "CF-0019",
+        "PR-1095",
+        "RB-0054",
+        "CF-0020",
+        "CF-0045",
+        "PR-1334"
+      ],
+      "first_relevant_rank": 4,
+      "recall": {
+        "1": 0.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "hit": {
+        "1": 0.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "ndcg": {
+        "1": 0.0,
+        "5": 0.43067655807339306,
+        "10": 0.43067655807339306
+      },
+      "latency_ms": 2.4
+    },
+    {
+      "id": "RQ-51",
+      "question": "What does PAYMENT_SERVICE_DB_POOL_TIMEOUT_SECONDS control?",
+      "category": "exact-match",
+      "relevant": [
+        "CF-0164",
+        "DOC-0060"
+      ],
+      "retrieved": [
+        "DOC-0060",
+        "PR-1475",
+        "PR-1504",
+        "PM-0039",
+        "PR-1470",
+        "PR-1501",
+        "CF-0166",
+        "CF-0164",
+        "PR-1211",
+        "PR-1409"
+      ],
+      "first_relevant_rank": 1,
+      "recall": {
+        "1": 1.0,
+        "5": 0.5,
+        "10": 1.0
+      },
+      "hit": {
+        "1": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "ndcg": {
+        "1": 1.0,
+        "5": 0.6131471927654584,
+        "10": 0.8065735963827293
+      },
+      "latency_ms": 4.8
+    },
+    {
+      "id": "RQ-52",
+      "question": "What is the value of RISK_DECLINE_THRESHOLD?",
+      "category": "exact-match",
+      "relevant": [
+        "CF-0174"
+      ],
+      "retrieved": [
+        "PR-1240",
+        "CF-0174",
+        "PR-1234",
+        "CF-0174",
+        "PR-1008",
+        "PR-1222",
+        "PM-0040",
+        "PM-0046",
+        "PM-0009",
+        "PM-0023"
+      ],
+      "first_relevant_rank": 2,
+      "recall": {
+        "1": 0.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "hit": {
+        "1": 0.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "ndcg": {
+        "1": 0.0,
+        "5": 0.6309297535714575,
+        "10": 0.6309297535714575
+      },
+      "latency_ms": 3.2
+    },
+    {
+      "id": "RQ-53",
+      "question": "What does MAX_STACKED_PROMOTIONS limit?",
+      "category": "exact-match",
+      "relevant": [
+        "CF-0199"
+      ],
+      "retrieved": [
+        "CF-0199",
+        "PR-1502",
+        "DOC-0094",
+        "PR-1485",
+        "CF-0189",
+        "CF-0024",
+        "RB-0001",
+        "RB-0010",
+        "RB-0050",
+        "PR-1054"
+      ],
+      "first_relevant_rank": 1,
+      "recall": {
+        "1": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "hit": {
+        "1": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "ndcg": {
+        "1": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "latency_ms": 2.1
+    },
+    {
+      "id": "RQ-54",
+      "question": "Show me the IdempotencyStore class.",
+      "category": "exact-match",
+      "relevant": [
+        "CF-0172"
+      ],
+      "retrieved": [
+        "CF-0174",
+        "CF-0172",
+        "PR-1021",
+        "CF-0136",
+        "CF-0217",
+        "CF-0167",
+        "DOC-0057",
+        "RB-0060",
+        "PR-1453",
+        "PR-1405"
+      ],
+      "first_relevant_rank": 2,
+      "recall": {
+        "1": 0.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "hit": {
+        "1": 0.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "ndcg": {
+        "1": 0.0,
+        "5": 0.6309297535714575,
+        "10": 0.6309297535714575
+      },
+      "latency_ms": 2.0
+    },
+    {
+      "id": "RQ-55",
+      "question": "Where is CheckoutOrchestrator defined?",
+      "category": "exact-match",
+      "relevant": [
+        "CF-0132"
+      ],
+      "retrieved": [
+        "CF-0150",
+        "CF-0131",
+        "PR-1035",
+        "PR-1050",
+        "PR-1076",
+        "PR-1392",
+        "PR-1223",
+        "PR-1216",
+        "PR-1509",
+        "PR-1184"
+      ],
+      "first_relevant_rank": null,
+      "recall": {
+        "1": 0.0,
+        "5": 0.0,
+        "10": 0.0
+      },
+      "hit": {
+        "1": 0.0,
+        "5": 0.0,
+        "10": 0.0
+      },
+      "ndcg": {
+        "1": 0.0,
+        "5": 0.0,
+        "10": 0.0
+      },
+      "latency_ms": 1.7
+    },
+    {
+      "id": "RQ-56",
+      "question": "When is CircuitOpenError raised?",
+      "category": "exact-match",
+      "relevant": [
+        "CF-0008"
+      ],
+      "retrieved": [
+        "CF-0014",
+        "CF-0008",
+        "RB-0011",
+        "DOC-0103",
+        "DOC-0067",
+        "DOC-0019",
+        "DOC-0011",
+        "DOC-0043",
+        "DOC-0027",
+        "DOC-0083"
+      ],
+      "first_relevant_rank": 2,
+      "recall": {
+        "1": 0.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "hit": {
+        "1": 0.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "ndcg": {
+        "1": 0.0,
+        "5": 0.6309297535714575,
+        "10": 0.6309297535714575
+      },
+      "latency_ms": 3.4
+    },
+    {
+      "id": "RQ-57",
+      "question": "Which code raises InsufficientStock?",
+      "category": "exact-match",
+      "relevant": [
+        "CF-0092"
+      ],
+      "retrieved": [
+        "CF-0092",
+        "CF-0092",
+        "CF-0081",
+        "CF-0075",
+        "CF-0100",
+        "CF-0073",
+        "CF-0252",
+        "CF-0093",
+        "PR-1353",
+        "PR-1010"
+      ],
+      "first_relevant_rank": 1,
+      "recall": {
+        "1": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "hit": {
+        "1": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "ndcg": {
+        "1": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "latency_ms": 2.3
+    },
+    {
+      "id": "RQ-58",
+      "question": "What does escape_query do?",
+      "category": "exact-match",
+      "relevant": [
+        "CF-0238"
+      ],
+      "retrieved": [
+        "CF-0238",
+        "PR-1187",
+        "PR-1622",
+        "PM-0018",
+        "PR-1168",
+        "PR-1617",
+        "PR-1187",
+        "PR-1622",
+        "INC-0180",
+        "INC-0533"
+      ],
+      "first_relevant_rank": 1,
+      "recall": {
+        "1": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "hit": {
+        "1": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "ndcg": {
+        "1": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "latency_ms": 1.6
+    },
+    {
+      "id": "RQ-59",
+      "question": "How does consume_refresh_token work?",
+      "category": "exact-match",
+      "relevant": [
+        "CF-0045"
+      ],
+      "retrieved": [
+        "CF-0045",
+        "CF-0047",
+        "PM-0012",
+        "CF-0047",
+        "PR-1137",
+        "PR-1153",
+        "PR-1246",
+        "PR-1260",
+        "DOC-0099",
+        "CF-0033"
+      ],
+      "first_relevant_rank": 1,
+      "recall": {
+        "1": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "hit": {
+        "1": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "ndcg": {
+        "1": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "latency_ms": 1.8
+    },
+    {
+      "id": "RQ-60",
+      "question": "Where is effective_price implemented?",
+      "category": "exact-match",
+      "relevant": [
+        "CF-0199"
+      ],
+      "retrieved": [
+        "CF-0199",
+        "PR-1502",
+        "PR-1485",
+        "PR-1054",
+        "PR-1394",
+        "PR-1619",
+        "CF-0189",
+        "DEP-0294",
+        "DEP-0295",
+        "INC-0403"
+      ],
+      "first_relevant_rank": 1,
+      "recall": {
+        "1": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "hit": {
+        "1": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "ndcg": {
+        "1": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "latency_ms": 1.6
+    },
+    {
+      "id": "RQ-61",
+      "question": "Which pull requests changed OrderSaga._advance?",
+      "category": "exact-match",
+      "relevant": [
+        "PR-1071",
+        "PR-1091",
+        "PR-1333",
+        "PR-1378",
+        "PR-1406",
+        "PR-1423",
+        "PR-1426",
+        "PR-1476",
+        "PR-1497",
+        "PR-1511",
+        "PR-1559",
+        "PR-1604",
+        "PR-1613"
+      ],
+      "retrieved": [
+        "PR-1333",
+        "PR-1406",
+        "PR-1476",
+        "PR-1604",
+        "PR-1613",
+        "PR-1091",
+        "PR-1423",
+        "PR-1426",
+        "PR-1497",
+        "PR-1511"
+      ],
+      "first_relevant_rank": 1,
+      "recall": {
+        "1": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "hit": {
+        "1": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "ndcg": {
+        "1": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "latency_ms": 4.8
+    },
+    {
+      "id": "RQ-62",
+      "question": "Which incidents involved redis-payments?",
+      "category": "exact-match",
+      "relevant": [
+        "INC-0025",
+        "INC-0135",
+        "INC-0246",
+        "INC-0343"
+      ],
+      "retrieved": [
+        "INC-0343",
+        "DOC-0096",
+        "RB-0037",
+        "PM-0027",
+        "PR-1301",
+        "INC-0246",
+        "INC-0246",
+        "DOC-0062",
+        "PM-0027",
+        "CF-0153"
+      ],
+      "first_relevant_rank": 1,
+      "recall": {
+        "1": 1.0,
+        "5": 0.25,
+        "10": 0.5
+      },
+      "hit": {
+        "1": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "ndcg": {
+        "1": 1.0,
+        "5": 0.3903800499921017,
+        "10": 0.5294362295028773
+      },
+      "latency_ms": 2.8
+    },
+    {
+      "id": "RQ-63",
+      "question": "What does the PaymentServiceDBPoolSaturated alert mean?",
+      "category": "exact-match",
+      "relevant": [
+        "DOC-0063"
+      ],
+      "retrieved": [
+        "INC-0184",
+        "INC-0117",
+        "INC-0179",
+        "INC-0218",
+        "INC-0510",
+        "INC-0384",
+        "INC-0046",
+        "INC-0414",
+        "INC-0406",
+        "PM-0039"
+      ],
+      "first_relevant_rank": null,
+      "recall": {
+        "1": 0.0,
+        "5": 0.0,
+        "10": 0.0
+      },
+      "hit": {
+        "1": 0.0,
+        "5": 0.0,
+        "10": 0.0
+      },
+      "ndcg": {
+        "1": 0.0,
+        "5": 0.0,
+        "10": 0.0
+      },
+      "latency_ms": 4.6
+    }
+  ]
+}

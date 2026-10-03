@@ -1,0 +1,38 @@
+# Build context for both images (backend: Dockerfile; frontend: frontend/Dockerfile).
+# Each image COPYs only what it needs; this keeps the context small and secrets out.
+
+# Secrets and local environments
+.env
+.env.*
+!.env.example
+# API tokens for scripts/audit_live.py
+tokens.json
+.venv
+venv
+
+# Caches and tooling
+**/__pycache__
+**/*.pyc
+.pytest_cache
+.ruff_cache
+.mypy_cache
+.git
+.idea
+.vscode
+
+# Data: the dataset is regenerated in the image; caches and benchmark output stay out
+data/generated
+data/evaluation/cache
+data/benchmarks
+data/sample
+
+# Not needed in any image
+docs
+*.md
+Makefile
+docker-compose*.yml
+
+# Coverage data
+.coverage
+.coverage.*
+htmlcov

@@ -1,0 +1,18 @@
+# Local demo override: sign in to the UI as a demo user (developer, SRE, manager, admin)
+# without API tokens, to show how answers change with the role. NOT for production: it
+# trusts an unauthenticated header, which the configuration only allows in the local
+# environment (and so the production checks are off).
+#
+#   docker compose -f docker-compose.yml -f docker-compose.demo.yml up --build
+
+services:
+  bootstrap:
+    environment:
+      OPSRAG_ENVIRONMENT: local
+  backend:
+    environment:
+      OPSRAG_ENVIRONMENT: local
+      SECURITY_ALLOW_USER_HEADER: "true"
+  frontend:
+    environment:
+      OPSRAG_DEMO_USER: ${OPSRAG_DEMO_USER:-alex.rivera}

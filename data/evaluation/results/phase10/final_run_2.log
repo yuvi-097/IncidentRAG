@@ -1,0 +1,32 @@
+[23:46:34] run phase10-final: 227 questions x methods ABCDEF
+[23:47:54] resuming: 434 of 1362 results already scored
+[23:47:54] 10/227 questions; last method correct so far: 46/72
+[23:47:54] 20/227 questions; last method correct so far: 46/72
+[23:47:54] 30/227 questions; last method correct so far: 46/72
+[23:47:54] 40/227 questions; last method correct so far: 46/72
+[23:47:54] 50/227 questions; last method correct so far: 46/72
+[23:47:54] 60/227 questions; last method correct so far: 46/72
+[23:47:54] 70/227 questions; last method correct so far: 46/72
+[23:51:30] 80/227 questions; last method correct so far: 50/80
+[23:55:25] 90/227 questions; last method correct so far: 57/90
+[23:58:42] 100/227 questions; last method correct so far: 67/100
+[00:01:32] 110/227 questions; last method correct so far: 76/110
+[00:04:14] 120/227 questions; last method correct so far: 84/120
+[00:06:02] 130/227 questions; last method correct so far: 94/130
+[00:08:49] 140/227 questions; last method correct so far: 103/140
+[00:12:23] 150/227 questions; last method correct so far: 113/150
+[00:17:20] 160/227 questions; last method correct so far: 116/160
+[00:21:44] 170/227 questions; last method correct so far: 120/170
+[00:25:19] 180/227 questions; last method correct so far: 129/180
+[00:28:22] 190/227 questions; last method correct so far: 138/190
+[00:31:28] 200/227 questions; last method correct so far: 148/200
+[00:34:20] 210/227 questions; last method correct so far: 158/210
+[00:37:26] 220/227 questions; last method correct so far: 168/220
+[00:40:05] 227/227 questions; last method correct so far: 175/227
+[00:40:13] wrote data\evaluation\results\phase10\phase10-final
+[00:40:13] A Dense                                correct 0.3744  R@5 0.3768  MRR 0.4201  faithful 1.0
+[00:40:13] B BM25                                 correct 0.5419  R@5 0.6141  MRR 0.8013  faithful 1.0
+[00:40:13] C Hybrid                               correct 0.4581  R@5 0.5359  MRR 0.6504  faithful 1.0
+[00:40:13] D Hybrid + reranker                    correct 0.489  R@5 0.533  MRR 0.6701  faithful 1.0
+[00:40:13] E Hybrid + reranker + verification     correct 0.533  R@5 0.533  MRR 0.6701  faithful 0.9868
+[00:40:13] F Full agentic system                  correct 0.7709  R@5 0.6177  MRR 0.7352  faithful 0.9962

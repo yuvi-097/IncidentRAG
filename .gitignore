@@ -1,0 +1,37 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+
+# Tooling
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+
+# Secrets / local config
+.env
+.env.*
+!.env.example
+# API tokens for scripts/audit_live.py
+tokens.json
+
+# Data: the full dataset is regenerated deterministically by scripts/generate_data.py
+# (~17 MB); only the small sample, docs and evaluation placeholders are committed.
+data/*
+!data/.gitkeep
+!data/README.md
+!data/sample/
+!data/evaluation/
+# The evaluation database cache (seeded, ingested and embedded corpus) is rebuilt on demand.
+data/evaluation/cache/
+
+# Editors / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+.coverage.*

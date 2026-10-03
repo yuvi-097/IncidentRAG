@@ -1,0 +1,34 @@
+{"id": "TQ-01", "relation": "immediately_before", "question": "Which deployment happened immediately before INC-0421?", "target": "deployment", "expected": ["DEP-0301"], "match": "first"}
+{"id": "TQ-02", "relation": "immediately_before", "question": "What was the last api-gateway deployment before INC-0475 started?", "target": "deployment", "expected": ["DEP-0311"], "match": "first"}
+{"id": "TQ-03", "relation": "immediately_before", "question": "Which release of notification-service went out right before INC-0383?", "target": "deployment", "expected": ["DEP-0266"], "match": "first"}
+{"id": "TQ-04", "relation": "immediately_before", "question": "What was deployed to inventory-service just before INC-0274?", "target": "deployment", "expected": ["DEP-0196"], "match": "first"}
+{"id": "TQ-05", "relation": "immediately_before", "question": "Which deployment happened immediately before INC-0142?", "target": "deployment", "expected": ["DEP-0061"], "match": "first"}
+{"id": "TQ-06", "relation": "immediately_before", "question": "Name the cart-service deployment that immediately preceded INC-0191.", "target": "deployment", "expected": ["DEP-0118"], "match": "first"}
+{"id": "TQ-07", "relation": "immediately_after", "question": "Which deployment came right after INC-0007 started?", "target": "deployment", "expected": ["DEP-0015"], "match": "first"}
+{"id": "TQ-08", "relation": "immediately_after", "question": "What was the first cart-service deployment after INC-0347?", "target": "deployment", "expected": ["DEP-0257"], "match": "first"}
+{"id": "TQ-09", "relation": "immediately_after", "question": "Which deployment followed INC-0515 on recommendation-service?", "target": "deployment", "expected": ["DEP-0362"], "match": "first"}
+{"id": "TQ-10", "relation": "immediately_after", "question": "What was deployed to search-service next after INC-0083 began?", "target": "deployment", "expected": ["DEP-0091"], "match": "first"}
+{"id": "TQ-11", "relation": "latest", "question": "What is the latest deployment of product-service?", "target": "deployment", "expected": ["DEP-0373"], "match": "first"}
+{"id": "TQ-12", "relation": "latest", "question": "Which cart-service deployment is the most recent?", "target": "deployment", "expected": ["DEP-0376"], "match": "first"}
+{"id": "TQ-13", "relation": "latest", "question": "What was the most recent incident on api-gateway?", "target": "incident", "expected": ["INC-0537"], "match": "first"}
+{"id": "TQ-14", "relation": "latest", "question": "Which inventory-service incident happened last?", "target": "incident", "expected": ["INC-0534"], "match": "first"}
+{"id": "TQ-15", "relation": "previous", "question": "Which deployment came before DEP-0229?", "target": "deployment", "expected": ["DEP-0225"], "match": "first"}
+{"id": "TQ-16", "relation": "previous", "question": "What was the previous user-service deployment before DEP-0069?", "target": "deployment", "expected": ["DEP-0068"], "match": "first"}
+{"id": "TQ-17", "relation": "previous", "question": "What was the previous incident on api-gateway before INC-0042?", "target": "incident", "expected": ["INC-0034"], "match": "first"}
+{"id": "TQ-18", "relation": "previous", "question": "Which search-service incident preceded INC-0389?", "target": "incident", "expected": ["INC-0336"], "match": "first"}
+{"id": "TQ-19", "relation": "at_time_of", "question": "Which version of api-gateway was running at the time of INC-0433?", "target": "version", "expected": ["v3.9.1"], "match": "first"}
+{"id": "TQ-20", "relation": "at_time_of", "question": "What api-gateway version was live when INC-0161 started?", "target": "version", "expected": ["v3.5.3"], "match": "first"}
+{"id": "TQ-21", "relation": "at_time_of", "question": "Which deployment was live at the time of INC-0173?", "target": "deployment", "expected": ["DEP-0104"], "match": "first"}
+{"id": "TQ-22", "relation": "at_time_of", "question": "What version of api-gateway was in production at the time of the incident INC-0244?", "target": "version", "expected": ["v3.7.1"], "match": "first"}
+{"id": "TQ-23", "relation": "at_time_of", "question": "Which cart-service release was serving traffic when INC-0053 began?", "target": "version", "expected": ["v2.7.2"], "match": "first"}
+{"id": "TQ-24", "relation": "during", "question": "Which deployments happened during INC-0022?", "target": "deployment", "expected": ["DEP-0026"], "match": "set"}
+{"id": "TQ-25", "relation": "during", "question": "Which inventory-service deployments were made while INC-0168 was ongoing?", "target": "deployment", "expected": ["DEP-0104"], "match": "set"}
+{"id": "TQ-26", "relation": "during", "question": "What was deployed to search-service during INC-0533?", "target": "deployment", "expected": ["DEP-0369"], "match": "set"}
+{"id": "TQ-27", "relation": "during", "question": "Which other incidents were open during INC-0220?", "target": "incident", "expected": ["INC-0221"], "match": "set"}
+{"id": "TQ-28", "relation": "during", "question": "What other incidents overlapped with INC-0229?", "target": "incident", "expected": ["INC-0230"], "match": "set"}
+{"id": "TQ-29", "relation": "after", "question": "Which incidents started within 24 hours after DEP-0145?", "target": "incident", "expected": ["INC-0213", "INC-0214"], "match": "set"}
+{"id": "TQ-30", "relation": "after", "question": "What incidents began in the 24 hours after deployment DEP-0015?", "target": "incident", "expected": ["INC-0010"], "match": "set"}
+{"id": "TQ-31", "relation": "after", "question": "Which incidents followed DEP-0355 within a day?", "target": "incident", "expected": ["INC-0500", "INC-0501"], "match": "set"}
+{"id": "TQ-32", "relation": "before", "question": "Which cart-service deployments happened in the 7 days before INC-0080?", "target": "deployment", "expected": ["DEP-0078"], "match": "set"}
+{"id": "TQ-33", "relation": "before", "question": "What was deployed to cart-service during the week before INC-0169?", "target": "deployment", "expected": ["DEP-0102"], "match": "set"}
+{"id": "TQ-34", "relation": "before", "question": "Which deployments of recommendation-service preceded INC-0532 within 7 days?", "target": "deployment", "expected": ["DEP-0362", "DEP-0365"], "match": "set"}

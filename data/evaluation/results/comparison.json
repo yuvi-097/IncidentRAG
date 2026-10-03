@@ -1,0 +1,1220 @@
+{
+  "systems": [
+    "dense",
+    "sparse",
+    "hybrid",
+    "hybrid_rerank"
+  ],
+  "labels": {
+    "dense": "Dense only",
+    "sparse": "BM25 only",
+    "hybrid": "Hybrid",
+    "hybrid_rerank": "Hybrid + reranker"
+  },
+  "subsets": {
+    "all": {
+      "dense": {
+        "questions": 63,
+        "recall": {
+          "1": 0.3968,
+          "5": 0.5423,
+          "10": 0.6431
+        },
+        "hit": {
+          "1": 0.3968,
+          "5": 0.6667,
+          "10": 0.746
+        },
+        "ndcg": {
+          "1": 0.3968,
+          "5": 0.4621,
+          "10": 0.4968
+        },
+        "mrr": 0.4937,
+        "latency_ms_median": 18.3
+      },
+      "sparse": {
+        "questions": 63,
+        "recall": {
+          "1": 0.5556,
+          "5": 0.678,
+          "10": 0.7659
+        },
+        "hit": {
+          "1": 0.5556,
+          "5": 0.8254,
+          "10": 0.8571
+        },
+        "ndcg": {
+          "1": 0.5556,
+          "5": 0.6115,
+          "10": 0.6523
+        },
+        "mrr": 0.6644,
+        "latency_ms_median": 3.0
+      },
+      "hybrid": {
+        "questions": 63,
+        "recall": {
+          "1": 0.4762,
+          "5": 0.6733,
+          "10": 0.7683
+        },
+        "hit": {
+          "1": 0.4762,
+          "5": 0.8254,
+          "10": 0.8889
+        },
+        "ndcg": {
+          "1": 0.4762,
+          "5": 0.5728,
+          "10": 0.614
+        },
+        "mrr": 0.6214,
+        "latency_ms_median": 28.2
+      },
+      "hybrid_rerank": {
+        "questions": 63,
+        "recall": {
+          "1": 0.6508,
+          "5": 0.6984,
+          "10": 0.8291
+        },
+        "hit": {
+          "1": 0.6508,
+          "5": 0.8889,
+          "10": 0.9841
+        },
+        "ndcg": {
+          "1": 0.6508,
+          "5": 0.6492,
+          "10": 0.6994
+        },
+        "mrr": 0.7507,
+        "latency_ms_median": 1580.9
+      }
+    },
+    "natural-language": {
+      "dense": {
+        "questions": 37,
+        "recall": {
+          "1": 0.5135,
+          "5": 0.6387,
+          "10": 0.7095
+        },
+        "hit": {
+          "1": 0.5135,
+          "5": 0.7838,
+          "10": 0.8108
+        },
+        "ndcg": {
+          "1": 0.5135,
+          "5": 0.5671,
+          "10": 0.593
+        },
+        "mrr": 0.6072,
+        "latency_ms_median": 18.5
+      },
+      "sparse": {
+        "questions": 37,
+        "recall": {
+          "1": 0.4595,
+          "5": 0.5815,
+          "10": 0.6689
+        },
+        "hit": {
+          "1": 0.4595,
+          "5": 0.7568,
+          "10": 0.8108
+        },
+        "ndcg": {
+          "1": 0.4595,
+          "5": 0.5164,
+          "10": 0.5551
+        },
+        "mrr": 0.5705,
+        "latency_ms_median": 3.3
+      },
+      "hybrid": {
+        "questions": 37,
+        "recall": {
+          "1": 0.4324,
+          "5": 0.6423,
+          "10": 0.7446
+        },
+        "hit": {
+          "1": 0.4324,
+          "5": 0.8378,
+          "10": 0.8649
+        },
+        "ndcg": {
+          "1": 0.4324,
+          "5": 0.5381,
+          "10": 0.5845
+        },
+        "mrr": 0.5958,
+        "latency_ms_median": 28.4
+      },
+      "hybrid_rerank": {
+        "questions": 37,
+        "recall": {
+          "1": 0.6216,
+          "5": 0.6054,
+          "10": 0.7914
+        },
+        "hit": {
+          "1": 0.6216,
+          "5": 0.8378,
+          "10": 0.973
+        },
+        "ndcg": {
+          "1": 0.6216,
+          "5": 0.5713,
+          "10": 0.6411
+        },
+        "mrr": 0.7138,
+        "latency_ms_median": 1588.5
+      }
+    },
+    "exact-match": {
+      "dense": {
+        "questions": 26,
+        "recall": {
+          "1": 0.2308,
+          "5": 0.4051,
+          "10": 0.5487
+        },
+        "hit": {
+          "1": 0.2308,
+          "5": 0.5,
+          "10": 0.6538
+        },
+        "ndcg": {
+          "1": 0.2308,
+          "5": 0.3127,
+          "10": 0.3598
+        },
+        "mrr": 0.3322,
+        "latency_ms_median": 17.8
+      },
+      "sparse": {
+        "questions": 26,
+        "recall": {
+          "1": 0.6923,
+          "5": 0.8154,
+          "10": 0.9038
+        },
+        "hit": {
+          "1": 0.6923,
+          "5": 0.9231,
+          "10": 0.9231
+        },
+        "ndcg": {
+          "1": 0.6923,
+          "5": 0.7469,
+          "10": 0.7908
+        },
+        "mrr": 0.7981,
+        "latency_ms_median": 2.8
+      },
+      "hybrid": {
+        "questions": 26,
+        "recall": {
+          "1": 0.5385,
+          "5": 0.7173,
+          "10": 0.8019
+        },
+        "hit": {
+          "1": 0.5385,
+          "5": 0.8077,
+          "10": 0.9231
+        },
+        "ndcg": {
+          "1": 0.5385,
+          "5": 0.6222,
+          "10": 0.6561
+        },
+        "mrr": 0.658,
+        "latency_ms_median": 27.9
+      },
+      "hybrid_rerank": {
+        "questions": 26,
+        "recall": {
+          "1": 0.6923,
+          "5": 0.8308,
+          "10": 0.8827
+        },
+        "hit": {
+          "1": 0.6923,
+          "5": 0.9615,
+          "10": 1.0
+        },
+        "ndcg": {
+          "1": 0.6923,
+          "5": 0.7602,
+          "10": 0.7824
+        },
+        "mrr": 0.8032,
+        "latency_ms_median": 1517.7
+      }
+    }
+  },
+  "categories": {
+    "change": {
+      "dense": {
+        "questions": 2,
+        "recall": {
+          "1": 0.0,
+          "5": 0.0,
+          "10": 0.0
+        },
+        "hit": {
+          "1": 0.0,
+          "5": 0.0,
+          "10": 0.0
+        },
+        "ndcg": {
+          "1": 0.0,
+          "5": 0.0,
+          "10": 0.0
+        },
+        "mrr": 0.0,
+        "latency_ms_median": 17.7
+      },
+      "sparse": {
+        "questions": 2,
+        "recall": {
+          "1": 1.0,
+          "5": 0.75,
+          "10": 1.0
+        },
+        "hit": {
+          "1": 1.0,
+          "5": 1.0,
+          "10": 1.0
+        },
+        "ndcg": {
+          "1": 1.0,
+          "5": 0.8066,
+          "10": 0.8989
+        },
+        "mrr": 1.0,
+        "latency_ms_median": 4.5
+      },
+      "hybrid": {
+        "questions": 2,
+        "recall": {
+          "1": 0.0,
+          "5": 0.25,
+          "10": 0.25
+        },
+        "hit": {
+          "1": 0.0,
+          "5": 0.5,
+          "10": 0.5
+        },
+        "ndcg": {
+          "1": 0.0,
+          "5": 0.1934,
+          "10": 0.1934
+        },
+        "mrr": 0.25,
+        "latency_ms_median": 29.7
+      },
+      "hybrid_rerank": {
+        "questions": 2,
+        "recall": {
+          "1": 1.0,
+          "5": 0.75,
+          "10": 0.75
+        },
+        "hit": {
+          "1": 1.0,
+          "5": 1.0,
+          "10": 1.0
+        },
+        "ndcg": {
+          "1": 1.0,
+          "5": 0.8066,
+          "10": 0.8066
+        },
+        "mrr": 1.0,
+        "latency_ms_median": 1452.7
+      }
+    },
+    "code": {
+      "dense": {
+        "questions": 7,
+        "recall": {
+          "1": 0.4286,
+          "5": 0.8333,
+          "10": 0.8333
+        },
+        "hit": {
+          "1": 0.4286,
+          "5": 1.0,
+          "10": 1.0
+        },
+        "ndcg": {
+          "1": 0.4286,
+          "5": 0.6091,
+          "10": 0.6091
+        },
+        "mrr": 0.6,
+        "latency_ms_median": 19.8
+      },
+      "sparse": {
+        "questions": 7,
+        "recall": {
+          "1": 0.5714,
+          "5": 0.8333,
+          "10": 0.8333
+        },
+        "hit": {
+          "1": 0.5714,
+          "5": 1.0,
+          "10": 1.0
+        },
+        "ndcg": {
+          "1": 0.5714,
+          "5": 0.6651,
+          "10": 0.6651
+        },
+        "mrr": 0.6714,
+        "latency_ms_median": 3.0
+      },
+      "hybrid": {
+        "questions": 7,
+        "recall": {
+          "1": 0.2857,
+          "5": 0.8333,
+          "10": 0.9048
+        },
+        "hit": {
+          "1": 0.2857,
+          "5": 1.0,
+          "10": 1.0
+        },
+        "ndcg": {
+          "1": 0.2857,
+          "5": 0.6011,
+          "10": 0.6303
+        },
+        "mrr": 0.5833,
+        "latency_ms_median": 26.9
+      },
+      "hybrid_rerank": {
+        "questions": 7,
+        "recall": {
+          "1": 0.7143,
+          "5": 0.6905,
+          "10": 0.8333
+        },
+        "hit": {
+          "1": 0.7143,
+          "5": 0.8571,
+          "10": 1.0
+        },
+        "ndcg": {
+          "1": 0.7143,
+          "5": 0.6447,
+          "10": 0.6956
+        },
+        "mrr": 0.7738,
+        "latency_ms_median": 1594.3
+      }
+    },
+    "documentation": {
+      "dense": {
+        "questions": 9,
+        "recall": {
+          "1": 0.7778,
+          "5": 0.7778,
+          "10": 0.9722
+        },
+        "hit": {
+          "1": 0.7778,
+          "5": 0.8889,
+          "10": 1.0
+        },
+        "ndcg": {
+          "1": 0.7778,
+          "5": 0.7715,
+          "10": 0.8366
+        },
+        "mrr": 0.8259,
+        "latency_ms_median": 19.5
+      },
+      "sparse": {
+        "questions": 9,
+        "recall": {
+          "1": 0.3333,
+          "5": 0.5278,
+          "10": 0.6667
+        },
+        "hit": {
+          "1": 0.3333,
+          "5": 0.6667,
+          "10": 0.7778
+        },
+        "ndcg": {
+          "1": 0.3333,
+          "5": 0.4592,
+          "10": 0.5068
+        },
+        "mrr": 0.4769,
+        "latency_ms_median": 3.4
+      },
+      "hybrid": {
+        "questions": 9,
+        "recall": {
+          "1": 0.6667,
+          "5": 0.8333,
+          "10": 0.9722
+        },
+        "hit": {
+          "1": 0.6667,
+          "5": 1.0,
+          "10": 1.0
+        },
+        "ndcg": {
+          "1": 0.6667,
+          "5": 0.719,
+          "10": 0.7799
+        },
+        "mrr": 0.7537,
+        "latency_ms_median": 26.5
+      },
+      "hybrid_rerank": {
+        "questions": 9,
+        "recall": {
+          "1": 0.6667,
+          "5": 0.6667,
+          "10": 0.8611
+        },
+        "hit": {
+          "1": 0.6667,
+          "5": 0.8889,
+          "10": 1.0
+        },
+        "ndcg": {
+          "1": 0.6667,
+          "5": 0.6604,
+          "10": 0.7326
+        },
+        "mrr": 0.7751,
+        "latency_ms_median": 1566.8
+      }
+    },
+    "exact-match": {
+      "dense": {
+        "questions": 26,
+        "recall": {
+          "1": 0.2308,
+          "5": 0.4051,
+          "10": 0.5487
+        },
+        "hit": {
+          "1": 0.2308,
+          "5": 0.5,
+          "10": 0.6538
+        },
+        "ndcg": {
+          "1": 0.2308,
+          "5": 0.3127,
+          "10": 0.3598
+        },
+        "mrr": 0.3322,
+        "latency_ms_median": 17.8
+      },
+      "sparse": {
+        "questions": 26,
+        "recall": {
+          "1": 0.6923,
+          "5": 0.8154,
+          "10": 0.9038
+        },
+        "hit": {
+          "1": 0.6923,
+          "5": 0.9231,
+          "10": 0.9231
+        },
+        "ndcg": {
+          "1": 0.6923,
+          "5": 0.7469,
+          "10": 0.7908
+        },
+        "mrr": 0.7981,
+        "latency_ms_median": 2.8
+      },
+      "hybrid": {
+        "questions": 26,
+        "recall": {
+          "1": 0.5385,
+          "5": 0.7173,
+          "10": 0.8019
+        },
+        "hit": {
+          "1": 0.5385,
+          "5": 0.8077,
+          "10": 0.9231
+        },
+        "ndcg": {
+          "1": 0.5385,
+          "5": 0.6222,
+          "10": 0.6561
+        },
+        "mrr": 0.658,
+        "latency_ms_median": 27.9
+      },
+      "hybrid_rerank": {
+        "questions": 26,
+        "recall": {
+          "1": 0.6923,
+          "5": 0.8308,
+          "10": 0.8827
+        },
+        "hit": {
+          "1": 0.6923,
+          "5": 0.9615,
+          "10": 1.0
+        },
+        "ndcg": {
+          "1": 0.6923,
+          "5": 0.7602,
+          "10": 0.7824
+        },
+        "mrr": 0.8032,
+        "latency_ms_median": 1517.7
+      }
+    },
+    "incident": {
+      "dense": {
+        "questions": 6,
+        "recall": {
+          "1": 0.6667,
+          "5": 0.5278,
+          "10": 0.6333
+        },
+        "hit": {
+          "1": 0.6667,
+          "5": 0.8333,
+          "10": 0.8333
+        },
+        "ndcg": {
+          "1": 0.6667,
+          "5": 0.5458,
+          "10": 0.5859
+        },
+        "mrr": 0.7222,
+        "latency_ms_median": 18.4
+      },
+      "sparse": {
+        "questions": 6,
+        "recall": {
+          "1": 0.3333,
+          "5": 0.25,
+          "10": 0.4083
+        },
+        "hit": {
+          "1": 0.3333,
+          "5": 0.5,
+          "10": 0.6667
+        },
+        "ndcg": {
+          "1": 0.3333,
+          "5": 0.2728,
+          "10": 0.3552
+        },
+        "mrr": 0.4444,
+        "latency_ms_median": 3.7
+      },
+      "hybrid": {
+        "questions": 6,
+        "recall": {
+          "1": 0.5,
+          "5": 0.3833,
+          "10": 0.5111
+        },
+        "hit": {
+          "1": 0.5,
+          "5": 0.6667,
+          "10": 0.8333
+        },
+        "ndcg": {
+          "1": 0.5,
+          "5": 0.3928,
+          "10": 0.4475
+        },
+        "mrr": 0.5794,
+        "latency_ms_median": 29.5
+      },
+      "hybrid_rerank": {
+        "questions": 6,
+        "recall": {
+          "1": 0.5,
+          "5": 0.4056,
+          "10": 0.55
+        },
+        "hit": {
+          "1": 0.5,
+          "5": 0.8333,
+          "10": 1.0
+        },
+        "ndcg": {
+          "1": 0.5,
+          "5": 0.4048,
+          "10": 0.4666
+        },
+        "mrr": 0.6389,
+        "latency_ms_median": 1601.4
+      }
+    },
+    "runbook": {
+      "dense": {
+        "questions": 13,
+        "recall": {
+          "1": 0.3846,
+          "5": 0.5872,
+          "10": 0.6051
+        },
+        "hit": {
+          "1": 0.3846,
+          "5": 0.6923,
+          "10": 0.6923
+        },
+        "ndcg": {
+          "1": 0.3846,
+          "5": 0.5002,
+          "10": 0.5103
+        },
+        "mrr": 0.5,
+        "latency_ms_median": 18.1
+      },
+      "sparse": {
+        "questions": 13,
+        "recall": {
+          "1": 0.4615,
+          "5": 0.6103,
+          "10": 0.6513
+        },
+        "hit": {
+          "1": 0.4615,
+          "5": 0.7692,
+          "10": 0.7692
+        },
+        "ndcg": {
+          "1": 0.4615,
+          "5": 0.5438,
+          "10": 0.5686
+        },
+        "mrr": 0.5731,
+        "latency_ms_median": 3.0
+      },
+      "hybrid": {
+        "questions": 13,
+        "recall": {
+          "1": 0.3846,
+          "5": 0.5872,
+          "10": 0.6846
+        },
+        "hit": {
+          "1": 0.3846,
+          "5": 0.7692,
+          "10": 0.7692
+        },
+        "ndcg": {
+          "1": 0.3846,
+          "5": 0.499,
+          "10": 0.5478
+        },
+        "mrr": 0.5538,
+        "latency_ms_median": 28.4
+      },
+      "hybrid_rerank": {
+        "questions": 13,
+        "recall": {
+          "1": 0.5385,
+          "5": 0.5872,
+          "10": 0.8385
+        },
+        "hit": {
+          "1": 0.5385,
+          "5": 0.7692,
+          "10": 0.9231
+        },
+        "ndcg": {
+          "1": 0.5385,
+          "5": 0.5107,
+          "10": 0.6035
+        },
+        "mrr": 0.6296,
+        "latency_ms_median": 1583.9
+      }
+    }
+  },
+  "first_relevant_rank": {
+    "RQ-01": {
+      "dense": 1,
+      "sparse": 1,
+      "hybrid": 1,
+      "hybrid_rerank": 1
+    },
+    "RQ-02": {
+      "dense": null,
+      "sparse": 1,
+      "hybrid": null,
+      "hybrid_rerank": 1
+    },
+    "RQ-03": {
+      "dense": 4,
+      "sparse": 1,
+      "hybrid": 2,
+      "hybrid_rerank": 7
+    },
+    "RQ-04": {
+      "dense": 2,
+      "sparse": 5,
+      "hybrid": 1,
+      "hybrid_rerank": 1
+    },
+    "RQ-05": {
+      "dense": 1,
+      "sparse": 1,
+      "hybrid": 1,
+      "hybrid_rerank": 1
+    },
+    "RQ-06": {
+      "dense": 1,
+      "sparse": 1,
+      "hybrid": 1,
+      "hybrid_rerank": 1
+    },
+    "RQ-07": {
+      "dense": 2,
+      "sparse": 2,
+      "hybrid": 2,
+      "hybrid_rerank": 1
+    },
+    "RQ-08": {
+      "dense": 4,
+      "sparse": 4,
+      "hybrid": 5,
+      "hybrid_rerank": 3
+    },
+    "RQ-09": {
+      "dense": 1,
+      "sparse": 1,
+      "hybrid": 1,
+      "hybrid_rerank": 1
+    },
+    "RQ-10": {
+      "dense": null,
+      "sparse": null,
+      "hybrid": null,
+      "hybrid_rerank": 8
+    },
+    "RQ-11": {
+      "dense": null,
+      "sparse": null,
+      "hybrid": 2,
+      "hybrid_rerank": 3
+    },
+    "RQ-12": {
+      "dense": 1,
+      "sparse": 2,
+      "hybrid": 2,
+      "hybrid_rerank": 4
+    },
+    "RQ-13": {
+      "dense": null,
+      "sparse": null,
+      "hybrid": null,
+      "hybrid_rerank": null
+    },
+    "RQ-14": {
+      "dense": 1,
+      "sparse": 3,
+      "hybrid": 1,
+      "hybrid_rerank": 1
+    },
+    "RQ-15": {
+      "dense": 1,
+      "sparse": 1,
+      "hybrid": 1,
+      "hybrid_rerank": 1
+    },
+    "RQ-16": {
+      "dense": 3,
+      "sparse": null,
+      "hybrid": 4,
+      "hybrid_rerank": 2
+    },
+    "RQ-17": {
+      "dense": 1,
+      "sparse": 2,
+      "hybrid": 1,
+      "hybrid_rerank": 1
+    },
+    "RQ-18": {
+      "dense": 10,
+      "sparse": 1,
+      "hybrid": 5,
+      "hybrid_rerank": 7
+    },
+    "RQ-19": {
+      "dense": 1,
+      "sparse": 1,
+      "hybrid": 1,
+      "hybrid_rerank": 1
+    },
+    "RQ-20": {
+      "dense": 1,
+      "sparse": 8,
+      "hybrid": 1,
+      "hybrid_rerank": 1
+    },
+    "RQ-21": {
+      "dense": 1,
+      "sparse": 3,
+      "hybrid": 1,
+      "hybrid_rerank": 3
+    },
+    "RQ-22": {
+      "dense": 1,
+      "sparse": null,
+      "hybrid": 3,
+      "hybrid_rerank": 1
+    },
+    "RQ-23": {
+      "dense": 4,
+      "sparse": 5,
+      "hybrid": 4,
+      "hybrid_rerank": 1
+    },
+    "RQ-24": {
+      "dense": 1,
+      "sparse": 4,
+      "hybrid": 2,
+      "hybrid_rerank": 1
+    },
+    "RQ-25": {
+      "dense": 1,
+      "sparse": 1,
+      "hybrid": 1,
+      "hybrid_rerank": 1
+    },
+    "RQ-26": {
+      "dense": 4,
+      "sparse": 1,
+      "hybrid": 2,
+      "hybrid_rerank": 4
+    },
+    "RQ-27": {
+      "dense": 1,
+      "sparse": 1,
+      "hybrid": 1,
+      "hybrid_rerank": 1
+    },
+    "RQ-28": {
+      "dense": 5,
+      "sparse": 1,
+      "hybrid": 3,
+      "hybrid_rerank": 6
+    },
+    "RQ-29": {
+      "dense": 2,
+      "sparse": 4,
+      "hybrid": 2,
+      "hybrid_rerank": 1
+    },
+    "RQ-30": {
+      "dense": 1,
+      "sparse": 1,
+      "hybrid": 3,
+      "hybrid_rerank": 1
+    },
+    "RQ-31": {
+      "dense": 1,
+      "sparse": 1,
+      "hybrid": 1,
+      "hybrid_rerank": 3
+    },
+    "RQ-32": {
+      "dense": 3,
+      "sparse": null,
+      "hybrid": 7,
+      "hybrid_rerank": 6
+    },
+    "RQ-33": {
+      "dense": 1,
+      "sparse": 2,
+      "hybrid": 1,
+      "hybrid_rerank": 1
+    },
+    "RQ-34": {
+      "dense": 1,
+      "sparse": 6,
+      "hybrid": 1,
+      "hybrid_rerank": 1
+    },
+    "RQ-35": {
+      "dense": null,
+      "sparse": null,
+      "hybrid": null,
+      "hybrid_rerank": 3
+    },
+    "RQ-36": {
+      "dense": null,
+      "sparse": 1,
+      "hybrid": null,
+      "hybrid_rerank": 1
+    },
+    "RQ-37": {
+      "dense": null,
+      "sparse": 1,
+      "hybrid": 2,
+      "hybrid_rerank": 1
+    },
+    "RQ-38": {
+      "dense": 1,
+      "sparse": 1,
+      "hybrid": 1,
+      "hybrid_rerank": 1
+    },
+    "RQ-39": {
+      "dense": null,
+      "sparse": 2,
+      "hybrid": null,
+      "hybrid_rerank": 1
+    },
+    "RQ-40": {
+      "dense": null,
+      "sparse": 1,
+      "hybrid": 1,
+      "hybrid_rerank": 1
+    },
+    "RQ-41": {
+      "dense": null,
+      "sparse": 2,
+      "hybrid": 8,
+      "hybrid_rerank": 1
+    },
+    "RQ-42": {
+      "dense": 5,
+      "sparse": 1,
+      "hybrid": 1,
+      "hybrid_rerank": 1
+    },
+    "RQ-43": {
+      "dense": null,
+      "sparse": 1,
+      "hybrid": 1,
+      "hybrid_rerank": 1
+    },
+    "RQ-44": {
+      "dense": 6,
+      "sparse": 1,
+      "hybrid": 2,
+      "hybrid_rerank": 1
+    },
+    "RQ-45": {
+      "dense": null,
+      "sparse": 1,
+      "hybrid": 2,
+      "hybrid_rerank": 2
+    },
+    "RQ-46": {
+      "dense": null,
+      "sparse": 1,
+      "hybrid": 5,
+      "hybrid_rerank": 10
+    },
+    "RQ-47": {
+      "dense": null,
+      "sparse": 1,
+      "hybrid": 8,
+      "hybrid_rerank": 3
+    },
+    "RQ-48": {
+      "dense": 2,
+      "sparse": 1,
+      "hybrid": 1,
+      "hybrid_rerank": 1
+    },
+    "RQ-49": {
+      "dense": null,
+      "sparse": 1,
+      "hybrid": 1,
+      "hybrid_rerank": 1
+    },
+    "RQ-50": {
+      "dense": 5,
+      "sparse": 4,
+      "hybrid": 2,
+      "hybrid_rerank": 1
+    },
+    "RQ-51": {
+      "dense": 3,
+      "sparse": 1,
+      "hybrid": 1,
+      "hybrid_rerank": 2
+    },
+    "RQ-52": {
+      "dense": 10,
+      "sparse": 2,
+      "hybrid": 2,
+      "hybrid_rerank": 4
+    },
+    "RQ-53": {
+      "dense": 1,
+      "sparse": 1,
+      "hybrid": 1,
+      "hybrid_rerank": 1
+    },
+    "RQ-54": {
+      "dense": 2,
+      "sparse": 2,
+      "hybrid": 1,
+      "hybrid_rerank": 1
+    },
+    "RQ-55": {
+      "dense": 9,
+      "sparse": null,
+      "hybrid": null,
+      "hybrid_rerank": 1
+    },
+    "RQ-56": {
+      "dense": 1,
+      "sparse": 2,
+      "hybrid": 1,
+      "hybrid_rerank": 2
+    },
+    "RQ-57": {
+      "dense": 5,
+      "sparse": 1,
+      "hybrid": 1,
+      "hybrid_rerank": 1
+    },
+    "RQ-58": {
+      "dense": 5,
+      "sparse": 1,
+      "hybrid": 3,
+      "hybrid_rerank": 5
+    },
+    "RQ-59": {
+      "dense": null,
+      "sparse": 1,
+      "hybrid": 5,
+      "hybrid_rerank": 2
+    },
+    "RQ-60": {
+      "dense": 1,
+      "sparse": 1,
+      "hybrid": 1,
+      "hybrid_rerank": 1
+    },
+    "RQ-61": {
+      "dense": 1,
+      "sparse": 1,
+      "hybrid": 1,
+      "hybrid_rerank": 1
+    },
+    "RQ-62": {
+      "dense": 1,
+      "sparse": 1,
+      "hybrid": 1,
+      "hybrid_rerank": 1
+    },
+    "RQ-63": {
+      "dense": 8,
+      "sparse": null,
+      "hybrid": 8,
+      "hybrid_rerank": 1
+    }
+  },
+  "questions": {
+    "RQ-01": "How do we handle database connection exhaustion?",
+    "RQ-02": "Redis writes are failing with 'OOM command not allowed'. What should I check?",
+    "RQ-03": "A Kafka consumer group keeps falling further behind. How do I troubleshoot it?",
+    "RQ-04": "Customers get 401 errors right after the signing keys were rotated. What do we do?",
+    "RQ-05": "What is the procedure to roll back a bad release?",
+    "RQ-06": "Postgres keeps logging 'deadlock detected' on writes. How should we respond?",
+    "RQ-07": "Pods keep restarting because they are OOMKilled.",
+    "RQ-08": "Mobile clients are receiving HTTP 429 Too Many Requests from the API.",
+    "RQ-09": "Product pages still show the old price after a price update.",
+    "RQ-10": "Our stock levels no longer match what the warehouse system reports.",
+    "RQ-11": "Order confirmation emails are arriving hours late.",
+    "RQ-12": "The API gateway is returning 504 Gateway Timeout for many requests.",
+    "RQ-13": "Card authorizations are failing because the payment processor returns errors.",
+    "RQ-14": "Where is payment database configuration?",
+    "RQ-15": "What timeout and retry settings does order-service use when it calls other services?",
+    "RQ-16": "Which services depend on inventory-service?",
+    "RQ-17": "How does canary analysis decide whether a deployment continues?",
+    "RQ-18": "Is it safe to rename a field in a Kafka event?",
+    "RQ-19": "How long are access tokens valid and how does the gateway validate them?",
+    "RQ-20": "Which alerts are defined for cart-service and what are their thresholds?",
+    "RQ-21": "What columns does the payments table have?",
+    "RQ-22": "What request rate limits apply to API clients?",
+    "RQ-23": "Where is the database connection pool size set for payment-service?",
+    "RQ-24": "Where is the token bucket rate limiter implemented?",
+    "RQ-25": "Which code prevents charging a customer twice when a payment request is retried?",
+    "RQ-26": "Where does checkout reserve inventory and authorize the payment?",
+    "RQ-27": "How does the gateway cache the JWKS signing keys?",
+    "RQ-28": "Where is user input escaped before the OpenSearch query is built?",
+    "RQ-29": "How are shopping carts stored in Redis and when do they expire?",
+    "RQ-30": "Why did payment-service fail?",
+    "RQ-31": "Why did payment requests start returning HTTP 500 errors after deployment v2.8.1?",
+    "RQ-32": "What caused inventory stock to drift away from the warehouse system?",
+    "RQ-33": "Why were valid tokens rejected by the API gateway after a key rotation?",
+    "RQ-34": "What happened when the cart Redis cluster ran out of memory?",
+    "RQ-35": "Consumers failed to process product events after a field was renamed. What happened?",
+    "RQ-36": "Which pull requests reduced the database connection pool size?",
+    "RQ-37": "What changed in payment-service v2.8.1?",
+    "RQ-38": "Our Kafka consumers keep logging 'Revoking previously assigned partitions'.",
+    "RQ-39": "Requests are rejected with 'token is not yet valid'.",
+    "RQ-40": "Pods log 'Temporary failure in name resolution' when calling other services.",
+    "RQ-41": "What does 'unknown signing key' mean and how do we fix it?",
+    "RQ-42": "payment-service logs 'QueuePool limit of size 20 overflow 10 reached, connection timed out'.",
+    "RQ-43": "What happened in INC-0406?",
+    "RQ-44": "Give me the details of INC-0329.",
+    "RQ-45": "What was the root cause of INC-0380?",
+    "RQ-46": "Which pull requests shipped in DEP-0296?",
+    "RQ-47": "What was released in payment-service v2.8.2?",
+    "RQ-48": "Why was inventory-service v1.17.2 rolled back?",
+    "RQ-49": "What is RECONCILIATION_TOLERANCE_UNITS used for?",
+    "RQ-50": "Where is JWKS_CACHE_TTL_SECONDS defined?",
+    "RQ-51": "What does PAYMENT_SERVICE_DB_POOL_TIMEOUT_SECONDS control?",
+    "RQ-52": "What is the value of RISK_DECLINE_THRESHOLD?",
+    "RQ-53": "What does MAX_STACKED_PROMOTIONS limit?",
+    "RQ-54": "Show me the IdempotencyStore class.",
+    "RQ-55": "Where is CheckoutOrchestrator defined?",
+    "RQ-56": "When is CircuitOpenError raised?",
+    "RQ-57": "Which code raises InsufficientStock?",
+    "RQ-58": "What does escape_query do?",
+    "RQ-59": "How does consume_refresh_token work?",
+    "RQ-60": "Where is effective_price implemented?",
+    "RQ-61": "Which pull requests changed OrderSaga._advance?",
+    "RQ-62": "Which incidents involved redis-payments?",
+    "RQ-63": "What does the PaymentServiceDBPoolSaturated alert mean?"
+  },
+  "config": {
+    "database": "postgresql",
+    "embedding_model": "BAAI/bge-small-en-v1.5",
+    "reranker_model": "cross-encoder/ms-marco-MiniLM-L6-v2",
+    "bm25": {
+      "k1": 1.2,
+      "b": 0.75,
+      "stemming": true,
+      "stopwords": true
+    },
+    "fusion": "rrf",
+    "dense_weight": 1.0,
+    "sparse_weight": 1.0,
+    "rrf_k": 60,
+    "fusion_depth": 50,
+    "rerank_candidates": 30,
+    "hnsw_ef_search": 100,
+    "top_k": 10
+  }
+}

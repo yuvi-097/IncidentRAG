@@ -1,0 +1,36 @@
+{"id": "TS-01", "relation": "immediately_before", "question": "Which release was the last one to go out before INC-0049?", "target": "deployment", "expected": ["DEP-0033"], "match": "first"}
+{"id": "TS-02", "relation": "immediately_before", "question": "Which release was the last one to go out before INC-0334?", "target": "deployment", "expected": ["DEP-0234"], "match": "first"}
+{"id": "TS-03", "relation": "next", "question": "Which notification-service deployment came next after DEP-0092?", "target": "deployment", "expected": ["DEP-0113"], "match": "first"}
+{"id": "TS-04", "relation": "next", "question": "Which cart-service deployment came next after DEP-0360?", "target": "deployment", "expected": ["DEP-0372"], "match": "first"}
+{"id": "TS-05", "relation": "next", "question": "Which incident on notification-service came after INC-0390?", "target": "incident", "expected": ["INC-0477"], "match": "first"}
+{"id": "TS-06", "relation": "next", "question": "Which incident on cart-service came after INC-0097?", "target": "incident", "expected": ["INC-0099"], "match": "first"}
+{"id": "TS-07", "relation": "latest", "question": "What was the newest version of payment-service?", "target": "version", "expected": ["v2.9.4"], "match": "first"}
+{"id": "TS-08", "relation": "latest", "question": "What was the newest version of product-service?", "target": "version", "expected": ["v4.3.20"], "match": "first"}
+{"id": "TS-09", "relation": "before", "question": "Which inventory-service incidents happened in the 2 days before INC-0449?", "target": "incident", "expected": ["INC-0444"], "match": "set"}
+{"id": "TS-10", "relation": "before", "question": "Which api-gateway incidents happened in the 2 days before INC-0462?", "target": "incident", "expected": ["INC-0454", "INC-0460"], "match": "set"}
+{"id": "TS-11", "relation": "during", "question": "What deployments did notification-service get while INC-0306 was open?", "target": "deployment", "expected": ["DEP-0218"], "match": "set"}
+{"id": "TS-12", "relation": "during", "question": "What deployments did inventory-service get while INC-0221 was open?", "target": "deployment", "expected": ["DEP-0156"], "match": "set"}
+{"id": "TS-13", "relation": "after", "question": "List the incidents that started within 12 hours after DEP-0151.", "target": "incident", "expected": ["INC-0219"], "match": "set"}
+{"id": "TS-14", "relation": "after", "question": "List the incidents that started within 12 hours after DEP-0123.", "target": "incident", "expected": ["INC-0184", "INC-0185"], "match": "set"}
+{"id": "TS-15", "relation": "previous", "question": "Which deployment of cart-service preceded DEP-0328?", "target": "deployment", "expected": ["DEP-0327"], "match": "first"}
+{"id": "TS-16", "relation": "previous", "question": "Which deployment of cart-service preceded DEP-0208?", "target": "deployment", "expected": ["DEP-0194"], "match": "first"}
+{"id": "TS-17", "relation": "at_time_of", "question": "What was running on api-gateway at the time INC-0464 was detected?", "target": "deployment", "expected": ["DEP-0311"], "match": "first"}
+{"id": "TS-18", "relation": "at_time_of", "question": "What was running on order-service at the time INC-0284 was detected?", "target": "deployment", "expected": ["DEP-0200"], "match": "first"}
+{"id": "TS-19", "relation": "after", "question": "Which deployments went out to product-service in the 48 hours after INC-0145 started?", "target": "deployment", "expected": ["DEP-0087", "DEP-0090"], "match": "set"}
+{"id": "TS-20", "relation": "after", "question": "Which deployments went out to cart-service in the 48 hours after INC-0452 started?", "target": "deployment", "expected": ["DEP-0328"], "match": "set"}
+{"id": "TS-21", "relation": "immediately_before", "question": "Before INC-0126 began, what was the most recent deployment to api-gateway?", "target": "deployment", "expected": ["DEP-0075"], "match": "first"}
+{"id": "TS-22", "relation": "immediately_before", "question": "Before INC-0225 began, what was the most recent deployment to search-service?", "target": "deployment", "expected": ["DEP-0145"], "match": "first"}
+{"id": "TS-23", "relation": "immediately_before", "question": "INC-0442: which deployment preceded it?", "target": "deployment", "expected": ["DEP-0313"], "match": "first"}
+{"id": "TS-24", "relation": "immediately_before", "question": "INC-0055: which deployment preceded it?", "target": "deployment", "expected": ["DEP-0053"], "match": "first"}
+{"id": "TS-25", "relation": "immediately_after", "question": "After INC-0453, which deployment was the first to reach order-service?", "target": "deployment", "expected": ["DEP-0338"], "match": "first"}
+{"id": "TS-26", "relation": "immediately_after", "question": "After INC-0490, which deployment was the first to reach search-service?", "target": "deployment", "expected": ["DEP-0346"], "match": "first"}
+{"id": "TS-27", "relation": "at_time_of", "question": "Which version was deployed to order-service when INC-0052 occurred?", "target": "version", "expected": ["v3.1.4"], "match": "first"}
+{"id": "TS-28", "relation": "at_time_of", "question": "Which version was deployed to product-service when INC-0473 occurred?", "target": "version", "expected": ["v4.3.17"], "match": "first"}
+{"id": "TS-29", "relation": "immediately_before", "question": "Which deployment happened immediately before INC-0408, counting only successful deployments?", "target": "deployment", "expected": ["DEP-0273"], "match": "first"}
+{"id": "TS-30", "relation": "immediately_before", "question": "Which deployment happened immediately before INC-0519, counting only successful deployments?", "target": "deployment", "expected": ["DEP-0355"], "match": "first"}
+{"id": "TS-31", "relation": "immediately_before", "question": "Which deployment on any service happened immediately before INC-0448?", "target": "deployment", "expected": ["DEP-0321"], "match": "first"}
+{"id": "TS-32", "relation": "immediately_before", "question": "Which deployment on any service happened immediately before INC-0208?", "target": "deployment", "expected": ["DEP-0138"], "match": "first"}
+{"id": "TS-33", "relation": "latest", "question": "What was the latest deployment of payment-service before 2026-03-01?", "target": "deployment", "expected": ["DEP-0182"], "match": "first"}
+{"id": "TS-34", "relation": "latest", "question": "What was the latest deployment of recommendation-service before 2025-12-15?", "target": "deployment", "expected": ["DEP-0100"], "match": "first"}
+{"id": "TS-35", "relation": "at_time_of", "question": "Which incidents were already open when DEP-0315 went out?", "target": "incident", "expected": ["INC-0437"], "match": "set"}
+{"id": "TS-36", "relation": "at_time_of", "question": "Which incidents were already open when DEP-0323 went out?", "target": "incident", "expected": ["INC-0451"], "match": "set"}

@@ -1,0 +1,61 @@
+{
+  "description": "OpsRAG access policy. For each role: which kinds of data it may read and, per kind, which sensitivity labels. Labels are compartments, not a ladder. 'confidential' can never be granted. Tool permissions follow from the grants (documents -> documents:read, ...); 'capabilities' adds interfaces that read several kinds of data (query_database), which still only sees rows the grants allow.",
+  "roles": {
+    "developer": {
+      "description": "Product engineers: engineering documentation, source code and non-sensitive incidents.",
+      "data": {
+        "documents": ["public", "engineering"],
+        "code": ["public", "engineering"],
+        "incidents": ["public", "engineering"],
+        "catalog": ["engineering"]
+      },
+      "capabilities": []
+    },
+    "sre": {
+      "description": "Site reliability engineers: engineering documentation, all incidents, logs, runbooks and deployments.",
+      "data": {
+        "documents": ["public", "engineering", "sre"],
+        "runbooks": ["public", "engineering", "sre"],
+        "incidents": ["public", "engineering", "sre"],
+        "deployments": ["public", "engineering", "sre"],
+        "logs": ["engineering", "sre"],
+        "catalog": ["engineering"]
+      },
+      "capabilities": ["sql:read"]
+    },
+    "manager": {
+      "description": "Engineering and support managers: operational reports, all incidents and non-sensitive documents.",
+      "data": {
+        "documents": ["public", "engineering", "manager"],
+        "incidents": ["public", "engineering", "sre", "manager"],
+        "catalog": ["engineering"]
+      },
+      "capabilities": ["sql:read"]
+    },
+    "admin": {
+      "description": "Platform and security administrators: all project data the assistant may use (never confidential).",
+      "data": {
+        "documents": ["public", "engineering", "sre", "manager", "admin"],
+        "runbooks": ["public", "engineering", "sre", "manager", "admin"],
+        "incidents": ["public", "engineering", "sre", "manager", "admin"],
+        "deployments": ["public", "engineering", "sre", "manager", "admin"],
+        "code": ["public", "engineering", "sre", "manager", "admin"],
+        "logs": ["engineering", "sre", "admin"],
+        "catalog": ["engineering"]
+      },
+      "capabilities": ["sql:read"]
+    }
+  },
+  "source_trust": {
+    "incident": "system_record",
+    "deployment": "system_record",
+    "sql_result": "system_record",
+    "timeline": "system_record",
+    "document": "curated",
+    "runbook": "curated",
+    "postmortem": "curated",
+    "code": "user_content",
+    "pull_request": "user_content",
+    "logs": "user_content"
+  }
+}

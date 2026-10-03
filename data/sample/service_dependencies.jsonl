@@ -1,0 +1,23 @@
+{"service_id":"api-gateway","depends_on_id":"auth-service","protocol":"http","criticality":"hard","description":"JWKS for bearer-token validation"}
+{"service_id":"api-gateway","depends_on_id":"cart-service","protocol":"http","criticality":"hard","description":"routes /v1/carts/*"}
+{"service_id":"api-gateway","depends_on_id":"order-service","protocol":"http","criticality":"hard","description":"routes /v1/orders/*"}
+{"service_id":"api-gateway","depends_on_id":"payment-service","protocol":"http","criticality":"hard","description":"routes /v1/payments/*"}
+{"service_id":"api-gateway","depends_on_id":"product-service","protocol":"http","criticality":"hard","description":"routes /v1/products/*"}
+{"service_id":"api-gateway","depends_on_id":"recommendation-service","protocol":"http","criticality":"soft","description":"routes /v1/recommendations/*"}
+{"service_id":"api-gateway","depends_on_id":"search-service","protocol":"http","criticality":"soft","description":"routes /v1/search/*"}
+{"service_id":"api-gateway","depends_on_id":"user-service","protocol":"http","criticality":"hard","description":"routes /v1/users/*"}
+{"service_id":"auth-service","depends_on_id":"user-service","protocol":"http","criticality":"hard","description":"loads user status during login"}
+{"service_id":"cart-service","depends_on_id":"inventory-service","protocol":"http","criticality":"soft","description":"availability hints"}
+{"service_id":"cart-service","depends_on_id":"product-service","protocol":"http","criticality":"hard","description":"current SKU prices"}
+{"service_id":"inventory-service","depends_on_id":"order-service","protocol":"kafka","criticality":"soft","description":"consumes order.created; consumes order.cancelled"}
+{"service_id":"inventory-service","depends_on_id":"product-service","protocol":"http","criticality":"soft","description":"validates SKUs on reservation"}
+{"service_id":"notification-service","depends_on_id":"order-service","protocol":"kafka","criticality":"soft","description":"consumes order.created"}
+{"service_id":"notification-service","depends_on_id":"payment-service","protocol":"kafka","criticality":"soft","description":"consumes payment.completed; consumes payment.failed; consumes refund.issued"}
+{"service_id":"order-service","depends_on_id":"cart-service","protocol":"http","criticality":"hard","description":"loads the checked-out cart"}
+{"service_id":"order-service","depends_on_id":"inventory-service","protocol":"http","criticality":"hard","description":"reserves stock; consumes inventory.reserved"}
+{"service_id":"order-service","depends_on_id":"payment-service","protocol":"http","criticality":"hard","description":"authorises and captures payments; consumes payment.completed; consumes payment.failed"}
+{"service_id":"order-service","depends_on_id":"user-service","protocol":"http","criticality":"soft","description":"shipping address lookup"}
+{"service_id":"recommendation-service","depends_on_id":"order-service","protocol":"kafka","criticality":"soft","description":"consumes order.created"}
+{"service_id":"recommendation-service","depends_on_id":"product-service","protocol":"http","criticality":"soft","description":"hydrates recommended product ids; consumes product.updated"}
+{"service_id":"recommendation-service","depends_on_id":"user-service","protocol":"http","criticality":"soft","description":"user segment lookup"}
+{"service_id":"search-service","depends_on_id":"product-service","protocol":"http","criticality":"soft","description":"full product reindex; consumes product.updated; consumes price.changed"}

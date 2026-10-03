@@ -1,0 +1,35 @@
+{
+  "generator_version": "1.0.0",
+  "seed": 42,
+  "window_start": "2025-09-01T00:00:00Z",
+  "window_end": "2026-09-01T00:00:00Z",
+  "counts": {
+    "roles": 4,
+    "users": 40,
+    "services": 11,
+    "service_dependencies": 23,
+    "code_files": 4,
+    "deployments": 6,
+    "pull_requests": 4,
+    "pull_request_files": 6,
+    "documents": 4,
+    "incidents": 3,
+    "logs": 152
+  },
+  "files": {
+    "roles.jsonl": "6eddb440d5b9af80b98860620402305c3aa482197181a710b634bbb48c0feb9d",
+    "users.jsonl": "ba6815a3065e227a853c71850c5b773e3a3870db030895e28732ff044ff66ad2",
+    "services.jsonl": "1bea5e543da1f3f98a8612688fb06a51cb988680299ea9f906d67e7d64b62432",
+    "service_dependencies.jsonl": "c9d906a49ceacdf1c12d858a193f63b145b432afeed6d111312ec4f0cf6fd2bf",
+    "code_files.jsonl": "0ce09dae2b2baf4b685c8358c4a655e9d858ebd7bceef59f0678546e8e97da38",
+    "deployments.jsonl": "9733da8cdd8ee70202cfc745131fdd393ce6392999d5c5c0f2987b2cef7a79dd",
+    "pull_requests.jsonl": "bd564fb57ceafb55a964ee69cd8792a0e6c9a103f48eeff1893f4773fa4516af",
+    "pull_request_files.jsonl": "7f54c8f8142b30934d4eb4ed2512576a51cbb2097b48056eadee936d22993925",
+    "documents.jsonl": "7696aba8fa1ff1893bab42a1ec4805fe0a874a77da7f1d5dcbf1447e85473980",
+    "incidents.jsonl": "14b7a563a3508a8811bc376f6da1a734f0c58060086f7bf958c1b6714f9e64a4",
+    "logs.jsonl": "48de305d6b1e26e24ec178f3b39c4e565ff7deb4babdf74ab6498b12315c5fcf"
+  },
+  "anchors": {
+    "payment-500s-v2.8.1": "INC-0406"
+  }
+}

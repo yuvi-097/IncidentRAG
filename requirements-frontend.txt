@@ -1,0 +1,6 @@
+# The Streamlit frontend (frontend/). It talks to the API over HTTP and imports nothing
+# from app/, so it can run in its own environment or container.
+streamlit==1.64.0
+altair==6.3.0
+pandas==3.0.6
+httpx==0.28.1

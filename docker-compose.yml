@@ -1,0 +1,176 @@
+# OpsRAG: the whole system in containers.
+#
+#   cp .env.example .env        # then set the three passwords (README > Run with Docker)
+#   docker compose up --build
+#
+# Start order, enforced by health checks:
+#   postgres (accepts connections)
+#     -> bootstrap (loads the dataset into an empty database, chunks, embeds; exits 0)
+#       -> backend (ready: database answers and the models are loaded)
+#         -> frontend (Streamlit up)
+#
+# Production configuration by default (OPSRAG_ENVIRONMENT=production): strong passwords
+# and the read-only SQL role are required, sign-in is by API token only. For a local
+# demo with the demo users, add the override file (see docker-compose.demo.yml).
+# Tests: docker compose --profile test run --rm tests
+
+name: opsrag
+
+x-logging: &logging
+  driver: json-file
+  options:
+    max-size: "10m"
+    max-file: "3"
+
+x-backend-build: &backend-build
+  context: .
+  target: backend
+
+x-backend-environment: &backend-environment
+  # Inside the compose network the database is reached by its service name. These
+  # override whatever a developer's .env says for running outside containers.
+  POSTGRES_HOST: postgres
+  POSTGRES_PORT: "5432"
+  OPSRAG_ENVIRONMENT: production
+  OPSRAG_LOG_FORMAT: json
+  SECURITY_ALLOW_USER_HEADER: "false"
+  TOOLS_SQL_USER: ${TOOLS_SQL_USER:-opsrag_sql_reader}
+  TOOLS_SQL_PASSWORD: ${TOOLS_SQL_PASSWORD:?Set TOOLS_SQL_PASSWORD in .env (see .env.example)}
+
+services:
+  postgres:
+    image: pgvector/pgvector:pg17
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-opsrag}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Set POSTGRES_PASSWORD in .env (see .env.example)}
+      POSTGRES_DB: ${POSTGRES_DB:-opsrag}
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      # Run once, when the data volume is first initialised: pgvector, and the separate
+      # database the integration tests use (they replace table contents).
+      - ./scripts/db:/docker-entrypoint-initdb.d:ro
+    ports:
+      # Published on the loopback interface only, for local tools (psql, scripts).
+      - "127.0.0.1:${POSTGRES_PUBLISH_PORT:-5432}:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U \"$${POSTGRES_USER}\" -d \"$${POSTGRES_DB}\""]
+      interval: 5s
+      timeout: 5s
+      retries: 12
+      start_period: 10s
+    restart: unless-stopped
+    security_opt:
+      - no-new-privileges:true
+    logging: *logging
+
+  bootstrap:
+    # One-shot: prepares the database, then exits. Safe on every start: it loads data
+    # only into an empty database and embeds only new or changed chunks.
+    build: *backend-build
+    image: opsrag-backend:latest
+    command: ["python", "scripts/bootstrap.py"]
+    env_file:
+      - path: .env
+        required: false
+    environment: *backend-environment
+    depends_on:
+      postgres:
+        condition: service_healthy
+    # A one-shot job: the image's health check (/api/ready) belongs to the API. Without
+    # this the job would be reported "unhealthy" while it works.
+    healthcheck:
+      disable: true
+    restart: "no"
+    init: true
+    security_opt:
+      - no-new-privileges:true
+    logging: *logging
+
+  backend:
+    build: *backend-build
+    image: opsrag-backend:latest
+    env_file:
+      - path: .env
+        required: false
+    environment:
+      <<: *backend-environment
+      # Load the models at startup; /api/ready (the health check) waits for them.
+      OPSRAG_PRELOAD_AGENT: "true"
+    ports:
+      - "${OPSRAG_API_PORT:-8000}:8000"
+    depends_on:
+      postgres:
+        condition: service_healthy
+        restart: true
+      bootstrap:
+        condition: service_completed_successfully
+    healthcheck:
+      test:
+        - CMD
+        - python
+        - -c
+        - "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/api/ready', timeout=4)"
+      interval: 15s
+      timeout: 5s
+      retries: 3
+      start_period: 180s
+    restart: unless-stopped
+    init: true
+    security_opt:
+      - no-new-privileges:true
+    logging: *logging
+
+  frontend:
+    build:
+      context: .
+      dockerfile: frontend/Dockerfile
+    image: opsrag-frontend:latest
+    environment:
+      OPSRAG_API_URL: http://backend:8000
+      # Optional: an API token (python scripts/create_token.py issue <user>) used when
+      # nobody signs in through the sidebar. Kept server-side; never sent to the browser.
+      OPSRAG_API_TOKEN: ${OPSRAG_API_TOKEN:-}
+    ports:
+      - "${OPSRAG_UI_PORT:-8501}:8501"
+    depends_on:
+      backend:
+        condition: service_healthy
+    healthcheck:
+      test:
+        - CMD
+        - python
+        - -c
+        - "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8501/_stcore/health', timeout=4)"
+      interval: 15s
+      timeout: 5s
+      retries: 3
+      start_period: 30s
+    restart: unless-stopped
+    init: true
+    security_opt:
+      - no-new-privileges:true
+    logging: *logging
+
+  tests:
+    # Not started by `up`: docker compose --profile test run --rm tests
+    profiles: ["test"]
+    build:
+      context: .
+      target: test
+    image: opsrag-tests:latest
+    environment:
+      OPSRAG_ENVIRONMENT: test
+      POSTGRES_HOST: postgres
+      POSTGRES_PORT: "5432"
+      POSTGRES_USER: ${POSTGRES_USER:-opsrag}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Set POSTGRES_PASSWORD in .env (see .env.example)}
+      # Never the application database: integration tests replace table contents.
+      POSTGRES_DB: opsrag_test
+    depends_on:
+      postgres:
+        condition: service_healthy
+    restart: "no"
+    logging: *logging
+
+volumes:
+  pgdata:

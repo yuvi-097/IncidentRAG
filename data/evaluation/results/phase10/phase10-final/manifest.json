@@ -1,0 +1,202 @@
+{
+ "run_id": "phase10-final",
+ "started_at": "2026-09-30T18:16:33.911669+00:00",
+ "finished_at": "2026-09-30T19:10:11.755206+00:00",
+ "command": "scripts\\evaluate.py --run-id phase10-final --resume",
+ "resumed": true,
+ "methods": {
+  "A": "Dense",
+  "B": "BM25",
+  "C": "Hybrid",
+  "D": "Hybrid + reranker",
+  "E": "Hybrid + reranker + verification",
+  "F": "Full agentic system"
+ },
+ "questions": 227,
+ "eval_set": {
+  "path": "data/evaluation/eval_set.jsonl",
+  "sha256": "5cc158989ac9e1c37ef4c37c766a407d66d8d4e56461e975d4f80c9f58b0a481"
+ },
+ "dataset": {
+  "generator_version": "1.0.0",
+  "seed": 42,
+  "window": [
+   "2025-09-01T00:00:00Z",
+   "2026-09-01T00:00:00Z"
+  ],
+  "files": {
+   "roles.jsonl": "6eddb440d5b9af80b98860620402305c3aa482197181a710b634bbb48c0feb9d",
+   "users.jsonl": "ba6815a3065e227a853c71850c5b773e3a3870db030895e28732ff044ff66ad2",
+   "services.jsonl": "1bea5e543da1f3f98a8612688fb06a51cb988680299ea9f906d67e7d64b62432",
+   "service_dependencies.jsonl": "c9d906a49ceacdf1c12d858a193f63b145b432afeed6d111312ec4f0cf6fd2bf",
+   "code_files.jsonl": "5f6a78dd9c480389c21585ec39dd8040dc7f519e91f51e5ef503ff7d4a016455",
+   "deployments.jsonl": "3add93acd70c2bfad6fa90b57af89846ca86fbc119ceadd136d113e6c81a140d",
+   "pull_requests.jsonl": "13f69836636f6c07ace3efb59f2bd51994d06f4d774aa461858a43375f0f7026",
+   "pull_request_files.jsonl": "29e9f32fd3e6c56d05c01b9102d5c2595db8c82c8b0ad9aef08bb06edcb47dc9",
+   "documents.jsonl": "65e59c88854491112811d3cebfd78fed5ea98c0707af7aa77cc7a19810a87e69",
+   "incidents.jsonl": "447fd2e1b0a469581e45b9cb158934470ae2777170c9a9bfd9d35d81e0e51c90",
+   "logs.jsonl": "910ee1dece9dedfe0702e4ebf7b4b835834ce95ab3e79924f8f542aefda0c1ec"
+  }
+ },
+ "database": {
+  "path": "data/evaluation/cache/eval-65785665f6130b77.sqlite",
+  "key": "65785665f6130b77",
+  "reused": true
+ },
+ "models": {
+  "embedding": {
+   "model": "BAAI/bge-small-en-v1.5",
+   "revision": "5c38ec7c405ec4b44b94cc5a9bb96e735b38267a"
+  },
+  "reranker": {
+   "model": "cross-encoder/ms-marco-MiniLM-L6-v2",
+   "revision": "233902d25c440f23af6f7d6e94d2946bac0bee0a"
+  },
+  "nli": {
+   "model": "cross-encoder/nli-deberta-v3-xsmall",
+   "revision": "a150876415327c80daeff35ca6f68f5ed8cf5c24"
+  },
+  "injection_classifier": {
+   "model": "protectai/deberta-v3-base-prompt-injection-v2",
+   "revision": "90c9989b1a342275dd0d1a95aad283c04e075671"
+  },
+  "llm_synthesizer": {
+   "model": null,
+   "revision": null
+  }
+ },
+ "judge": "not run: no LLM configured (LLM_PROVIDER=none)",
+ "clock": "2026-09-01T00:00:00+00:00",
+ "code_sha256": "ea1f57a5a0b37108f097227a67bd92caec3844cf9f36d50ea24515bce5c1e5d1",
+ "versions": {
+  "python": "3.11.9",
+  "platform": "Windows-10-10.0.26300-SP0",
+  "torch": "2.14.0",
+  "transformers": "5.17.0",
+  "sentence-transformers": "6.1.0",
+  "sqlalchemy": "2.1.1",
+  "pydantic": "2.13.5",
+  "numpy": "2.4.6",
+  "matplotlib": "3.11.2"
+ },
+ "configuration": {
+  "app": {
+   "service_name": "opsrag-api",
+   "environment": "local",
+   "log_level": "INFO",
+   "log_format": "console"
+  },
+  "database": {
+   "host": "127.0.0.1",
+   "port": 5432,
+   "user": "opsrag",
+   "password": "**********",
+   "db": "opsrag",
+   "driver": "postgresql+psycopg",
+   "pool_size": 5,
+   "max_overflow": 5,
+   "pool_timeout_seconds": 10.0,
+   "pool_recycle_seconds": 1800,
+   "connect_timeout_seconds": 2,
+   "echo_sql": false
+  },
+  "llm": {
+   "provider": "none",
+   "model": null,
+   "api_key": null,
+   "base_url": null,
+   "temperature": 0.0,
+   "max_output_tokens": 1024,
+   "timeout_seconds": 60.0
+  },
+  "embedding": {
+   "provider": "sentence-transformers",
+   "model": "BAAI/bge-small-en-v1.5",
+   "dimension": 384,
+   "device": "cpu",
+   "batch_size": 32,
+   "normalize": true,
+   "query_prefix": "Represent this sentence for searching relevant passages: ",
+   "document_prefix": "",
+   "max_seq_length": null,
+   "api_key": null,
+   "base_url": null
+  },
+  "chunking": {
+   "strategy": "document_aware",
+   "chunk_size_tokens": 350,
+   "chunk_overlap_tokens": 50
+  },
+  "retrieval": {
+   "mode": "hybrid_rerank",
+   "top_k": 10,
+   "hnsw_ef_search": 100,
+   "fusion": "rrf",
+   "dense_weight": 1.0,
+   "sparse_weight": 1.0,
+   "rrf_k": 60,
+   "fusion_depth": 50,
+   "rerank_candidates": 30
+  },
+  "bm25": {
+   "k1": 1.2,
+   "b": 0.75,
+   "stemming": true,
+   "stopwords": true,
+   "part_weight": 0.75
+  },
+  "reranker": {
+   "provider": "cross-encoder",
+   "model": "cross-encoder/ms-marco-MiniLM-L6-v2",
+   "device": "cpu",
+   "batch_size": 16,
+   "max_length": 512
+  },
+  "tools": {
+   "max_top_k": 20,
+   "snippet_chars": 1500,
+   "runbook_max_chars": 20000,
+   "sql_max_rows": 200,
+   "sql_timeout_seconds": 5.0,
+   "logs_max_results": 200,
+   "logs_max_window_days": 31,
+   "sql_user": "opsrag_sql_reader",
+   "sql_password": "**********"
+  },
+  "agent": {
+   "max_tool_calls": 6,
+   "results_per_tool": 5,
+   "max_evidence": 8,
+   "min_query_coverage": 0.5,
+   "log_window_padding_minutes": 30,
+   "default_log_window_hours": 24,
+   "time_budget_seconds": 60.0,
+   "rerank_evidence": true
+  },
+  "verification": {
+   "nli_model": "cross-encoder/nli-deberta-v3-xsmall",
+   "device": "cpu",
+   "supported_threshold": 0.75,
+   "partial_threshold": 0.4,
+   "entailment_threshold": 0.6,
+   "partial_entailment_threshold": 0.3,
+   "contradiction_threshold": 0.7,
+   "conflict_overlap": 0.6,
+   "unsupported_policy": "remove",
+   "partial_policy": "label",
+   "high_confidence": 0.75,
+   "medium_confidence": 0.5
+  },
+  "security": {
+   "policy_file": null,
+   "injection_action": "quarantine",
+   "query_injection_action": "refuse",
+   "allow_user_header": false,
+   "injection_model": "protectai/deberta-v3-base-prompt-injection-v2",
+   "injection_threshold": 0.9,
+   "injection_device": "cpu"
+  }
+ },
+ "env_overrides": [],
+ "report_rebuilt_at": "2026-09-30T19:13:43.525932+00:00"
+}
