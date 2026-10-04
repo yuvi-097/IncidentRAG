@@ -25,7 +25,7 @@ COPY requirements.txt /tmp/requirements.txt
 # The default torch wheel on Linux bundles CUDA (several GB) that this CPU image never
 # uses: install the CPU build first, so requirements.txt finds torch already satisfied.
 RUN pip install --index-url https://download.pytorch.org/whl/cpu "torch==2.14.0" \
- && pip install -r /tmp/requirements.txt
+  && pip install -r /tmp/requirements.txt
 
 # --- models --------------------------------------------------------------------------
 FROM deps AS models
@@ -67,8 +67,8 @@ COPY scripts ./scripts
 COPY data/evaluation ./data/evaluation
 # The synthetic dataset is deterministic (seed 42): generated here, loaded by bootstrap.
 RUN python scripts/generate_data.py \
- && groupadd --system --gid 10001 opsrag \
- && useradd --system --uid 10001 --gid 10001 --create-home --home-dir /home/opsrag opsrag
+  && groupadd --system --gid 10001 opsrag \
+  && useradd --system --uid 10001 --gid 10001 --create-home --home-dir /home/opsrag opsrag
 # Production checks on by default: strong database passwords and a read-only SQL role are
 # required, and the unauthenticated demo header is refused (see app/config.py).
 ENV OPSRAG_ENVIRONMENT=production \
@@ -80,6 +80,10 @@ EXPOSE 8000
 HEALTHCHECK --interval=15s --timeout=5s --start-period=180s --retries=3 \
     CMD ["python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/api/ready', timeout=4)"]
 CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000", "--no-server-header", "--timeout-keep-alive", "5"]
+
+# --- bootstrap -----------------------------------------------------------------------
+FROM backend AS bootstrap
+CMD ["python", "scripts/bootstrap.py"]
 
 # --- tests ---------------------------------------------------------------------------
 FROM backend AS test
