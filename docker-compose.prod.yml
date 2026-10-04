@@ -1,0 +1,131 @@
+# Production OpsRAG deployment
+# Usage: docker compose -f docker-compose.prod.yml up -d
+# Before running: set environment variables in .env.prod
+
+name: opsrag-prod
+
+x-logging: &logging
+  driver: json-file
+  options:
+    max-size: "50m"
+    max-file: "5"
+
+x-backend-environment: &backend-environment
+  POSTGRES_HOST: ${POSTGRES_HOST:-postgres}
+  POSTGRES_PORT: ${POSTGRES_PORT:-5432}
+  OPSRAG_ENVIRONMENT: production
+  OPSRAG_LOG_FORMAT: json
+  SECURITY_ALLOW_USER_HEADER: "false"
+  TOOLS_SQL_USER: ${TOOLS_SQL_USER:-opsrag_sql_reader}
+  TOOLS_SQL_PASSWORD: ${TOOLS_SQL_PASSWORD:?Set TOOLS_SQL_PASSWORD in .env.prod}
+
+services:
+  postgres:
+    image: pgvector/pgvector:pg17
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-opsrag}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Set POSTGRES_PASSWORD in .env.prod}
+      POSTGRES_DB: ${POSTGRES_DB:-opsrag}
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ./scripts/db:/docker-entrypoint-initdb.d:ro
+    ports:
+      - "${POSTGRES_BIND_ADDR:-127.0.0.1}:${POSTGRES_PUBLISH_PORT:-5432}:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U \"$${POSTGRES_USER}\" -d \"$${POSTGRES_DB}\""]
+      interval: 5s
+      timeout: 5s
+      retries: 12
+      start_period: 10s
+    restart: always
+    security_opt:
+      - no-new-privileges:true
+    logging: *logging
+
+  bootstrap:
+    image: ${DOCKER_HUB_USERNAME:-yuvi0011}/opsrag-bootstrap:${IMAGE_TAG:-latest}
+    command: ["python", "scripts/bootstrap.py"]
+    env_file:
+      - path: .env.prod
+        required: false
+    environment: *backend-environment
+    depends_on:
+      postgres:
+        condition: service_healthy
+    healthcheck:
+      disable: true
+    restart: "no"
+    init: true
+    security_opt:
+      - no-new-privileges:true
+    logging: *logging
+
+  backend:
+    image: ${DOCKER_HUB_USERNAME:-yuvi0011}/opsrag-backend:${IMAGE_TAG:-latest}
+    env_file:
+      - path: .env.prod
+        required: false
+    environment:
+      <<: *backend-environment
+      OPSRAG_PRELOAD_AGENT: "true"
+    ports:
+      - "${OPSRAG_API_BIND_ADDR:-0.0.0.0}:${OPSRAG_API_PORT:-8000}:8000"
+    depends_on:
+      postgres:
+        condition: service_healthy
+        restart: true
+      bootstrap:
+        condition: service_completed_successfully
+    healthcheck:
+      test:
+        - CMD
+        - python
+        - -c
+        - "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/api/ready', timeout=4)"
+      interval: 15s
+      timeout: 5s
+      retries: 3
+      start_period: 180s
+    restart: always
+    init: true
+    security_opt:
+      - no-new-privileges:true
+    logging: *logging
+    deploy:
+      resources:
+        limits:
+          cpus: "4"
+          memory: 8G
+        reservations:
+          cpus: "2"
+          memory: 4G
+
+  frontend:
+    image: ${DOCKER_HUB_USERNAME:-yuvi0011}/opsrag-frontend:${IMAGE_TAG:-latest}
+    environment:
+      OPSRAG_API_URL: ${OPSRAG_API_URL:-http://backend:8000}
+      OPSRAG_API_TOKEN: ${OPSRAG_API_TOKEN:-}
+    ports:
+      - "${OPSRAG_UI_BIND_ADDR:-0.0.0.0}:${OPSRAG_UI_PORT:-8501}:8501"
+    depends_on:
+      backend:
+        condition: service_healthy
+    healthcheck:
+      test:
+        - CMD
+        - python
+        - -c
+        - "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8501/_stcore/health', timeout=4)"
+      interval: 15s
+      timeout: 5s
+      retries: 3
+      start_period: 30s
+    restart: always
+    init: true
+    security_opt:
+      - no-new-privileges:true
+    logging: *logging
+
+volumes:
+  pgdata:
+    driver: local
