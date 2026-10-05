@@ -135,5 +135,6 @@ def test_tokens_are_never_logged(
         api.post("/api/agent/ask", json=QUESTION, headers=headers)
         api.post("/api/agent/ask", json=QUESTION, headers={"Authorization": f"Bearer {secret}x"})
     logged = "\n".join(r.getMessage() + " " + str(r.__dict__) for r in caplog.records)
-    assert secret not in logged and secret.rsplit("_", 1)[1] not in logged
+    # opsrag_<id>_<secret>: the secret itself may contain "_", so split from the left
+    assert secret not in logged and secret.split("_", 2)[2] not in logged
     assert any(r.getMessage() == "auth.failed" for r in caplog.records)

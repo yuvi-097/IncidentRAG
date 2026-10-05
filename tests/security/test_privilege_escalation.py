@@ -89,7 +89,7 @@ def test_forged_and_revoked_tokens_are_refused(app: FastAPI, tool_env: ToolEnv) 
     token_id = real.split("_")[1]
     forged = [
         "opsrag_" + token_id + "_" + "A" * 43,  # right id, wrong secret
-        "opsrag_" + "0" * 12 + "_" + real.rsplit("_", 1)[1],  # right secret, wrong id
+        "opsrag_" + "0" * 12 + "_" + real.split("_", 2)[2],  # right secret, wrong id
         real + "x",
         "not-a-token",
         "",
