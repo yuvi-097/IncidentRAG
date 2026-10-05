@@ -1,20 +1,19 @@
-name: Build and Push Docker Images
+name: Test, then build and push Docker images
 
+# Tests run on every push and pull request: the secret scan also checks docs, so a change
+# to any file can fail it. Images are built and pushed only after the tests pass, and only
+# for pushes to main (never for pull requests).
 on:
   push:
     branches: [main]
-    paths:
-      - 'Dockerfile'
-      - 'frontend/Dockerfile'
-      - 'requirements*.txt'
-      - 'app/**'
-      - 'frontend/**'
-      - 'scripts/**'
-      - '.github/workflows/deploy.yml'
+  pull_request:
+    branches: [main]
   workflow_dispatch:
 
 jobs:
   build-and-push:
+    needs: test
+    if: github.event_name != 'pull_request'
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -73,7 +72,6 @@ jobs:
 
   test:
     runs-on: ubuntu-latest
-    needs: build-and-push
     timeout-minutes: 30
 
     services:
