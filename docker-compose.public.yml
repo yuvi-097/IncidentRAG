@@ -1,0 +1,39 @@
+# Public demo: share the UI through a Cloudflare quick tunnel (no account needed), with a
+# role picker so visitors can see RBAC change the answers. The data is synthetic.
+#
+#   docker compose -f docker-compose.yml -f docker-compose.public.yml up --build -d
+#   python scripts/public_url.py        # prints the https://….trycloudflare.com link
+#
+# What is exposed: only the UI, through the tunnel. The API accepts the demo-user header here
+# (local environment), so it gets no host port at all: only the UI, inside the compose network,
+# can reach it. The UI fixes the API address and sends no token (OPSRAG_UI_PUBLIC_DEMO).
+# A quick tunnel gets a new random link each time it starts, and lives only while this
+# machine runs the stack. Not for real data: there is no rate limiting.
+
+services:
+  bootstrap:
+    environment:
+      OPSRAG_ENVIRONMENT: local
+  backend:
+    environment:
+      OPSRAG_ENVIRONMENT: local
+      SECURITY_ALLOW_USER_HEADER: "true"
+    ports: !reset []
+  frontend:
+    environment:
+      OPSRAG_UI_PUBLIC_DEMO: "true"
+      OPSRAG_DEMO_USER: ${OPSRAG_DEMO_USER:-alex.rivera}
+  tunnel:
+    image: cloudflare/cloudflared:2026.9.3
+    command: ["tunnel", "--no-autoupdate", "--url", "http://frontend:8501"]
+    depends_on:
+      frontend:
+        condition: service_healthy
+    restart: unless-stopped
+    security_opt:
+      - no-new-privileges:true
+    logging:
+      driver: json-file
+      options:
+        max-size: 10m
+        max-file: "3"

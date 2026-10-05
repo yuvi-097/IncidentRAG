@@ -25,9 +25,30 @@ pytestmark = pytest.mark.skipif(
 )
 
 
+class ComposeLoader(yaml.SafeLoader):
+    """YAML plus Compose's merge tags (``!reset``, ``!override``), read as plain values."""
+
+
+def _merge_tag(loader: yaml.SafeLoader, node: yaml.Node) -> Any:
+    if isinstance(node, yaml.SequenceNode):
+        return loader.construct_sequence(node)
+    if isinstance(node, yaml.MappingNode):
+        return loader.construct_mapping(node)
+    return loader.construct_scalar(node)  # type: ignore[arg-type]
+
+
+for _tag in ("!reset", "!override"):
+    ComposeLoader.add_constructor(_tag, _merge_tag)
+
+
+def load(path: Path) -> dict[str, Any]:
+    # ComposeLoader is a SafeLoader subclass: no arbitrary Python objects.
+    return yaml.load(path.read_text(encoding="utf-8"), Loader=ComposeLoader)
+
+
 @pytest.fixture(scope="module")
 def compose() -> dict[str, Any]:
-    return yaml.safe_load((ROOT / "docker-compose.yml").read_text(encoding="utf-8"))
+    return load(ROOT / "docker-compose.yml")
 
 
 def stages(dockerfile: Path) -> dict[str, list[str]]:
@@ -80,7 +101,7 @@ def test_the_database_persists_and_is_not_exposed(compose: dict[str, Any]) -> No
 
 def test_no_secret_is_written_into_the_compose_files(compose: dict[str, Any]) -> None:
     for path in ROOT.glob("docker-compose*.yml"):
-        data = yaml.safe_load(path.read_text(encoding="utf-8"))
+        data = load(path)
         for service in data["services"].values():
             for key, value in (service.get("environment") or {}).items():
                 if re.search(r"PASSWORD|TOKEN|KEY|SECRET", key):
@@ -96,7 +117,7 @@ def test_app_containers_run_in_production_mode(compose: dict[str, Any]) -> None:
         assert "TOOLS_SQL_PASSWORD" in env
     assert compose["services"]["backend"]["environment"]["OPSRAG_PRELOAD_AGENT"] == "true"
     assert compose["services"]["tests"]["environment"]["POSTGRES_DB"] == "opsrag_test"
-    demo = yaml.safe_load((ROOT / "docker-compose.demo.yml").read_text(encoding="utf-8"))
+    demo = load(ROOT / "docker-compose.demo.yml")
     assert demo["services"]["backend"]["environment"]["OPSRAG_ENVIRONMENT"] == "local"
 
 
@@ -156,3 +177,19 @@ def test_the_test_stage_copies_every_requirements_file_it_includes() -> None:
     assert included
     for name in ["requirements-dev.txt", *included]:
         assert name in test, name
+
+
+def test_the_public_demo_exposes_only_the_ui() -> None:
+    """docker-compose.public.yml shares the UI through a tunnel. Its API trusts the demo-user
+    header, so the API must get no host port and the tunnel must point at the UI."""
+    path = ROOT / "docker-compose.public.yml"
+    services = load(path)["services"]
+    assert "ports: !reset []" in path.read_text(encoding="utf-8")  # a plain [] would merge
+    assert services["backend"]["ports"] == []
+    assert services["backend"]["environment"]["SECURITY_ALLOW_USER_HEADER"] == "true"
+    assert services["frontend"]["environment"]["OPSRAG_UI_PUBLIC_DEMO"] == "true"
+    tunnel = services["tunnel"]
+    assert "http://frontend:8501" in tunnel["command"]
+    assert not any("backend" in part for part in tunnel["command"])
+    assert re.search(r":\d{4}\.\d+\.\d+$", tunnel["image"]), "pin a cloudflared release"
+    assert tunnel["depends_on"]["frontend"]["condition"] == "service_healthy"

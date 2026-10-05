@@ -173,3 +173,45 @@ def test_incident_explorer_opens_an_incident_and_traces_its_change(fake: FakeCli
     assert ("trace", {"incident_id": first["id"]}) in fake.calls
     flow = " ".join(m.value for m in at.markdown)
     assert "From the incident to the change" in flow
+
+
+def test_the_public_demo_offers_only_the_demo_users(
+    fake: FakeClient, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    """Shared through a tunnel, the sidebar lets visitors pick a role and nothing else."""
+    monkeypatch.setenv("OPSRAG_UI_PUBLIC_DEMO", "true")
+    at = AppTest.from_file(str(FRONTEND / "app.py"), default_timeout=TIMEOUT)
+    at.session_state["client"] = fake
+    at.run()
+    assert not at.exception
+    assert not [w.label for w in at.text_input if w.label in ("API URL", "API token")]
+    picker = next(s for s in at.selectbox if s.label == "Sign in as")
+    picker.set_value("arjun.mehta").run()
+    assert at.session_state["connection"]["demo_user"] == "alex.rivera"  # not yet
+    next(b for b in at.button if b.label == "Switch role").click().run()
+    assert at.session_state["connection"]["demo_user"] == "arjun.mehta"
+
+
+def test_the_public_demo_client_ignores_a_changed_url_and_tokens(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    """Even if the session held another address or a token, a public demo would send
+    neither: the server must not call out on a visitor's behalf."""
+    monkeypatch.setenv("OPSRAG_UI_PUBLIC_DEMO", "true")
+    monkeypatch.setenv("OPSRAG_API_TOKEN", "server-side-value")
+
+    def script() -> None:
+        import streamlit as st
+
+        from opsrag_ui.client import DEFAULT_URL, get_client
+
+        st.session_state["connection"] = {
+            "api_url": "http://attacker.example:9000",
+            "demo_user": "noor.hassan",
+            "api_token": "pasted-by-a-visitor",
+        }
+        client = get_client()
+        st.session_state["built"] = (client.base_url == DEFAULT_URL, client.token, client.user)
+
+    at = AppTest.from_function(script).run()
+    assert at.session_state["built"] == (True, None, "noor.hassan")

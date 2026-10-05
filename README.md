@@ -750,6 +750,26 @@ docker compose -f docker-compose.yml -f docker-compose.demo.yml up --build   # l
 docker compose down -v                                   # stop and delete the database volume
 ```
 
+### Public demo link
+
+Share the running site with anyone through a free Cloudflare quick tunnel; no account is
+needed. Visitors pick a role (developer, SRE, manager, admin) in the sidebar and see the
+answers change with it.
+
+```bash
+docker compose -f docker-compose.yml -f docker-compose.public.yml up --build -d
+python scripts/public_url.py     # prints https://<random-words>.trycloudflare.com
+```
+
+- **Only the UI is exposed.** The API trusts the chosen demo user in this mode, so it gets
+  no host port at all, and only the UI can reach it inside the compose network. The UI
+  fixes the API address and sends no tokens.
+- **The link is temporary.** It changes every time the tunnel restarts, and it works only
+  while this machine runs the stack. A permanent address needs a named Cloudflare tunnel
+  on your own domain.
+- **It is a demo.** There is no rate limiting, and the server answers about one question
+  per second on a laptop CPU. The data is synthetic.
+
 Troubleshooting (ports, password changes, model downloads) is in the
 [technical reference](docs/TECHNICAL_REFERENCE.md#troubleshooting).
 

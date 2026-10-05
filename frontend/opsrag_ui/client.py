@@ -7,6 +7,11 @@ Authentication, in order of precedence:
   roles and show that answers depend on them.
 
 The client never logs or stores the token beyond the Streamlit session.
+
+A public demo (``OPSRAG_UI_PUBLIC_DEMO=true``, the UI shared through a tunnel) fixes the API
+URL to ``OPSRAG_API_URL`` and sends no token: visitors only pick a demo user. Otherwise a
+visitor could point the server at another address, and it would send its token there and
+make requests into the network it runs in.
 """
 
 from __future__ import annotations
@@ -96,6 +101,11 @@ class ApiClient:
         return self._request("GET", "/metrics")
 
 
+def public_demo() -> bool:
+    """Whether the UI is a public demo: visitors pick a demo user and nothing else."""
+    return os.environ.get("OPSRAG_UI_PUBLIC_DEMO", "").strip().lower() in {"1", "true", "yes"}
+
+
 def connection() -> dict[str, str]:
     """Where the session connects and as whom: ``api_url``, ``demo_user``, ``api_token``.
 
@@ -104,12 +114,13 @@ def connection() -> dict[str, str]:
     default values), and that must never point the session at another URL or user.
     """
     default_user = os.environ.get("OPSRAG_DEMO_USER", "alex.rivera")
+    default_token = os.environ.get("OPSRAG_API_TOKEN", "")  # read from env at startup
     return st.session_state.setdefault(  # type: ignore[no-any-return]
         "connection",
         {
             "api_url": DEFAULT_URL,
             "demo_user": default_user if default_user in DEMO_USERS else "alex.rivera",
-            "api_token": "",  # typed in the sidebar; OPSRAG_API_TOKEN stays server-side
+            "api_token": default_token,  # from OPSRAG_API_TOKEN or empty
         },
     )
 
@@ -120,6 +131,8 @@ def get_client() -> ApiClient:
     if injected is not None:
         return injected  # type: ignore[no-any-return]
     conn = connection()
+    if public_demo():  # whatever the session holds: the configured API, no token
+        return ApiClient(base_url=DEFAULT_URL, token=None, user=conn["demo_user"])
     return ApiClient(
         base_url=conn["api_url"] or DEFAULT_URL,
         token=conn["api_token"] or os.environ.get("OPSRAG_API_TOKEN") or None,
@@ -127,4 +140,12 @@ def get_client() -> ApiClient:
     )
 
 
-__all__ = ["DEFAULT_URL", "DEMO_USERS", "ApiClient", "ApiError", "connection", "get_client"]
+__all__ = [
+    "DEFAULT_URL",
+    "DEMO_USERS",
+    "ApiClient",
+    "ApiError",
+    "connection",
+    "get_client",
+    "public_demo",
+]
