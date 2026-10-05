@@ -1,7 +1,7 @@
 -r requirements.txt
 pytest==9.1.1
 coverage==7.13.0  # QA: python -m coverage run -m pytest (see README > Quality audit)
-httpx2==2.13.1  # used by starlette.testclient
+httpx==0.28.1  # used by starlette.testclient
 ruff==0.16.9
 PyYAML==6.0.3  # tests parse the generated deploy manifests
 matplotlib==3.11.2  # Phase 10 evaluation plots (scripts/evaluate.py)
