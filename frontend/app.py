@@ -1,4 +1,4 @@
-"""OpsRAG frontend: run with ``streamlit run app.py`` from this directory.
+"""IncidentRAG frontend: run with ``streamlit run app.py`` from this directory.
 
 The API must be running (``uvicorn app.main:app`` in the project root). Configure it with
 ``OPSRAG_API_URL`` and sign in with an API token (``OPSRAG_API_TOKEN`` or the sidebar);
@@ -15,7 +15,7 @@ from opsrag_ui.session import forget, memo
 from opsrag_ui.theme import inject_css
 
 st.set_page_config(
-    page_title="OpsRAG · Incident copilot",
+    page_title="IncidentRAG · Incident copilot",
     page_icon=":material/emergency_home:",
     layout="wide",
     initial_sidebar_state="expanded",
@@ -58,7 +58,7 @@ def connection_form() -> None:
 
 def sidebar() -> None:
     with st.sidebar:
-        st.markdown("### OpsRAG")
+        st.markdown("### IncidentRAG")
         st.caption("Incident response copilot for NovaCart (synthetic data)")
         with st.expander("Connection", icon=":material/key:"):
             connection_form()
